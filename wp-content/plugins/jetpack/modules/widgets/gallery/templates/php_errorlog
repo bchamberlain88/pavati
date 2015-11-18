@@ -1,0 +1,1 @@
+[15-Oct-2015 06:26:41 CST6CDT] PHP Fatal error:  Using $this when not in object context in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/widgets/gallery/templates/form.php on line 2

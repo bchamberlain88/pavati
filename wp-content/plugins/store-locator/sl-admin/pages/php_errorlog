@@ -1,0 +1,5 @@
+[21-Sep-2015 03:36:14 CST6CDT] PHP Fatal error:  Call to undefined function sl_move_upload_directories() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-admin/pages/locations.php on line 2
+[23-Sep-2015 08:49:33 CST6CDT] PHP Fatal error:  Call to undefined function sl_initialize_variables() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-admin/pages/manage-locations.php on line 9
+[23-Sep-2015 10:05:21 CST6CDT] PHP Fatal error:  Call to undefined function sl_initialize_variables() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-admin/pages/add-locations.php on line 13
+[23-Sep-2015 15:08:25 CST6CDT] PHP Fatal error:  Call to undefined function sl_move_upload_directories() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-admin/pages/news-upgrades.php on line 3
+[06-Oct-2015 00:46:47 CST6CDT] PHP Fatal error:  Call to undefined function sl_move_upload_directories() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-admin/pages/mapdesigner.php on line 8

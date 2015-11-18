@@ -1,0 +1,2 @@
+[15-Oct-2015 13:01:46 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/protect/transient-cleanup.php on line 54
+[15-Oct-2015 13:04:48 CST6CDT] PHP Fatal error:  Using $this when not in object context in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/protect/config-ui.php on line 1

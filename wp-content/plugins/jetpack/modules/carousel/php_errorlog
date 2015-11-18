@@ -1,0 +1,1 @@
+[14-Oct-2015 21:00:13 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/carousel/jetpack-carousel.php on line 28

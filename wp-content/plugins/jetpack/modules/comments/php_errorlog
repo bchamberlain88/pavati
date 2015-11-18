@@ -1,0 +1,2 @@
+[15-Oct-2015 11:46:48 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/comments/base.php on line 25
+[15-Oct-2015 11:47:59 CST6CDT] PHP Fatal error:  Class 'Jetpack_Comments' not found in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/comments/admin.php on line 28

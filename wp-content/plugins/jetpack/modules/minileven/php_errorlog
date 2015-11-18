@@ -1,0 +1,1 @@
+[15-Oct-2015 11:49:28 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/minileven/minileven.php on line 149

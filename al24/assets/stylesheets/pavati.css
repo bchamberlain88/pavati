@@ -1,0 +1,408 @@
+@font-face { 
+    src: url(../fonts/bankgoth.ttf); font-family: "bg"; 
+}
+
+body {
+    background:#000;
+    font-family:Arial,Helvetica,sans-serif;
+    height:100%;
+    margin:0;
+    overflow:hidden;
+    padding:0;
+    width:100%;
+}
+
+.loading {
+    background:url(../images/loading.gif) center center no-repeat #000;
+    bottom:0;
+    height:100%;
+    left:0;
+    position:absolute;
+    right:0;
+    top:0;
+    width:100%;
+}
+
+.logo {
+    bottom:20px;
+    display:none;
+    float:left;
+    height:60px;
+    position:absolute;
+    right:90px;
+    width:auto;
+    z-index:2000;
+}
+
+.al24 {
+    bottom:20px;
+    display:none;
+    float:left;
+    height:53px;
+    position:absolute;
+    right:20px;
+    z-index:2000;
+}
+
+.slogan {
+    color:#FFF;
+    display:none;
+    float:left;
+    font-family:"bg",Arial,Helvetica,sans-serif;
+    font-size:28px;
+    padding:0 0 0 10px;
+    position:absolute;
+    text-align:center;
+    text-transform:uppercase;
+    top:105px;
+    width:calc(100% - 5px);
+    z-index:2000;
+}
+
+.stripes {
+    background:url(../images/stripes.png) fixed;
+    bottom:0;
+    height:100%;
+    left:0;
+    position:absolute;
+    top:0;
+    right:0;
+    width:100%;
+    z-index:1000;
+}
+
+.boat {
+    background:url(../images/pavati-bkg-lights-off.jpg) center bottom no-repeat fixed #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    bottom:0;
+    display:none;
+    height:100%;
+    left:0;
+    position:absolute;
+    right:0;
+    top:0;
+    width:100%;
+    z-index:0;
+}
+
+.lights {
+    background:url(../images/pavati-bkg-lights-on.jpg) center bottom no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display:none;
+    height:100%;
+    margin:0;
+    padding:0;
+    width:100%;
+    z-index:1;
+}
+
+.subscribe-form {
+    background:rgba(0,0,0,0.25);
+    display:none;
+    height:auto;
+    left:50%;
+    margin-left:-210px;
+    padding:10px;
+    position:absolute;
+    top:155px;
+    width:420px;
+    z-index:2000;
+}
+
+.subscribe-form p {
+    color:rgba(255,255,255,0.5);
+    float:left;
+    font-size:12px;
+    text-align:center;
+    width:100%;
+}
+
+.input {
+    background:#222;
+    border:none;
+    color:#AAA;
+    float:left;
+    font-family:"bg",Arial,Helvetica,sans-serif;
+    font-size:18px;
+    height:50px;
+    margin-right:10px;
+    outline:none;
+    padding:0 20px;
+    text-transform:uppercase;
+    width:360px;
+}
+
+.button {
+    background:#222;
+    border:none;
+    color:#FFF;
+    float:left;
+    font-size:20px;
+    height:50px;
+    line-height:50px;
+    outline:none;
+    padding:0;
+    width:50px;
+}
+
+.button:hover, .about-tab:hover {
+    background-color:#444;
+}
+
+.top-stripes {
+    background-position:0 0;
+    background-image: repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(0,0,0,0.25) 5px, rgba(0,0,0,0.25) 10px);
+    height:15px;
+    left:1px;
+    position:absolute;
+    right:1px;
+    top:1px;
+    width:calc(100% - 2px);
+}
+
+.warning {
+    border-right:2px solid rgba(0,0,0,0.25);
+    color:rgba(0,0,0,0.25);
+    float:left;
+    font-size:30px;
+    margin:5px 20px 0 0;
+    padding-right:20px;
+}
+
+.form-return {
+    background:#b72525;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,0.15);
+    color:#FFF;
+    display:none;
+    float:left;
+    font-size:12px;
+    line-height:20px;
+    margin-bottom:10px;
+    padding:35px 20px 20px 20px;
+    position:relative;
+    text-align:left;
+    text-decoration:none;
+}
+
+.form-return:hover {
+    background:#cb2323;
+    cursor:pointer;
+}
+
+.success {
+    background:rgba(37,183,37,0.5);
+}
+
+.success:hover {
+    background:rgba(37,183,37,0.75);
+}
+
+.af-form {
+    left:-1000px;
+    opacity:0;
+    -moz-opacity:0;
+    -webkit-opacity:0;
+    position:fixed;
+    top:-1000px;
+    z-index:0;
+}
+
+.countdown {
+    border-radius:8px;
+    bottom:60px;
+    display:none;
+    height:auto;
+    left:0;
+    padding:30px 0;
+    position:absolute;
+    text-align:center;
+    width:100%;
+    z-index:2000;
+}
+
+.countdown-info {
+    bottom:42px;
+    color:rgba(255,255,255,0.5);
+    font-size:12px;
+    position:absolute;
+    text-align:center;
+    width:100%;
+    z-index:2000;
+}
+
+.shadow {
+    background:rgba(0,0,0,0.75);
+    bottom:0;
+    display:none;
+    height:100%;
+    left:0;
+    position:fixed;
+    right:0;
+    top:0;
+    width:100%;
+    z-index:2250;
+}
+
+.about-page {
+    background:url(../images/stripes.png) fixed #222;
+    height:auto;
+    max-height:85%;
+    min-height:50%;
+    padding:0 0 60px 0;
+    position:fixed;
+    width:100%;
+    z-index:2500;
+}
+
+.about-tab {
+    background:url(../images/stripes.png) fixed #222;
+    color:#FFF;
+    cursor:pointer;
+    font-size:14px;
+    height:35px;
+    left:50%;
+    line-height:35px;
+    margin-left:-60px;
+    position:absolute;
+    text-align:center;
+    top:0;
+    width:120px;
+    z-index:2500;
+}
+
+.about-container {
+    color:#FFF;
+    height:100%;
+    margin:0 auto;
+    width:800px;
+}
+
+.about-container h1 {
+    font-family:"bg",Arial,Helvetica,sans-serif;
+    font-size:28px;
+    text-transform:uppercase;
+}
+
+.about-container p {
+    border-top:1px dashed rgba(255,255,255,0.15);
+    font-size:14px;
+    letter-spacing:1px;
+    line-height:20px;
+    padding-top:25px;
+    text-align:justify;
+}
+
+.about-container span {
+    background:rgba(0,0,0,0.25);
+    float:left;
+    font-size:14px;
+    margin-top:30px;
+    padding:20px;
+    text-align:center;
+    width:calc(100% - 40px);
+}
+
+.about-container span i {
+    margin:0 5px 0 10px;
+}
+
+.about-container span a {
+    color:#AAA;
+    font-weight:bold;
+}
+
+.fb-like {
+    display:none;
+    float:right;
+    margin:20px;
+    position:relative;
+    z-index:2000;
+}
+
+.info-icon {
+    font-size:10px;
+    margin:0 0 0 10px;
+}
+
+.share-page {
+    color:#FFF;
+    float:left;
+    height:32px;
+    line-height:32px;
+    padding:10px 0;
+    text-align:center;
+    width:100%;
+}
+
+a.mt-share-inline-bar-sm img {
+  width: 34px;
+  height: auto;
+  border: 0px;
+}
+
+a.mt-share-inline-bar-sm: hover {
+  z-index: 50;
+  -webkit-transform: scale3d(1.075, 1.075, 1.075);
+}
+
+a.mt-share-inline-bar-sm {
+  display: inline-block;
+  width: 64px;
+  height: 32px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-right: 0px;
+  text-align: center;
+  position: relative;
+  transition: all 100ms ease-in;
+  -webkit-transition: all 100ms ease-in;
+  -webkit-transform: scale3d(1, 1, 1);
+}
+
+.mt-google: hover {
+  background-color: rgb(225, 95, 79);
+}
+
+.mt-google {
+  background-color: rgb(221, 75, 57);
+}
+
+.mt-linkedin: hover {
+  background-color: rgb(16, 135, 192);
+}
+
+.mt-linkedin {
+  background-color: rgb(14, 118, 168);
+}
+
+.mt-twitter: hover {
+  background-color: rgb(8, 187, 255);
+}
+
+.mt-twitter {
+  background-color: rgb(0, 172, 238);
+}
+
+.mt-facebook: hover {
+  background-color: rgb(66, 100, 170);
+}
+
+.mt-facebook {
+  background-color: rgb(59, 89, 152);
+}
+
+.mt-pinterest: hover {
+  background-color: rgb(221, 42, 48);
+}
+
+.mt-pinterest {
+  background-color: rgb(204, 33, 39);
+}

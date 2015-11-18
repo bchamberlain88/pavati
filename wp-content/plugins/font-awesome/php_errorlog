@@ -1,0 +1,6 @@
+[04-Apr-2015 16:51:09 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/font-awesome/plugin.php on line 53
+[10-Apr-2015 03:15:54 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/font-awesome/plugin.php on line 53
+[21-Apr-2015 03:50:46 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/font-awesome/plugin.php on line 53
+[14-Jun-2015 11:13:28 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/font-awesome/plugin.php on line 53
+[03-Nov-2015 04:34:56 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/font-awesome/plugin.php on line 53
+[14-Nov-2015 23:51:24 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/font-awesome/plugin.php on line 53

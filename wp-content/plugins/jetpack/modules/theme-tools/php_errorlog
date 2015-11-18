@@ -1,0 +1,4 @@
+[15-Oct-2015 13:00:53 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/theme-tools/random-redirect.php on line 69
+[15-Oct-2015 13:01:21 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/theme-tools/site-logo.php on line 40
+[15-Oct-2015 13:02:56 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/theme-tools/responsive-videos.php on line 21
+[15-Oct-2015 13:03:50 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/theme-tools/infinite-scroll.php on line 43

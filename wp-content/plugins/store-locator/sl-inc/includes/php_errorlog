@@ -1,0 +1,16 @@
+[21-Sep-2015 04:51:47 CST6CDT] PHP Fatal error:  Call to undefined function __() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-inc/includes/search-links.php on line 58
+[21-Sep-2015 13:42:10 CST6CDT] PHP Fatal error:  Call to undefined function __() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-inc/includes/mapdesigner-options.php on line 87
+[22-Sep-2015 06:07:26 CST6CDT] PHP Fatal error:  Call to undefined function __() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-inc/includes/module-keys.php on line 47
+[23-Sep-2015 11:21:05 CST6CDT] PHP Fatal error:  Call to undefined function __() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-inc/includes/top-nav.php on line 3
+[23-Sep-2015 12:36:52 CST6CDT] PHP Fatal error:  Call to undefined function __() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-inc/includes/mgmt-buttons-links.php on line 5
+[23-Sep-2015 16:24:10 CST6CDT] PHP Fatal error:  Call to undefined function sl_data() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-inc/includes/admin-notices.php on line 5
+[05-Oct-2015 09:59:00 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-inc/includes/via-latest.php on line 67
+[05-Oct-2015 18:27:55 CST6CDT] PHP Fatal error:  Class 'lastRSS' not found in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-inc/includes/module-news.php on line 6
+[20-Oct-2015 09:31:13 CST6CDT] PHP Fatal error:  Call to undefined function __() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-inc/includes/search-links.php on line 58
+[20-Oct-2015 09:31:26 CST6CDT] PHP Fatal error:  Call to undefined function __() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-inc/includes/mapdesigner-options.php on line 87
+[20-Oct-2015 09:31:41 CST6CDT] PHP Fatal error:  Call to undefined function __() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-inc/includes/module-keys.php on line 47
+[20-Oct-2015 09:32:19 CST6CDT] PHP Fatal error:  Call to undefined function __() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-inc/includes/top-nav.php on line 3
+[20-Oct-2015 09:32:35 CST6CDT] PHP Fatal error:  Call to undefined function __() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-inc/includes/mgmt-buttons-links.php on line 5
+[20-Oct-2015 09:32:51 CST6CDT] PHP Fatal error:  Call to undefined function sl_data() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-inc/includes/admin-notices.php on line 5
+[20-Oct-2015 09:33:55 CST6CDT] PHP Fatal error:  Class 'lastRSS' not found in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-inc/includes/module-news.php on line 6
+[20-Oct-2015 09:34:13 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-inc/includes/via-latest.php on line 67

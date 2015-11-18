@@ -1,0 +1,3 @@
+[15-Oct-2015 13:10:57 CST6CDT] PHP Fatal error:  Call to undefined function __() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/_inc/footer.php on line 7
+[15-Oct-2015 13:11:33 CST6CDT] PHP Fatal error:  Class 'Jetpack' not found in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/_inc/header.php on line 8
+[15-Oct-2015 13:12:07 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/_inc/genericons.php on line 8

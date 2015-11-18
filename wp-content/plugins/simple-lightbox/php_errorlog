@@ -1,0 +1,4 @@
+[02-Nov-2015 15:15:23 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/simple-lightbox/main.php on line 23
+[02-Nov-2015 15:15:42 CST6CDT] PHP Fatal error:  Call to undefined function did_action() in /home/highwayp/public_html/pavati/wp-content/plugins/simple-lightbox/includes/class.base.php on line 120
+[02-Nov-2015 15:16:59 CST6CDT] PHP Fatal error:  Class 'SLB_Base' not found in /home/highwayp/public_html/pavati/wp-content/plugins/simple-lightbox/controller.php on line 7
+[08-Nov-2015 05:01:34 CST6CDT] PHP Fatal error:  Call to undefined function did_action() in /home/highwayp/public_html/pavati/wp-content/plugins/simple-lightbox/includes/class.base.php on line 120

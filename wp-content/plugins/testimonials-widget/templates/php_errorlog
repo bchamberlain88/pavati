@@ -1,0 +1,11 @@
+[26-Sep-2015 07:41:13 CST6CDT] PHP Fatal error:  Call to undefined function make_clickable() in /home/highwayp/public_html/pavati/wp-content/plugins/testimonials-widget/templates/span-url.php on line 7
+[26-Sep-2015 08:56:59 CST6CDT] PHP Fatal error:  Call to undefined function make_clickable() in /home/highwayp/public_html/pavati/wp-content/plugins/testimonials-widget/templates/span-email.php on line 7
+[26-Sep-2015 19:03:09 CST6CDT] PHP Fatal error:  Call to undefined function apply_filters() in /home/highwayp/public_html/pavati/wp-content/plugins/testimonials-widget/templates/testimonial-cite.php on line 63
+[26-Sep-2015 20:18:55 CST6CDT] PHP Fatal error:  Call to undefined function is_single() in /home/highwayp/public_html/pavati/wp-content/plugins/testimonials-widget/templates/testimonial-open.php on line 12
+[26-Sep-2015 22:50:27 CST6CDT] PHP Fatal error:  Class 'Testimonials_Widget' not found in /home/highwayp/public_html/pavati/wp-content/plugins/testimonials-widget/templates/testimonials-open.php on line 7
+[27-Sep-2015 11:28:09 CST6CDT] PHP Fatal error:  Call to undefined function is_home() in /home/highwayp/public_html/pavati/wp-content/plugins/testimonials-widget/templates/testimonials-paging.php on line 7
+[27-Sep-2015 12:43:56 CST6CDT] PHP Fatal error:  Call to undefined function apply_filters() in /home/highwayp/public_html/pavati/wp-content/plugins/testimonials-widget/templates/testimonial-content.php on line 9
+[27-Sep-2015 13:59:42 CST6CDT] PHP Fatal error:  Class 'Testimonials_Widget' not found in /home/highwayp/public_html/pavati/wp-content/plugins/testimonials-widget/templates/testimonials-recent.php on line 14
+[27-Sep-2015 16:31:14 CST6CDT] PHP Fatal error:  Call to undefined function add_filter() in /home/highwayp/public_html/pavati/wp-content/plugins/testimonials-widget/templates/testimonials-archives.php on line 9
+[27-Sep-2015 17:47:01 CST6CDT] PHP Fatal error:  Call to undefined function wp_tag_cloud() in /home/highwayp/public_html/pavati/wp-content/plugins/testimonials-widget/templates/testimonials-tag-cloud.php on line 11
+[27-Sep-2015 19:02:47 CST6CDT] PHP Fatal error:  Call to undefined function tw_get_option() in /home/highwayp/public_html/pavati/wp-content/plugins/testimonials-widget/templates/testimonials-categories.php on line 16

@@ -1,0 +1,1 @@
+[15-Oct-2015 12:12:41 CST6CDT] PHP Fatal error:  Call to undefined function admin_url() in /home/highwayp/public_html/pavati/wp-content/plugins/aweber-web-form-widget/trunk/php/aweber_webform_plugin.php on line 18

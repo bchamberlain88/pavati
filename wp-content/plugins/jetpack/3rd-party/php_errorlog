@@ -1,0 +1,3 @@
+[15-Oct-2015 13:20:40 CST6CDT] PHP Fatal error:  require_once(): Failed opening required 'JETPACK__PLUGIN_DIR3rd-party/buddypress.php' (include_path='.:/usr/local/php56/pear') in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/3rd-party/3rd-party.php on line 8
+[15-Oct-2015 13:20:54 CST6CDT] PHP Fatal error:  Call to undefined function add_filter() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/3rd-party/buddypress.php on line 3
+[11-Nov-2015 23:57:12 CST6CDT] PHP Fatal error:  require_once(): Failed opening required 'JETPACK__PLUGIN_DIR3rd-party/buddypress.php' (include_path='.:/usr/local/php56/pear') in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/3rd-party/3rd-party.php on line 8

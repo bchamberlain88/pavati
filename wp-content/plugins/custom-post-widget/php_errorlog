@@ -1,0 +1,12 @@
+[15-Oct-2015 12:01:03 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/custom-post-widget/notice.php on line 15
+[15-Oct-2015 12:02:20 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/custom-post-widget/meta-box.php on line 12
+[15-Oct-2015 12:03:12 CST6CDT] PHP Fatal error:  Class 'WP_Widget' not found in /home/highwayp/public_html/pavati/wp-content/plugins/custom-post-widget/post-widget.php on line 9
+[15-Oct-2015 12:04:20 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/custom-post-widget/custom-post-widget.php on line 30
+[25-Oct-2015 03:42:34 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/custom-post-widget/custom-post-widget.php on line 30
+[01-Nov-2015 09:11:03 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/custom-post-widget/notice.php on line 15
+[01-Nov-2015 23:53:40 CST6CDT] PHP Fatal error:  Class 'WP_Widget' not found in /home/highwayp/public_html/pavati/wp-content/plugins/custom-post-widget/post-widget.php on line 9
+[02-Nov-2015 06:49:23 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/custom-post-widget/meta-box.php on line 12
+[15-Nov-2015 09:57:31 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/custom-post-widget/meta-box.php on line 12
+[15-Nov-2015 16:16:23 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/custom-post-widget/notice.php on line 15
+[16-Nov-2015 03:38:33 CST6CDT] PHP Fatal error:  Class 'WP_Widget' not found in /home/highwayp/public_html/pavati/wp-content/plugins/custom-post-widget/post-widget.php on line 9
+[16-Nov-2015 16:16:43 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/custom-post-widget/custom-post-widget.php on line 30

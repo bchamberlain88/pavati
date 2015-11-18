@@ -1,0 +1,12 @@
+[05-Oct-2015 18:13:06 CST6CDT] PHP Fatal error:  Class 'IXR_Client' not found in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/class.jetpack-ixr-client.php on line 10
+[15-Oct-2015 01:39:52 CST6CDT] PHP Fatal error:  Class 'IXR_Client' not found in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/class.jetpack-ixr-client.php on line 10
+[21-Oct-2015 06:14:37 CST6CDT] PHP Fatal error:  Class 'IXR_Client' not found in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/class.jetpack-ixr-client.php on line 10
+[27-Oct-2015 14:31:54 CST6CDT] PHP Fatal error:  Class 'IXR_Client' not found in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/class.jetpack-ixr-client.php on line 10
+[27-Oct-2015 21:08:15 CST6CDT] PHP Fatal error:  Call to undefined function status_header() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/uninstall.php on line 10
+[03-Nov-2015 04:59:34 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/functions.gallery.php on line 8
+[04-Nov-2015 05:03:09 CST6CDT] PHP Fatal error:  Class 'WPCOM_JSON_API_Endpoint' not found in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/json-endpoints/class.wpcom-json-api-post-endpoint.php on line 3
+[05-Nov-2015 08:15:44 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/functions.opengraph.php on line 11
+[07-Nov-2015 07:16:56 CST6CDT] PHP Fatal error:  Class 'Jetpack' not found in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/class.jetpack-admin.php on line 25
+[09-Nov-2015 17:51:39 CST6CDT] PHP Fatal error:  Class 'Walker' not found in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/json-endpoints/class.wpcom-json-api-list-comments-endpoint.php on line 3
+[16-Nov-2015 00:27:23 CST6CDT] PHP Fatal error:  Class 'IXR_Client' not found in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/class.jetpack-ixr-client.php on line 10
+[18-Nov-2015 10:22:14 CST6CDT] PHP Fatal error:  Class 'IXR_Client' not found in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/class.jetpack-ixr-client.php on line 10

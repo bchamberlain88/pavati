@@ -1,0 +1,1 @@
+[15-Oct-2015 12:09:35 CST6CDT] PHP Fatal error:  Call to undefined function add_filter() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/custom-css/custom-css/preprocessors.php on line 33

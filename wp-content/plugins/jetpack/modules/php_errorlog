@@ -1,0 +1,8 @@
+[04-Nov-2015 00:20:59 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/verification-tools.php on line 20
+[05-Nov-2015 19:04:34 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/manage.php on line 15
+[05-Nov-2015 20:34:33 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/subscriptions.php on line 15
+[09-Nov-2015 21:49:49 CST6CDT] PHP Fatal error:  Call to undefined function add_filter() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/latex.php on line 101
+[09-Nov-2015 23:29:33 CST6CDT] PHP Fatal error:  Class 'Jetpack' not found in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/shortcodes.php on line 45
+[13-Nov-2015 07:06:31 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/after-the-deadline.php on line 39
+[16-Nov-2015 03:07:30 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/theme-tools.php on line 13
+[18-Nov-2015 08:26:18 CST6CDT] PHP Fatal error:  Call to undefined function apply_filters() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/modules/holiday-snow.php on line 119

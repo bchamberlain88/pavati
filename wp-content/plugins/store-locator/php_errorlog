@@ -1,0 +1,5 @@
+[19-Sep-2015 22:32:32 CST6CDT] PHP Fatal error:  Call to undefined function get_option() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-define.php on line 3
+[19-Sep-2015 23:48:18 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-functions.php on line 520
+[20-Sep-2015 01:04:05 CST6CDT] PHP Fatal error:  Call to undefined function get_option() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-define.php on line 3
+[16-Oct-2015 19:29:29 CST6CDT] PHP Fatal error:  Call to undefined function get_option() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-define.php on line 3
+[16-Oct-2015 19:29:41 CST6CDT] PHP Fatal error:  Call to undefined function get_option() in /home/highwayp/public_html/pavati/wp-content/plugins/store-locator/sl-define.php on line 3

@@ -1,0 +1,557 @@
+* {
+    font-family:Arial,Helvetica,sans-serif;
+    outline:none;
+}
+
+body {
+    background:#1a1c26;
+    height:100%;
+    margin:0;
+    padding:0;
+    width:100%;
+}
+
+table {
+    border-spacing:0;
+}
+
+a {
+    color:#8dcf61;
+    text-decoration:none;
+}
+
+.entry-content form{
+    float:left;
+    height:auto;
+}
+
+.entry-content form label {
+    clear:both;
+    float:left;
+    width:100%;
+}
+
+.entry-content form input[type="password"] {
+    background:rgba(0,0,0,0.25);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:4px;
+    color:#FFF;
+    clear:both;
+    float:left;
+    font-size:16px;
+    height:50px;
+    letter-spacing:2px;
+    margin:10px 0 20px 0;
+    padding:0 20px;
+    width:calc(100% - 40px);
+}
+
+.entry-content form input[type="submit"] {
+    background:#8dcf61;
+    border:none;
+    border-radius:4px;
+    color:#FFF;
+    float:left;
+    height:40px;
+    line-height:40px;
+    padding:0 50px;
+}
+
+.entry-content form input[type="submit"]:hover {
+    background:#6B9D4A;
+    cursor:pointer;
+}
+
+.lmm-panel {
+    display:none;
+}
+
+.leaflet-left, .leaflet-right {
+    display:none;
+}
+
+.site {
+    bottom:0;
+    height:100%;
+    left:0;
+    margin:0;
+    padding:0;
+    position:fixed;
+    right:0;
+    top:0;
+    width:100%;
+}
+
+.site-header {
+    background:#8dcf61;
+    border-bottom:5px solid rgba(0,0,0,0.25);
+    box-shadow:inset 0 1px 0 0 rgba(255,255,255,0.25);
+    -o-box-shadow:inset 0 1px 0 0 rgba(255,255,255,0.25);
+    -moz-box-shadow:inset 0 1px 0 0 rgba(255,255,255,0.25);
+    -webkit-box-shadow:inset 0 1px 0 0 rgba(255,255,255,0.25);
+    height:50px;
+    left:0;
+    line-height:50px;
+    position:fixed;
+    top:0;
+    width:calc(100% - 500px);
+    z-index:1000;
+}
+
+.main-navigation {
+    background:transparent;
+    float:left;
+    height:50px;
+    line-height:50px;
+    overflow:hidden;
+    width:100%;
+}
+
+.top-header-logo {
+    float:left;
+    padding:5px 20px;
+    position:relative;
+}
+
+.nav-menu {
+    border-left:1px solid rgba(0,0,0,0.25);
+    float:left;
+    height:50px;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.menu-item {
+    border-right:1px solid rgba(0,0,0,0.25);
+    float:left;
+    height:auto;
+    width:auto;
+}
+
+.menu-item a {
+    border-left:1px solid rgba(255,255,255,0.25);
+    border-right:1px solid rgba(255,255,255,0.25);
+    color:#FFF;
+    float:left;
+    font-size:13px;
+    height:50px;
+    line-height:50px;
+    padding:0 20px;
+    text-shadow:1px 1px 1px rgba(0,0,0,0.25);
+}
+
+.menu-item a:hover {
+    background:rgba(0,0,0,0.05);
+    box-shadow:inset 0 5px 10px 0 rgba(0,0,0,0.05);
+    -o-box-shadow:inset 0 5px 10px 0 rgba(0,0,0,0.05);
+    -moz-box-shadow:inset 0 5px 10px 0 rgba(0,0,0,0.05);
+    -webkit-box-shadow:inset 0 5px 10px 0 rgba(0,0,0,0.05);
+}
+
+.menu-item a:active {
+    background:rgba(0,0,0,0.1);
+    box-shadow:inset 0 5px 10px 0 rgba(0,0,0,0.25);
+    -o-box-shadow:inset 0 5px 10px 0 rgba(0,0,0,0.25);
+    -moz-box-shadow:inset 0 5px 10px 0 rgba(0,0,0,0.25);
+    -webkit-box-shadow:inset 0 5px 10px 0 rgba(0,0,0,0.25);
+}
+
+.wrapper {
+    bottom:0;
+    height:100%;
+    left:0;
+    position:fixed;
+    right:0;
+    top:0;
+}
+
+.site-content, .jspScrollable {
+    background:#1a1c26;
+    height:100%;
+    padding:25px 50px 100px 50px;
+    position:fixed;
+    right:0;
+    text-align:justify;
+    top:0;
+    width:400px;
+    z-index:10000;
+}
+
+.jspPane {
+    margin:0;
+    min-height:100%;
+    padding:0;
+}
+
+.site-content #content {
+    color:rgba(255,255,255,0.5);
+    float:left;
+    font-size:13px;
+    line-height:21px;
+    min-height:100%;
+    width:100%;
+}
+
+.site-content #content article .entry-content h1 {
+    color:#FFF;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.site-content #content article .entry-content p img {
+    box-shadow:0 0 0 10px rgba(255,255,255,0.05);
+    -o-box-shadow:0 0 0 10px rgba(255,255,255,0.05);
+    -moz-box-shadow:0 0 0 10px rgba(255,255,255,0.05);
+    -webkit-box-shadow:0 0 0 10px rgba(255,255,255,0.05);
+    float:left;
+    height:auto;
+    margin:10px 10px 25px 10px;
+    width:calc(100% - 20px);
+}
+
+.site-content #content article .entry-content p strong {
+    color:#FFF;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.site-content #content article .entry-content p del a {
+    background:url(http://www.pavati.com/al24/access/wp-content/uploads/2013/12/arrow_down_alt1_24x24.png) calc(100% - 15px) center no-repeat;
+    color:rgba(255,255,255,0.5);
+    float:left;
+    height:50px;
+    line-height:50px;
+    padding:0 20px;
+    text-align:left;
+    width:calc(100% - 40px);
+}
+
+.site-content #content article .entry-content p del {
+    background:rgba(0,0,0,0.25);
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:inset 0 10px 20px 0 rgba(0,0,0,0.25);
+    border-radius:4px;
+    float:left;
+    font-style:none;
+    height:auto;
+    margin:15px 0 0 0;
+    padding:0;
+    text-align:left;
+    text-decoration:none;
+    width:100%;
+}
+
+.site-content #content article .entry-content p del:hover {
+    background:rgba(0,0,0,0.75);
+    cursor:pointer;
+}
+
+.site-content #content article .entry-content table {
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,0.15);
+    -o-box-shadow:inset 0 0 0 1px rgba(255,255,255,0.15);
+    -moz-box-shadow:inset 0 0 0 1px rgba(255,255,255,0.15);
+    -webkit-box-shadow:inset 0 0 0 1px rgba(255,255,255,0.15);
+    float:left;
+    height:auto;
+    margin:10px 0 20px 0;
+    padding:0;
+    width:100%;
+}
+
+.site-content #content article .entry-content table tr {
+    border-bottom:1px solid rgba(255,255,255,0.15);
+    clear:both;
+    float:left;
+    height:auto;
+    margin:0;
+    padding:0;
+    width:100%;
+}
+
+.site-content #content article .entry-content table tr:last-child {
+    border:none;
+}
+
+.site-content #content article .entry-content table tr:nth-child(even) {
+    background:rgba(0,0,0,0.25);
+}
+
+.site-content #content article .entry-content table tr td {
+    float:left;
+    line-height:40px;
+    min-height:40px;
+}
+
+.site-content #content article .entry-content table tr td:first-child {
+    border-right:1px solid rgba(255,255,255,0.15);
+    color:#8dcf61;
+    float:left;
+    font-size:13px;
+    font-weight:bold;
+    text-align:center;
+    width:calc(32% - 1px);
+}
+
+.site-content #content article .entry-content table tr td:last-child {
+    float:left;
+    font-size:13px;
+    height:40px;
+    line-height:40px;
+    padding:0 20px;
+    text-align:left;
+    width:calc(68% - 42px);
+}
+
+.widget-title {
+    display:none;
+}
+
+.widget-area {
+    background:url(http://www.pavati.com/al24/access/wp-content/uploads/2013/12/No-Overlay-with-Lights.jpg) center center no-repeat;
+    height:100%;
+    left:0;
+    padding:0;
+    position:absolute;
+    top:0;
+    width:calc(100% - 500px);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.widget-area aside {
+    float:left;
+    height:100%;
+    margin:0;
+    padding:0;
+    position:relative;
+    width:100%;
+}
+
+.widget-area aside p {
+    float:left;
+    margin:0;
+    padding:0;
+}
+
+.widget-area aside .size-full {
+    float:left;
+    height:100%;
+    margin:0;
+    padding:0;
+    position:relative;
+    width:auto;
+}
+
+.widget-area aside table {
+    border:none;
+    bottom:0;
+    height:calc(100px - 55px);
+    left:0;
+    margin:0;
+    padding:0;
+    position:fixed;
+    right:0;
+    top:55px;
+    width:calc(100% - 500px);
+}
+
+.widget-area aside table tr {
+    float:left;
+    height:100%;
+    margin:0;
+    overflow:hidden;
+    padding:0;
+    position:relative;
+    width:100%;
+}
+
+.widget-area aside table tr td {
+    float:left;
+    height:100%;
+    margin:0;
+    padding:0;
+    position:relative;
+    width:50%;
+}
+
+.content-footer {
+    background:rgba(0,0,0,0.5);
+    bottom:0;
+    color:rgba(255,255,255,0.5);
+    font-size:11px;
+    height:65px;
+    left:0;
+    line-height:65px;
+    padding:0 50px;
+    position:absolute;
+    right:0;
+    text-align:left;
+    width:calc(100% - 100px);
+}
+
+.site-info {
+    display:none;
+}
+
+.widget_custom_post_widget {
+    min-height:100%;
+}
+
+.boat-models {
+    bottom:0;
+    height:100%;
+    left:0;
+    position:absolute;
+    right:0;
+    top:0;
+    width:100%;
+}
+
+.boat-model {
+    height:100%;
+    overflow:hidden;
+    position:absolute;
+    top:0;
+    width:50%;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
+
+.model-left {
+    background:url(http://localhost/wp-pavati/wp-content/uploads/2013/12/IMG_53122.jpg) center center no-repeat;
+    left:0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.model-right {
+    background:url(http://localhost/wp-pavati/wp-content/uploads/2013/12/IMG_53122.jpg) center center no-repeat;
+    right:0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.boat-info {
+    bottom:0;
+    height:100%;
+    left:0;
+    position:absolute;
+    right:0;
+    top:0;
+    width:100%;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.boat-info:hover {
+    top:-100%;
+}
+
+.model-info {
+    background:rgba(13,14,19,0.75);
+    bottom:-100%;
+    height:100%;
+    left:0;
+    position:absolute;
+    right:0;
+    width:100%;
+}
+
+.contact-form {
+    background:#FFF;
+    height:auto;
+    left:50%;
+    margin:0 0 0 -250px;
+    padding:30px;
+    position:absolute;
+    top:100px;
+    width:500px;
+    z-index:1000;
+}
+
+.af-body {
+    background:#333;
+    bottom:0;
+    float:left;
+    height:auto;
+    left:0;
+    position:absolute;
+    right:0;
+    top:0;
+    width:100%;
+}
+
+.af-element {
+    background:#FFF;
+    float:left;
+    margin:0;
+    padding:0;
+    position:relative;
+    width:calc(100% - 30px);
+}
+
+.af-element .previewLabel {
+    color:red;
+}
+
+.af-textWrap {
+    background:red;
+    float:left;
+    position:relative;
+    width:100%;
+}
+
+@media(max-width:1024px){
+
+    .site, .wrapper {
+        float:left;
+        height:auto;
+        position:relative;
+        top:0;
+        width:100%;
+    }
+
+    .jspVerticalBar {
+        display:none;
+    }
+    
+    .widget-area {
+        float:left;
+        height:auto;
+        position:relative;
+        width:100%;
+    }
+
+    .site-content {
+        float:left;
+        height:auto;
+        min-height:100%;
+        padding:0 50px;
+        position:relative;
+        top:0;
+        width:calc(100% - 100px);
+    }
+
+    .content-footer {
+        float:left;
+        margin:20px -50px 0 -50px;
+        position:relative;
+        width:100%;
+    }
+
+    .site-header {
+        display:none;
+    }
+
+}

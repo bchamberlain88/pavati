@@ -7,3 +7,11 @@
 [18-Nov-2015 12:28:42 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/contact-form-7/modules/number.php on line 10
 [18-Nov-2015 15:00:15 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/contact-form-7/modules/submit.php on line 8
 [18-Nov-2015 16:16:16 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/contact-form-7/modules/select.php on line 8
+[18-Nov-2015 17:31:48 CST6CDT] PHP Fatal error:  Call to undefined function add_filter() in /home/highwayp/public_html/pavati/wp-content/plugins/contact-form-7/modules/akismet.php on line 7
+[18-Nov-2015 18:47:33 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/contact-form-7/modules/jetpack.php on line 3
+[18-Nov-2015 20:03:20 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/contact-form-7/modules/captcha.php on line 8
+[18-Nov-2015 22:34:52 CST6CDT] PHP Fatal error:  Call to undefined function wpcf7_add_shortcode() in /home/highwayp/public_html/pavati/wp-content/plugins/contact-form-7/modules/response.php on line 8
+[18-Nov-2015 23:50:54 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/contact-form-7/modules/flamingo.php on line 7
+[19-Nov-2015 02:22:26 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/contact-form-7/modules/textarea.php on line 8
+[19-Nov-2015 08:41:20 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/contact-form-7/modules/checkbox.php on line 8
+[19-Nov-2015 13:44:23 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/contact-form-7/modules/acceptance.php on line 8

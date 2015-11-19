@@ -1,3 +1,4 @@
 [10-Nov-2015 13:54:49 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/contact-form-7/includes/controller.php on line 3
 [13-Nov-2015 02:16:16 CST6CDT] PHP Fatal error:  Call to undefined function add_filter() in /home/highwayp/public_html/pavati/wp-content/plugins/contact-form-7/includes/capabilities.php on line 3
 [18-Nov-2015 09:57:10 CST6CDT] PHP Fatal error:  Call to undefined function add_filter() in /home/highwayp/public_html/pavati/wp-content/plugins/contact-form-7/includes/mail.php on line 289
+[19-Nov-2015 01:06:39 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/contact-form-7/includes/upgrade.php on line 3

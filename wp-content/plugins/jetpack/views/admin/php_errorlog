@@ -4,3 +4,4 @@
 [21-Oct-2015 09:15:30 CST6CDT] PHP Fatal error:  Call to undefined function _e() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/views/admin/network-admin-header.php on line 5
 [21-Oct-2015 09:16:58 CST6CDT] PHP Fatal error:  Class 'Jetpack' not found in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/views/admin/admin-page.php on line 4
 [21-Oct-2015 09:18:00 CST6CDT] PHP Fatal error:  Call to undefined function _e() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/views/admin/network-admin-footer.php on line 4
+[18-Nov-2015 18:07:57 CST6CDT] PHP Fatal error:  Call to undefined function _e() in /home/highwayp/public_html/pavati/wp-content/plugins/jetpack/views/admin/module-modal-template.php on line 2

@@ -297,7 +297,6 @@ function nectar_custom_css() {
 		echo '@media only screen and (min-width: 1000px) {
 			
 			    .container {
-			      max-width: 1515px; 
 				  width: 100%;
 				  padding: 0px 90px; 
 			    } 

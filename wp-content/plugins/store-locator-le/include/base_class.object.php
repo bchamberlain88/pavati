@@ -19,7 +19,7 @@ if ( ! class_exists('SLPlus_BaseClass_Object') ) {
 		/**
 		 * @var boolean set to true if this object uses the slplus base object
 		 */
-		private $uses_slplus = true;
+		protected $uses_slplus = true;
 
 		/**
 		 * @param array $options

@@ -1,0 +1,9 @@
+[05-Dec-2015 22:52:10 CST6CDT] PHP Fatal error:  Call to undefined function do_action() in /home/highwayp/public_html/pavati/wp-content/plugins/eps-301-redirects/templates/admin-tab-404s.php on line 14
+[05-Dec-2015 22:52:15 CST6CDT] PHP Fatal error:  Call to undefined function do_action() in /home/highwayp/public_html/pavati/wp-content/plugins/eps-301-redirects/templates/admin-tab-error.php on line 15
+[05-Dec-2015 22:52:20 CST6CDT] PHP Fatal error:  Call to undefined function wp_nonce_field() in /home/highwayp/public_html/pavati/wp-content/plugins/eps-301-redirects/templates/admin-panel-cache.php on line 15
+[05-Dec-2015 22:52:26 CST6CDT] PHP Fatal error:  Call to undefined function get_option() in /home/highwayp/public_html/pavati/wp-content/plugins/eps-301-redirects/templates/admin-panel-donate.php on line 16
+[05-Dec-2015 22:52:31 CST6CDT] PHP Fatal error:  Call to undefined function do_action() in /home/highwayp/public_html/pavati/wp-content/plugins/eps-301-redirects/templates/admin-tab-redirects.php on line 18
+[05-Dec-2015 22:52:36 CST6CDT] PHP Fatal error:  Call to undefined function do_action() in /home/highwayp/public_html/pavati/wp-content/plugins/eps-301-redirects/templates/admin-tab-import-export.php on line 15
+[05-Dec-2015 22:52:41 CST6CDT] PHP Fatal error:  Call to a member function config() on null in /home/highwayp/public_html/pavati/wp-content/plugins/eps-301-redirects/templates/template.redirect-entry.php on line 12
+[05-Dec-2015 22:52:46 CST6CDT] PHP Fatal error:  Cannot access self:: when no class scope is active in /home/highwayp/public_html/pavati/wp-content/plugins/eps-301-redirects/templates/template.redirect-entry-edit.php on line 12
+[05-Dec-2015 22:52:51 CST6CDT] PHP Fatal error:  Call to undefined function wp_nonce_field() in /home/highwayp/public_html/pavati/wp-content/plugins/eps-301-redirects/templates/template.redirect-entry-edit-inline.php on line 24

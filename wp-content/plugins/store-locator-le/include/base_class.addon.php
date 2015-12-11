@@ -1,6 +1,7 @@
 <?php
 if (! class_exists('SLP_BaseClass_Addon')) {
-	require_once( WP_PLUGIN_DIR . '/store-locator-le/include/base_class.object.php');
+    if ( ! defined( 'SLPLUS_PLUGINDIR' ) ) {  require_once( dirname( __FILE__ ) . '/../store-locator-le.php' ); }
+	require_once( SLPLUS_PLUGINDIR . 'include/base_class.object.php');
 
     /**
      * A base class that consolidates common add-on pack methods.

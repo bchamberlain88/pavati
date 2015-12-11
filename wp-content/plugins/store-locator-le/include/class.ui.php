@@ -317,7 +317,7 @@ class SLPlus_UI {
      */
     function create_MapContent() {
         // FILTER: slp_googlemapdiv
-        return apply_filters('slp_googlemapdiv','<div id="map"></div>');
+        return apply_filters('slp_googlemapdiv','<div id="map" class="slp_map"></div>');
     }
 
     /**
@@ -350,7 +350,6 @@ class SLPlus_UI {
      * Process shortcodes for search form.
      */
     function create_SearchElement($attributes, $content = null) {
-        $this->slplus->debugMP('slp.main','pr',get_class().'::'.__FUNCTION__,$attributes);
 
         // Pre-process the attributes.
         //
@@ -613,6 +612,9 @@ class SLPlus_UI {
 	    //
 	    $this->slplus->createobject_AddOnManager();
 	    $environment['addons'] = $this->slplus->add_ons->get_versions();
+        $environment['slp'] = SLPLUS_VERSION;
+
+        add_filter( 'slp_js_options'    , array( $this , 'add_to_js_options') );
 
         // Lets get some variables into our script.
         // "Higher Level" JS Options are those noted below.
@@ -648,6 +650,17 @@ class SLPlus_UI {
 
         wp_localize_script('csl_script' ,'slplus'   , $scriptData);
 
+    }
+
+    /**
+     * Show force load option in JS options.
+     */
+    function add_to_js_options( $options ) {
+        return
+            array_merge(
+                $options,
+                array( 'force_load_js' => $this->slplus->options_nojs['force_load_js'] )
+            );
     }
 
 	/**

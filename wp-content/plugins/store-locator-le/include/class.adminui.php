@@ -5,78 +5,48 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
 	/**
 	 * Store Locator Plus basic admin user interface.
 	 *
-	 * @property-read   boolean     $already_enqueue    True if admin stylesheet enqueued.
-	 * @property-read   boolean     $isOurAdminPage     True if we are on an admin page for the plugin.
-	 * @property       string[]     $admin_slugs        The registered admin page hooks for the plugin.
-	 *
 	 * @package StoreLocatorPlus\AdminUI
 	 * @author Lance Cleveland <lance@charlestonsw.com>
 	 * @copyright 2012-2015 Charleston Software Associates, LLC
+	 *
+	 * @property-read   boolean     $already_enqueue    True if admin stylesheet enqueued.
+	 * @property-read   boolean     $isOurAdminPage     True if we are on an admin page for the plugin.
+	 * @property       string[]     $admin_slugs        The registered admin page hooks for the plugin.
+	 * @property SLPlus_AdminUI_UserExperience $Experience
+	 * @property SLPlus_AdminUI_GeneralSettings $GeneralSettings
+	 * @property-read SLPlus_AdminUI_Info $Info The Info object.
+	 * @property SLPlus_AdminUI_Locations $ManageLocations
+	 * @property SLPlus_AdminUI_UserExperience $MapSettings
+	 * @property string $styleHandle
 	 */
 	class SLPlus_AdminUI extends SLPlus_BaseClass_Object {
 		private $already_enqueued   = false;
-		private $is_our_admin_page  = false;
-		public  $slp_admin_slugs    = array();
-
-
-	    //-------------------------------------
-	    // Properties
-	    //-------------------------------------
-
-		/**
-		 * @var SLPlus_AdminUI_UserExperience $Experience
-		 */
-		public $Experience;
-
-		/**
-		 * @var \SLPlus_AdminUI_GeneralSettings $GeneralSettings
-		 */
-		public $GeneralSettings;
-
-		/**
-		 * The Info object.
-		 *
-		 * @var \SLPlus_AdminUI_Info $Info
-		 */
+		public 	$Experience;
+		public 	$GeneralSettings;
 		private $Info;
-
-	    /**
-	     *
-	     * @var \SLPlus_AdminUI_Locations $ManageLocations
-	     */
-	    public $ManageLocations;
-
-	    /**
-	     * @var SLPlus_AdminUI_UserExperience $MapSettings
-	     */
-	    public $MapSettings;
-
-	    /**
-	     *
-	     * @var string $styleHandle
-	     */
-	    public $styleHandle;
-
-	    //----------------------------------
-	    // Methods
-	    //----------------------------------
+		private $is_our_admin_page  = false;
+	    public 	$ManageLocations;
+	    public 	$MapSettings;
+		public  $slp_admin_slugs    = array();
+	    public 	$styleHandle;
 
 	    /**
 	     * Invoke the AdminUI class.
+		 *
+		 * @param	array	$options
 	     *
 	     */
 	    function __construct( $options = array() ) {
 		    add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_stylesheet' ) );
 
-		    // Update system hook
-		    // Premium add-ons can use the admin_init hook to utilize this.
-		    //
-		    require_once( SLPLUS_PLUGINDIR . '/include/class.updates.php' );
-
 		    parent::__construct( $options );
 
 	        $this->styleHandle = $this->slplus->styleHandle;
 			$this->add_janitor_hooks();
+
+            // Called after admin_menu and admin_init when the current screen info is available.
+            //
+            add_action( 'current_screen' , array ( $this , 'setup_admin_screen' ) );
 
 		    /**
 		     * HOOK: slp_admin_init_complete
@@ -253,7 +223,7 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
 		 */
 		private function create_object_Experience() {
 			if ( ! isset( $this->Experience ) ) {
-				require_once( SLPLUS_PLUGINDIR . '/include/class.adminui.experience.php' );
+				require_once( SLPLUS_PLUGINDIR . 'include/class.adminui.experience.php' );
 				$this->Experience = new SLPlus_AdminUI_UserExperience();
 
 				// TODO: remove MapSettings when all add-on packs start referencing AdminUI->Experience ( ES, GFI, PRO, REX )
@@ -261,12 +231,22 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
 			}
 		}
 
+        /**
+         * Create General object.
+         */
+        private function create_object_General() {
+            if ( ! isset( $this->GeneralSettings ) ) {
+                require_once(SLPLUS_PLUGINDIR . 'include/class.adminui.generalsettings.php');
+                $this->GeneralSettings = new SLPlus_AdminUI_GeneralSettings();
+            }
+        }
+
 		/**
 		 * Create Info object.
 		 */
 		private function create_object_Info() {
 			if ( ! isset( $this->Info ) ) {
-				require_once( SLPLUS_PLUGINDIR . '/include/class.adminui.info.php' );
+				require_once( SLPLUS_PLUGINDIR . 'include/class.adminui.info.php' );
 				$this->Info = new SLPlus_AdminUI_Info( array( 'adminui'   => $this ) );
 			}
 		}
@@ -276,7 +256,7 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
 		 */
 		private function create_Object_Locations() {
 			if ( ! isset( $this->ManageLocations ) ) {
-				require_once( SLPLUS_PLUGINDIR . '/include/class.adminui.locations.php' );
+				require_once( SLPLUS_PLUGINDIR . 'include/class.adminui.locations.php' );
 				$this->ManageLocations = new SLPlus_AdminUI_Locations();
 			}
 		}
@@ -342,7 +322,7 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
 	                                9,
 	                                sprintf(
 	                                        __('Could not read icon directory %s','store-locator-le'),
-	                                        $directory
+	                                        $icon['dir']
 	                                        )
 	                                );
 	                         $this->slplus->notifications->display();
@@ -363,7 +343,9 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
 	                ) {
 	                $htmlStr .=
 	                    "<div class='slp_icon_selector_box'>".
-	                        "<img class='slp_icon_selector'
+	                        "<img
+	                         	 data-filename='$filename'
+	                        	 class='slp_icon_selector'
 	                             src='".$fqURL[$fqURLIndex].$filename."'
 	                             onclick='".
 	                                "document.getElementById(\"".$inputFieldID."\").value=this.src;".
@@ -396,19 +378,19 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
 			// The CSS file must exists where we expect it and
 			// The admin page being rendered must be in "our family" of admin pages
 			//
-			if ( file_exists( SLPLUS_PLUGINDIR . '/css/admin/admin.css') ) {
+			if ( file_exists( SLPLUS_PLUGINDIR . 'css/admin/admin.css') ) {
 				$this->already_enqueued = true;
 				wp_enqueue_style('slp_admin_style' , SLPLUS_PLUGINURL . '/css/admin/admin.css' );
 
 				// jQuery Smoothness Theme
 				//
-				if (file_exists(SLPLUS_PLUGINDIR . '/css/admin/jquery-ui-smoothness.css')) {
+				if (file_exists(SLPLUS_PLUGINDIR . 'css/admin/jquery-ui-smoothness.css')) {
 					wp_enqueue_style(
 						'jquery-ui-smoothness', SLPLUS_PLUGINURL . '/css/admin/jquery-ui-smoothness.css'
 					);
 				}
 
-				if (file_exists(SLPLUS_PLUGINDIR . '/js/admin-interface.js')) {
+				if (file_exists(SLPLUS_PLUGINDIR . 'js/admin-interface.js')) {
 					wp_enqueue_script( 'slp_admin_script' , SLPLUS_PLUGINURL . '/js/admin-interface.js', 'jquery', SLPLUS_VERSION, true );
 				}
 			}
@@ -420,7 +402,6 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
 		 * Render the experience tab.
 		 */
 		function render_experience_tab() {
-			$this->create_object_Experience();
 			$this->Experience->display();
 		}
 
@@ -429,7 +410,6 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
 		 *
 		 */
 		function render_info_tab() {
-			$this->create_object_Info();
 			$this->Info->display();
 		}
 
@@ -459,8 +439,6 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
 		 *
 		 */
 		function renderPage_GeneralSettings() {
-			require_once(SLPLUS_PLUGINDIR . '/include/class.adminui.generalsettings.php');
-			$this->GeneralSettings = new SLPlus_AdminUI_GeneralSettings();
 			$this->GeneralSettings->render_adminpage();
 			$this->render_rate_box();
 		}
@@ -470,9 +448,52 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
 		 */
 		function renderPage_Locations() {
 			$this->slplus->set_php_timeout();
-			$this->create_object_Locations();
 			$this->ManageLocations->render_adminpage();
 		}
+
+        /**
+         * Attach the wanted screen object and save the settings if appropriate.
+         *
+         * @param   WP_Screen       $current_screen         The current screen object.
+         */
+        function setup_admin_screen( $current_screen ) {
+            switch ( $current_screen->id ) {
+
+                // Experience Tab
+                //
+                case SLP_ADMIN_PAGEPRE . 'slp_experience':
+                    $this->create_object_Experience();
+                    if ( isset( $_POST ) && ! empty( $_POST ) ) {
+                        $this->Experience->save_options();
+                    }
+                    break;
+
+                // General Tab
+                //
+                case SLP_ADMIN_PAGEPRE . 'slp_general':
+                    $this->create_object_General();
+                    if ( isset( $_POST ) && ! empty( $_POST ) ) {
+                        $this->GeneralSettings->save_options();
+                    }
+                    break;
+
+                // Info Tab
+                //
+                case SLP_ADMIN_PAGEPRE . 'slp_info':
+                    $this->create_object_Info();
+                    break;
+
+                // Locations Tab
+                case SLP_ADMIN_PAGEPRE . 'slp_manage_locations':
+                    $this->create_Object_Locations();
+                    break;
+
+                // Unknown
+                //
+                default:
+                    break;
+            }
+        }
 
 	     /**
 	      * Merge existing options and POST options, then save to the wp_options table.

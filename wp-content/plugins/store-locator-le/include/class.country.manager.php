@@ -1,7 +1,7 @@
 <?php
 
 if ( ! class_exists('SLP_Country_Manager') ) {
-	require_once( WP_PLUGIN_DIR . '/store-locator-le/include/base_class.object.php');
+	require_once( SLPLUS_PLUGINDIR . 'include/base_class.object.php');
 
 	/**
 	 * Class SLP_Country
@@ -12,17 +12,12 @@ if ( ! class_exists('SLP_Country_Manager') ) {
 	 * @author Lance Cleveland <lance@charlestonsw.com>
 	 * @copyright 2015 Charleston Software Associates, LLC
 	 *
-	 *
 	 * @since 4.3.00
+     *
+     * @property    SLP_Country[]   $countries      the index key is the slug for the country.
+     *
 	 */
 	class SLP_Country_Manager extends SLPlus_BaseClass_Object {
-
-		/**
-		 * @var array $countries a named array of SLP_Country objects {
-		 *      @var string $slug = the slug for the country (array key)
-		 *      @var SLP_Country $country = the country object
-		 * }
-		 */
 		public $countries;
 
 		/**
@@ -30,7 +25,7 @@ if ( ! class_exists('SLP_Country_Manager') ) {
 		 */
 		function __construct( $options = array() ) {
 			parent::__construct( $options );
-			require_once( WP_PLUGIN_DIR . '/store-locator-le/include/class.country.php');
+			require_once( SLPLUS_PLUGINDIR . 'include/class.country.php');
 			$this->load_country_data();
 		}
 
@@ -59,9 +54,11 @@ if ( ! class_exists('SLP_Country_Manager') ) {
 			 * @var SLP_Country $new_country
 			 */
 			$new_country = new SLP_Country( array(
-				'name'          => __('United States'                  ,'store-locator-le')   ,
-				'google_domain' => 'maps.google.com'                                    ,
-				'cctld'         => 'us'                                                 ,
+				'name'          => __('United States'                  ,'store-locator-le') ,
+                'google_domain' => 'maps.google.com'                                        ,
+				'cctld'         => 'us'                                                     ,
+				'map_center_lat'=>   '37.09024'											    ,
+				'map_center_lng'=> '-95.712891'											    ,
 			) );
 			$this->countries[ $new_country->slug ] = $new_country;
 
@@ -87,9 +84,12 @@ if ( ! class_exists('SLP_Country_Manager') ) {
 			$this->countries[ $new_country->slug ] = $new_country;
 
 			$new_country = new SLP_Country( array(
-				'name'          => __('Angola'                         ,'store-locator-le'),
-				'google_domain' => 'maps.google.co.ao',
-				'cctld'         => 'ao'
+				'name'          => __('Angola'                         ,'store-locator-le') ,
+				'google_domain' => 'maps.google.co.ao'                                      ,
+				'cctld'         => 'ao'                                                     ,
+                'map_center_lat'=>  '-11.20269'											    ,
+                'map_center_lng'=>  '17.873887'											    ,
+
 			) );
 			$this->countries[ $new_country->slug ] = $new_country;
 
@@ -108,9 +108,12 @@ if ( ! class_exists('SLP_Country_Manager') ) {
 			$this->countries[ $new_country->slug ] = $new_country;
 
 			$new_country = new SLP_Country( array(
-				'name'          => __('Australia'                      ,'store-locator-le'),
-				'google_domain' => 'maps.google.com.au',
-				'cctld'         => 'au',
+				'name'          => __('Australia'                      ,'store-locator-le') ,
+				'google_domain' => 'maps.google.com.au'                                     ,
+				'cctld'         => 'au'                                                     ,
+                'map_center_lat'=>  '-25.274398'										    ,
+                'map_center_lng'=>  '133.775136'										    ,
+
 			) );
 			$this->countries[ $new_country->slug ] = $new_country;
 
@@ -321,6 +324,9 @@ if ( ! class_exists('SLP_Country_Manager') ) {
 				'name'          => __('Germany'                        ,'store-locator-le'),
 				'google_domain' => 'maps.google.de',
 				'cctld'         => 'de',
+				'map_center_lat'=>  '51.165691'										    ,
+				'map_center_lng'=>  '10.451526'										    ,
+
 			) );
 			$this->countries[ $new_country->slug ] = $new_country;
 
@@ -486,9 +492,12 @@ if ( ! class_exists('SLP_Country_Manager') ) {
 			$this->countries[ $new_country->slug ] = $new_country;
 
 			$new_country = new SLP_Country( array(
-				'name'          => __('Netherlands'                    ,'store-locator-le'),
-				'google_domain' => 'maps.google.nl',
-				'cctld'         => 'nl',
+				'name'          => __('Netherlands'                    ,'store-locator-le') ,
+				'google_domain' => 'maps.google.nl'                                         ,
+				'cctld'         => 'nl'                                                     ,
+                'map_center_lat'=>  '52.132633'											    ,
+                'map_center_lng'=>   '5.291266'											    ,
+
 			) );
 			$this->countries[ $new_country->slug ] = $new_country;
 
@@ -640,9 +649,11 @@ if ( ! class_exists('SLP_Country_Manager') ) {
 			$this->countries[ $new_country->slug ] = $new_country;
 
 			$new_country = new SLP_Country( array(
-				'name'          => __('Sweden'                         ,'store-locator-le'),
-				'google_domain' => 'maps.google.se',
-				'cctld'         => 'se',
+				'name'          => __('Sweden'                         ,'store-locator-le') ,
+				'google_domain' => 'maps.google.se'                                         ,
+				'cctld'         => 'se'                                                     ,
+                'map_center_lat'=>  '60.128161'											    ,
+                'map_center_lng'=>  '18.653501'											    ,
 			) );
 			$this->countries[ $new_country->slug ] = $new_country;
 

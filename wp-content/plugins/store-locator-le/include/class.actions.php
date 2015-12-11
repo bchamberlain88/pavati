@@ -24,17 +24,12 @@ if ( ! class_exists('SLPlus_Actions') ) {
 			//
 			add_action('init'               , array($this,'init'                    ) , 11  );
 
-			add_action('admin_menu'         , array($this,'admin_menu'              )       ); // ADMIN
-			add_action('admin_init'         , array($this,'admin_init'              ) ,10   ); // ADMIN
-
 			add_action( "load-post.php"     , array( $this, 'action_AddToPageHelp'  ) , 20  );
 			add_action( "load-post-new.php" , array( $this, 'action_AddToPageHelp'  ) , 20  );
 
 			add_action('wp_head'            , array($this,'wp_head'                 )       ); // UI
 
 			add_action('wp_footer'          , array($this,'wp_footer'               )       ); // UI
-
-			add_action( 'admin_bar_menu'    , array( $this, 'add_slp_to_admin_bar'  ) , 999 ); // ADMIN
 
 			add_action('shutdown'           , array($this,'shutdown'                )       ); // BOTH
 
@@ -49,7 +44,9 @@ if ( ! class_exists('SLPlus_Actions') ) {
 		 * @param $admin_bar
 		 */
 		function add_slp_to_admin_bar( $admin_bar ) {
-			$args = array(
+            if( ! current_user_can( 'manage_slp_admin' ) ) { return; }
+
+            $args = array(
 				'parent' => 'site-name',
 				'id'     => 'store-locator-plus',
 				'title'  => $this->slplus->name,
@@ -66,23 +63,11 @@ if ( ! class_exists('SLPlus_Actions') ) {
 		 */
 		private function create_object_AdminUI() {
 			if ( ! isset( $this->slplus->AdminUI ) || ! is_object( $this->slplus->AdminUI ) ) {
-				require_once( SLPLUS_PLUGINDIR . '/include/class.adminui.php' );
+				require_once( SLPLUS_PLUGINDIR . 'include/class.adminui.php' );
 				$this->slplus->AdminUI = new SLPlus_AdminUI();     // Lets invoke this and make it an object
 			}
 
 			return true;
-		}
-
-		/**
-		 * Called when the WordPress admin_init action is processed.
-		 *
-		 * Builds the interface elements used by WPCSL-generic for the admin interface.
-		 *
-		 */
-		function admin_init() {
-			if ( current_user_can( 'manage_slp' ) ) {
-				$this->create_object_AdminUI();
-			}
 		}
 
 		/**
@@ -112,100 +97,108 @@ if ( ! class_exists('SLPlus_Actions') ) {
 		/**
 		 * Add the Store Locator panel to the admin sidebar.
 		 *
+		 * Roles and Caps
+		 * manage_slp_admin
+		 * manage_slp_user
+		 *
+		 * WordPress Store Locator Plus Menu Roles & Caps
+		 *
+		 * Info : manage_slp_admin
+		 * Locations: manage_slp_user
+		 * Experience: manage_slp_admin
+		 * General: manage_slp_admin
+		 *
 		 */
 		function admin_menu() {
-			if ( current_user_can( 'manage_slp' ) ) {
-				$this->create_object_AdminUI();
-				do_action( 'slp_admin_menu_starting' );
+			$this->create_object_AdminUI();
+			do_action( 'slp_admin_menu_starting' );
 
-				// The main hook for the menu
+			// The main hook for the menu
+			//
+			add_menu_page(
+				$this->slplus->name,
+				$this->slplus->name,
+				'manage_slp',
+				SLPLUS_PREFIX,
+				array( $this->slplus->AdminUI, 'renderPage_GeneralSettings' ),
+				SLPLUS_PLUGINURL . '/images/icon_from_jpg_16x16.png'
+			);
+
+			// Default menu items
+			//
+			$force_load_indicator = $this->slplus->javascript_is_forced ? '*' : '';
+			$menuItems            = array(
+				array(
+					'label'    => __( 'Info', 'store-locator-le' ),
+					'slug'     => 'slp_info',
+					'class'    => $this->slplus->AdminUI,
+					'function' => 'render_info_tab'
+				),
+				array(
+					'label'    => __( 'Locations', 'store-locator-le' ),
+					'slug'     => 'slp_manage_locations',
+					'class'    => $this->slplus->AdminUI,
+					'function' => 'renderPage_Locations'
+				),
+				array(
+					'label'    => __( 'Experience', 'store-locator-le' ),
+					'slug'     => 'slp_experience',
+					'class'    => $this->slplus->AdminUI,
+					'function' => 'render_experience_tab'
+				),
+				array(
+					'label'    => __( 'General', 'store-locator-le' ) . $force_load_indicator,
+					'slug'     => 'slp_general',
+					'class'    => $this->slplus->AdminUI,
+					'function' => 'renderPage_GeneralSettings'
+				),
+			);
+
+			// Third party plugin add-ons
+			//
+			$menuItems = apply_filters( 'slp_menu_items', $menuItems );
+
+			// Attach Menu Items To Sidebar and Top Nav
+			//
+			foreach ( $menuItems as $menuItem ) {
+
+				// Sidebar connect...
 				//
-				add_menu_page(
-					$this->slplus->name,
-					$this->slplus->name,
-					'manage_slp',
-					SLPLUS_PREFIX,
-					array( $this->slplus->AdminUI, 'renderPage_GeneralSettings' ),
-					SLPLUS_PLUGINURL . '/images/icon_from_jpg_16x16.png'
-				);
-
-				// Default menu items
-				//
-				$force_load_indicator = $this->slplus->javascript_is_forced ? '*' : '';
-				$menuItems            = array(
-					array(
-						'label'    => __( 'Info', 'store-locator-le' ),
-						'slug'     => 'slp_info',
-						'class'    => $this->slplus->AdminUI,
-						'function' => 'render_info_tab'
-					),
-					array(
-						'label'    => __( 'Locations', 'store-locator-le' ),
-						'slug'     => 'slp_manage_locations',
-						'class'    => $this->slplus->AdminUI,
-						'function' => 'renderPage_Locations'
-					),
-					array(
-						'label'    => __( 'Experience', 'store-locator-le' ),
-						'slug'     => 'slp_experience',
-						'class'    => $this->slplus->AdminUI,
-						'function' => 'render_experience_tab'
-					),
-					array(
-						'label'    => __( 'General', 'store-locator-le' ) . $force_load_indicator,
-						'slug'     => 'slp_general',
-						'class'    => $this->slplus->AdminUI,
-						'function' => 'renderPage_GeneralSettings'
-					),
-				);
-
-				// Third party plugin add-ons
-				//
-				$menuItems = apply_filters( 'slp_menu_items', $menuItems );
-
-				// Attach Menu Items To Sidebar and Top Nav
-				//
-				foreach ( $menuItems as $menuItem ) {
-
-					// Sidebar connect...
-					//
-					// Differentiate capability for User Managed Locations
-					if ( $menuItem['label'] == __( 'Locations', 'store-locator-le' ) ) {
-						$slpCapability = 'manage_slp_user';
-					} else {
-						$slpCapability = 'manage_slp_admin';
-					}
-
-					// Using class names (or objects)
-					//
-					if ( isset( $menuItem['class'] ) ) {
-						add_submenu_page(
-							$this->slplus->prefix,
-							$menuItem['label'],
-							$menuItem['label'],
-							$slpCapability,
-							$menuItem['slug'],
-							array( $menuItem['class'], $menuItem['function'] )
-						);
-
-						// Full URL or plain function name
-						//
-					} else {
-						add_submenu_page(
-							$this->slplus->prefix,
-							$menuItem['label'],
-							$menuItem['label'],
-							$slpCapability,
-							$menuItem['url']
-						);
-					}
+				// Differentiate capability for User Managed Locations
+				if ( $menuItem['label'] == __( 'Locations', 'store-locator-le' ) ) {
+					$slpCapability = 'manage_slp_user';
+				} else {
+					$slpCapability = 'manage_slp_admin';
 				}
 
-				// Remove the duplicate menu entry
+				// Using class names (or objects)
 				//
-				remove_submenu_page( $this->slplus->prefix, $this->slplus->prefix );
+				if ( isset( $menuItem['class'] ) ) {
+					add_submenu_page(
+						SLPLUS_PREFIX,
+						$menuItem['label'],
+						$menuItem['label'],
+						$slpCapability,
+						$menuItem['slug'],
+						array( $menuItem['class'], $menuItem['function'] )
+					);
+
+					// Full URL or plain function name
+					//
+				} else {
+					add_submenu_page(
+						SLPLUS_PREFIX,
+						$menuItem['label'],
+						$menuItem['label'],
+						$slpCapability,
+						$menuItem['url']
+					);
+				}
 			}
 
+			// Remove the duplicate menu entry
+			//
+			remove_submenu_page( SLPLUS_PREFIX, SLPLUS_PREFIX );
 		}
 
 
@@ -229,9 +222,10 @@ if ( ! class_exists('SLPlus_Actions') ) {
 
 		/**
 		 * Called when the WordPress init action is processed.
+		 *
+		 * Current user is authenticated by this time.
 		 */
 		function init() {
-			load_plugin_textdomain( 'store-locator-le', false, plugin_basename( dirname( SLPLUS_PLUGINDIR . 'store-locator-le.php' ) ) . '/languages' );
 
 			// Fire the SLP init starting trigger
 			//
@@ -323,12 +317,24 @@ if ( ! class_exists('SLPlus_Actions') ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
 
 			// HOOK: slp_init_complete
-			// gets a copy of the slplus actions object as a parameter
 			//
-			do_action( 'slp_init_complete', $this );
+			do_action( 'slp_init_complete' );
 
 			// TODO: remove when references to addons['slp.AjaxHandler']->plugin are replaced with slplus->AjaxHandler (GFI)
 			$this->slplus->addons['slp.AjaxHandler'] = $this->slplus->AjaxHandler;
+
+			//  If the current user can manage_slp (roles & caps), add these admin hooks.
+			//
+			if ( current_user_can( 'manage_slp' ) ) {
+				add_action('admin_menu'		, array( $this , 'admin_menu'			)		); 	// ADMIN
+				add_action('admin_bar_menu'	, array( $this , 'add_slp_to_admin_bar'	) , 999	); 	// ADMIN
+			}
+
+            // If current user can update plugins, hook in the updates system.
+            //
+            if ( current_user_can( 'update_plugins' ) ) {
+                require_once(SLPLUS_PLUGINDIR . 'include/class.updates.php');
+            }
 		}
 
 		/**
@@ -398,13 +404,13 @@ if ( ! class_exists('SLPlus_Actions') ) {
 			echo '<!-- SLP Custom CSS -->' . "\n" . '<style type="text/css">' . "\n" .
 
 			     // Map
-			     "div#sl_div div#map {\n" .
+			     "div#map.slp_map {\n" .
 			     "width:{$this->slplus->options_nojs['map_width']}{$this->slplus->options_nojs['map_width_units']};\n" .
 			     "height:{$this->slplus->options_nojs['map_height']}{$this->slplus->options_nojs['map_height_units']};\n" .
 			     "}\n" .
 
 			     // Tagline
-			     "div#sl_div div#slp_tagline {\n" .
+			     "div#slp_tagline {\n" .
 			     "width:{$this->slplus->options_nojs['map_width']}{$this->slplus->options_nojs['map_width_units']};\n" .
 			     "}\n" .
 

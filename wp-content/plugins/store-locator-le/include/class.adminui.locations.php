@@ -158,12 +158,9 @@ if( !class_exists('SLPlus_AdminUI_Locations') ){
 
 				// SLP Action Hooks
 				//
-				// slp_location_added : update extendo data when adding a location
 				// slp_location_saved : update extendo data when changing a location
 				//
-				add_action( 'slp_location_added', array( $this, 'action_SaveExtendedData' ) );
 				add_action( 'slp_location_saved', array( $this, 'action_SaveExtendedData' ) );
-
 				add_filter( 'slp_manage_expanded_location_columns', array(
 					$this,
 					'add_extended_data_to_manage_locations_table'
@@ -240,7 +237,7 @@ if( !class_exists('SLPlus_AdminUI_Locations') ){
 		 * @see https://github.com/DataTables/DataTables
 		 */
 		private function enqueue_scripts() {
-			if ( file_exists( SLPLUS_PLUGINDIR . '/js/jquery.dataTables.min.js' ) ) {
+			if ( file_exists( SLPLUS_PLUGINDIR . 'js/jquery.dataTables.min.js' ) ) {
 				wp_enqueue_script(  'jquery-ui-draggable' );
 				wp_enqueue_script(  'jquery-ui-droppable' );
 				wp_enqueue_script(  'slp_datatables' , SLPLUS_PLUGINURL . '/js/jquery.dataTables.min.js' );
@@ -248,7 +245,7 @@ if( !class_exists('SLPlus_AdminUI_Locations') ){
 				wp_enqueue_script(  'slp_admin_locations_manager' , SLPLUS_PLUGINURL . '/js/admin-locations-tab.js' , array( 'slp_datatables', 'jquery-ui-draggable' , 'jquery-ui-droppable' ));
 				wp_localize_script( 'slp_admin_locations_manager' , 'location_manager' , $this->script_data );
 
-				if (file_exists(SLPLUS_PLUGINDIR . '/css/admin/jquery.dataTables-slp.css')) {
+				if (file_exists(SLPLUS_PLUGINDIR . 'css/admin/jquery.dataTables-slp.css')) {
 					wp_enqueue_style(
 						'slp_admin_locations_manager', SLPLUS_PLUGINURL . '/css/admin/jquery.dataTables-slp.css'
 					);

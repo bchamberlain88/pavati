@@ -143,7 +143,6 @@
 
                 // Find the first child with sections and display it.
                 var clickedGroup = $(this).parent().find('.sub-menu li a:first').attr('href');
-
                 if (clickedGroup != '') {
                     $('.group').hide();
                     $(clickedGroup).show();
@@ -199,6 +198,7 @@
 
                     $('.group').hide();
                     $(clickedGroup).show();
+                    $(clickedGroup).trigger('is_shown');
 
                     return false;
                 }

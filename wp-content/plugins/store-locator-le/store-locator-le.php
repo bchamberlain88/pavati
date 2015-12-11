@@ -6,8 +6,8 @@ Description: Add a location finder or directory to your site in minutes. Extensi
 Author: Store Locator Plus
 Author URI: http://www.storelocatorplus.com
 License: GPL3
-Tested up to: 4.3
-Version: 4.3.08
+Tested up to: 4.4
+Version: 4.3.24
 
 Text Domain: store-locator-le
 Domain Path: /languages/
@@ -30,10 +30,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 */
 
-// No direct access, please.
-//
-if (!defined( 'ABSPATH'     )) { exit;   }
-
 // Check WP Version
 //
 global $wp_version;
@@ -48,7 +44,7 @@ if ( version_compare( $wp_version, '3.8', '<' ) ) {
 	return;
 }
 
-if ( defined( 'SLPLUS_VERSION'   ) === false ) { define( 'SLPLUS_VERSION'    , '4.3.08'                             ); } // Current plugin version.
+if ( defined( 'SLPLUS_VERSION'   ) === false ) { define( 'SLPLUS_VERSION'    , '4.3.24'                             ); } // Current plugin version.
 if ( defined( 'SLPLUS_NAME'      ) === false ) { define( 'SLPLUS_NAME'       , __('Store Locator Plus','store-locator-le')); } // Plugin name via gettext.
 if ( defined( 'SLPLUS_PREFIX'    ) === false ) { define( 'SLPLUS_PREFIX'     , 'csl-slplus'                         ); } // The shorthand prefix to various option settings, etc.
 if ( defined( 'SLP_ADMIN_PAGEPRE') === false ) { define( 'SLP_ADMIN_PAGEPRE' , 'store-locator-plus_page_'           ); } // Admin Page Slug Prefix
@@ -118,7 +114,7 @@ require_once(SLPLUS_PLUGINDIR . 'include/class.activation.php');
 require_once(SLPLUS_PLUGINDIR . 'include/class.ui.php');
 $slplus_plugin->UI = new SLPlus_UI(array('slplus'=>$slplus_plugin));
 
-register_activation_hook( __FILE__ , array( $slplus_plugin , 'activate_or_update_slplus' ) );
+add_action( 'plugins_loaded' , array( $slplus_plugin , 'activate_or_update_slplus' ) );
 
 //====================================================================
 // WordPress Shortcodes and Text Filters

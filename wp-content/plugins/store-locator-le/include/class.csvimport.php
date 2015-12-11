@@ -202,15 +202,19 @@ if (!class_exists('CSVImport')) {
 
         /**
          * Process a CSV File.
-         *
-         * This should be extended.
-         *
-         * HOOK: slp_csv_processing_complete
-         *
          */
         function process_File( $file_meta = null ) {
             if ( $file_meta === null ) { $file_meta = $_FILES; }
             $this->process_FileDirect( $file_meta );
+
+            /**
+             * HOOK: slp_csv_processing_complete
+             *
+             * Run this action when the CSV import process has been completed.
+             *
+             * @params  _FILES  $file_meta  the original select query with all main table fields and distance calc.
+             *
+             */
             do_action('slp_csv_processing_complete');
         }
 

@@ -8,6 +8,7 @@
  * @author Lance Cleveland <lance@charlestonsw.com>
  * @copyright 2012-2015 Charleston Software Associates, LLC
  *
+ * FIELDS:
  * @property int $id
  * @property string $store          the store name
  * @property string $address
@@ -33,34 +34,58 @@
  * @property boolean $pages_on
  * @property string $option_value
  * @property datetime $lastupdated
+ *
+ * EXTENDED DATA FIELDS:
  * @property mixed[] $exdata - the extended data fields
- * @property mixed[] $settings - the deserialized option_value field
  *
- * @property mixed[] $pageData - the related store_page custom post type properties.
- * @property-read string $pageType - the custom WordPress page type of locations
- * @property-read string $pageDefaultStatus - the default page status
+ * DESERIALIZED DATA:
+ * @property        mixed[] $settings               The deserialized option_value field
+ * @property-read   mixed[] $attributes             The deserialized option_value field. This can be augmented by multiple add-on packs.
+ *                                                  Tagalong adds:
+ *                                                   array[] ['store_categories']
+ *                                                        int[] ['stores']
  *
- * @property-read string $dbFieldPrefix - the database field prefix for locations
- * @property-read string[] $dbFields - an array of properties that are in the db table
+ * PAGE RELATIONS:
+ * @property        mixed[]     $pageData           The related store_page custom post type properties.
+ *                                                   WordPress Standard Custom Post Type Features:
+ *                                                     int    ['ID']          - the WordPress page ID
+ *                                                     string ['post_type']   - always set to this.PageType
+ *                                                     string ['post_status'] - current post status, 'draft', 'published'
+ *                                                     string ['post_title']  - the title for the page
+ *                                                     string ['post_content']- the page content, defaults to blank
  *
- * @property SLPlus $slplus - the parent plugin object
+ *                                                   Store Pages adds:
+ *                                                      post_content attribute is loaded with auto-generated HTML content
+ *
+ *                                                   Tagalong adds:
+ *                                                      mixed[] ['tax_input'] - the custom taxonomy values for this location
+ *
+ * @property-read   string      $pageType           The custom WordPress page type of locations
+ * @property-read   string      $pageDefaultStatus  The default page status
+ *
+ * DB META:
+ * @property-read   string      $dbFieldPrefix      The database field prefix for locations
+ * @property-read   string[]    $dbFields           An array of properties that are in the db table
+ *
+ * FUNCTIONALITY:
+ * @property-read   int         $count                  How many locations have processed for geocoding this session.
+ * @property        boolean     $dataChanged            True if the location data has changed. Used to manage the MakePersistent method, if false do not write to disk.
+ * @property-read   wpdb        $db                     The WPDB connection.
+ * @property-read   string[]    $dbfields               Array of locator table field names.
+ * @property-read   int         $delay                  How long to wait between geocoding requests.
+ * @property-read   boolean     $geocodeIssuesRendered
+ * @property        boolean     $geocodeSkipOKNotices   If true do not show valid geocodes.
+ * @property-read   string      $geocodeURL             The URL of the geocoding service.
+ * @property-read   int         $iterations             How many times to retry an address.
+ * @property-read   mixed[]     $locationData           Remember the last location data array passed into set properties via DB.
+ * @property-read   int         $retry_maximum_delayms  Maxmium delay in milliseconds.
+ * @property        bool        $validate_fields        Validate fields? no by default.
+ * @property        SLPlus      $slplus                 The parent plugin object
  */
 class SLPlus_Location {
 
-    const StartingDelay = 2000000;
+    const StartingDelay         = 2000000;
 
-    //-------------------------------------------------
-    // Properties
-    //-------------------------------------------------
-
-    // Our database fields
-    //
-
-    /**
-     * Unique location ID.
-     * 
-     * @var int $id
-     */
     private $id;
     private $store;
     private $address;
@@ -87,37 +112,14 @@ class SLPlus_Location {
     private $option_value;
     private $lastupdated;
 
-    /**
-     * How many locations have processed for geocoding this session.
-     *
-     * @var int $count
-     */
-    private $count = 0;
+    private $exdata             = array();
 
-    /**
-     * How long to wait between geocoding requests.
-     *
-     * @var int $delay
-     */
-    private $delay = SLPlus_Location::StartingDelay;
-
-    /**
-     * Extended data values.
-     * 
-     * @var mixed[] $exdata
-     */
-    private $exdata = array();
-
-    /**
-     * The WordPress database connection.
-     * 
-     * @var \wpdb $db
-     */
+    private $attributes;
+    private $count              = 0;
+    public $dataChanged         = true;
     private $db;
-
-    // The database map
-    //
-    private $dbFields = array(
+    private $delay              = SLPlus_Location::StartingDelay;
+    private $dbFields           = array(
             'id',
             'store',
             'address',
@@ -144,110 +146,18 @@ class SLPlus_Location {
             'option_value',
             'lastupdated'
         );
-
-    /**
-     * The deserialized option_value field. This can be augmented by multiple add-on packs.
-     *
-     * Tagalong adds:
-     *  array[] ['store_categories']
-     *       int[] ['stores']
-     *
-     * @var mixed[] $attributes
-     */
-    private $attributes;
-
-    /**
-     * True if the location data has changed.
-     *
-     * Used to manage the MakePersistent method, if false do not write to disk.
-     * 
-     * @var boolean $dataChanged
-     */
-    public $dataChanged = true;
-
-    /**
-     *
-     * @var boolean $geocodeIssuesRendered
-     */
-    private $geocodeIssuesRendered = false;
-
-    /**
-     * If true do not show valid geocodes.
-     *
-     * @var boolean $geocodeSkipOKNotices
-     */
-    public $geocodeSkipOKNotices = false;
-
-    /**
-     * The URL of the geocoding service.
-     *
-     * @var string $geocodeURL
-     */
+    private $dbFieldPrefix          = 'sl_';
+    private $geocodeIssuesRendered  = false;
+    public  $geocodeSkipOKNotices   = false;
     private $geocodeURL;
-
-    /**
-     * How many times to retry an address.
-     *
-     * @var int $iterations
-     */
-    private $iterations;
-
-    /**
-     * Remember the last location data array passed into set properties via DB.
-     *
-     * @var mixed[] $locationData
-     */
     private $locationData;
-
-    /**
-     * The related store_page custom post type properties.
-     *
-     * WordPress Standard Custom Post Type Features:
-     *   int    ['ID']          - the WordPress page ID
-     *   string ['post_type']   - always set to this.PageType
-     *   string ['post_status'] - current post status, 'draft', 'published'
-     *   string ['post_title']  - the title for the page
-     *   string ['post_content']- the page content, defaults to blank
-     *
-     * Store Pages adds:
-     *    post_content attribute is loaded with auto-generated HTML content
-     *
-     * Tagalong adds:
-     *    mixed[] ['tax_input'] - the custom taxonomy values for this location
-     *
-     * @var mixed[] $pageData
-     */
     private $pageData;
-
-    // Assistants for this class
-    //
-    private $dbFieldPrefix      = 'sl_';
-    private $pageType           = 'store_page';
+    private $pageType               = 'store_page';
     private $pageDefaultStatus;
-
-    /**
-     * Maxmium delay in milliseconds.
-     *
-     * @var $retry_maximum_delayms
-     */
+    private $iterations;
     private $retry_maximum_delayms = 5000000;
-
-    /**
-     * @var \SLPlus
-     */
-    private $slplus;
-
-    /**
-     * Validate fields? no by default.
-     *
-     * @var bool
-     */
     public $validate_fields = false;
-
-
-    //-------------------------------------------------
-    // Magic Methods
-    //-------------------------------------------------
+    private $slplus;
 
     /**
      * Initialize a new location
@@ -280,7 +190,7 @@ class SLPlus_Location {
 			return $this->$property;
 		}
 		if (
-			$this->slplus->database->extension->has_ExtendedData()  &&
+			$this->slplus->database->has_extended_data()  &&
 			isset($this->exdata[$property])
 		) {
 			return $this->exdata[$property];
@@ -318,8 +228,9 @@ class SLPlus_Location {
 		// with a built-in property.
 		//
 		if (
-			$this->slplus->database->extension->has_ExtendedData()  &&
-			! property_exists($this,$property)
+            ! property_exists($this,$property)      &&
+			$this->slplus->database->is_Extended()  &&
+            $this->slplus->database->extension->has_field( $property )
 		) {
 			$this->exdata[$property] = $value;
 		}
@@ -333,6 +244,8 @@ class SLPlus_Location {
 
 	/**
      * Add an address into the SLP locations database.
+     *
+     * NOTE: Only saves PRIMARY data fields.  DOES NOT save extended data.   Use the slp_location_added action.
      *
      * duplicates_handling can be:
      * o none = ignore duplicates
@@ -354,10 +267,6 @@ class SLPlus_Location {
      *
      */
     function add_to_database($locationData,$duplicates_handling='none',$skipGeocode=false) {
-        $this->debugMP('msg', get_class() . '::' .__FUNCTION__,
-            "duplicates handling mode: {$duplicates_handling} " . ($skipGeocode?' skip geocode':'')
-        );
-
         $add_mode = ( $duplicates_handling === 'add' );
 
         // Add Mode : skip lots of duplication checking stuff
@@ -381,7 +290,6 @@ class SLPlus_Location {
             // This also ensures that ID actually exists in the database.
             //
             if ($this->slplus->currentLocation->isvalid_ID($locationData['sl_id'])) {
-                $this->debugMP('msg', '', "location ID {$locationData['sl_id']} being loaded");
                 $this->slplus->currentLocation->set_PropertiesViaDB($locationData['sl_id']);
                 $locationData['sl_id'] = $this->slplus->currentLocation->id;
 
@@ -396,7 +304,6 @@ class SLPlus_Location {
             // Go see if the location can be found by name + address
             //
             if (!$this->slplus->currentLocation->isvalid_ID()) {
-                $this->debugMP('msg', '', 'location ID not provided or invalid.');
                 $locationData['sl_id'] = $this->slplus->db->get_var(
                     $this->slplus->db->prepare(
                         $this->slplus->database->get_SQL('selectslid') .
@@ -423,7 +330,6 @@ class SLPlus_Location {
             // Location ID exists, we have a duplicate entry...
             //
             if ($this->slplus->currentLocation->isvalid_ID($locationData['sl_id'])) {
-                $this->debugMP('msg', '', "location ID {$locationData['sl_id']} found or provided is valid.");
                 if ($duplicates_handling === 'skip') {
                     return 'skipped';
                 }
@@ -440,7 +346,6 @@ class SLPlus_Location {
                 // Location ID does not exist, we are adding a new record.
                 //
             } else {
-                $this->debugMP('msg', '', "location {$locationData['sl_id']} not found via address lookup, original handling mode {$duplicates_handling}.");
                 $duplicates_handling = 'add';
                 $return_code = 'added';
             }
@@ -456,11 +361,15 @@ class SLPlus_Location {
                     ($this->val_or_blank($locationData, 'sl_state') == $this->slplus->currentLocation->state) &&
                     ($this->val_or_blank($locationData, 'sl_zip') == $this->slplus->currentLocation->zip) &&
                     ($this->val_or_blank($locationData, 'sl_country') == $this->slplus->currentLocation->country);
-                $this->debugMP('msg', '', 'Address does ' . ($skipGeocode ? 'NOT ' : '') . 'need to be recoded via location update mode.');
             }
-            $this->debugMP('msg', '', "set location properties via array in {$duplicates_handling} duplicates handling mode");
-        }
 
+            // If the address matches, make sure we retain the existing lat/long.
+            //
+            if ( $skipGeocode ) {
+                $locationData['sl_latitude']    = $this->slplus->currentLocation->latitude;
+                $locationData['sl_longitude']   = $this->slplus->currentLocation->longitude;
+            }
+        }
 
         // Set the current location data
         //
@@ -484,6 +393,10 @@ class SLPlus_Location {
         //
         if ( $this->slplus->currentLocation->dataChanged ) {
             $this->slplus->currentLocation->MakePersistent();
+            if ( count( $this->slplus->currentLocation->exdata ) > 0 ) {
+                $this->slplus->database->extension->update_data( $this->slplus->currentLocation->id , $this->slplus->currentLocation->exdata );
+                $this->slplus->database->reset_extended_data_flag();
+            }
 
         // Set not updated return code.
         //
@@ -508,8 +421,6 @@ class SLPlus_Location {
      * @return int return the page ID linked to this location.
      */
     public function crupdate_Page($MakePersistent=true) {
-        $this->debugMP('msg',__FUNCTION__);
-        
         $crupdateOK = false;
 
         // Setup the page properties.
@@ -521,25 +432,16 @@ class SLPlus_Location {
         if ($this->linked_postid > 0) {
             $touched_pageID = wp_update_post($this->pageData);
             $crupdateOK = ($touched_pageID > 0);
-            $this->debugMP('msg','','update page '.$touched_pageID);
-
 
         // Create a new page.
         } else {
             $touched_pageID = wp_insert_post($this->pageData, true);
             $crupdateOK = !is_wp_error($touched_pageID);
-            if ($crupdateOK) {
-                $this->debugMP('msg','','added page '.$touched_pageID);
-            } else {
-                $this->debugMP('msg','','Error Creating Page: '.$touched_pageID->get_error_message() . '<br/>' .'Page data: ');
-                $this->debugMP('pr','',$this->pageData);
-            }
         }
 
         // Ok - we are good...
         //
         if ($crupdateOK) {
-           $this->debugMP('msg','','create or update is OK, no error');
 
             // If we created a page or changed the page ID,
             // set it in our location property and make it
@@ -550,7 +452,6 @@ class SLPlus_Location {
                 $this->pages_url = get_permalink($this->linked_postid);
                 $this->dataChanged = true;
                 if ($MakePersistent) {
-                    $this->debugMP('msg','Make new linked post ID ' . $this->linked_postid . ' persistent.');
                     $this->MakePersistent();
                 }
             }
@@ -562,36 +463,10 @@ class SLPlus_Location {
             $this->slplus->notifications->add_notice('error',
                     __('Could not create or update the custom page for this location.','store-locator-le')
                     );
-            $this->debugMP('pr','location.crupdate_Page() failed',(is_object($touched_pageID)?$touched_pageID->get_error_messages():''));
         }
 
 
         return $this->linked_postid;
-    }
-
-    /**
-     * Simplify the plugin debugMP interface.
-     *
-     * @param string $type
-     * @param string $hdr
-     * @param string $msg
-     */
-    function debugMP($type,$hdr,$msg='') {
-        $this->slplus->debugMP('slp.location',$type,$hdr,$msg,NULL,NULL,true);
-    }
-
-    /**
-     * Put out the dump of the current location to DebugMP slp.main panel.
-     * 
-     */
-    public function debugProperties() {
-        $this->debugMP('msg',__FUNCTION__);
-        $output = array();
-        foreach ($this->dbFields as $property) {
-            $output[$property] = $this->$property;
-        }
-        $output['attributes'] = $this->attributes;
-        $this->debugMP('pr','',$output);
     }
 
     /**
@@ -614,7 +489,6 @@ class SLPlus_Location {
      * @param string $address the address to geocode, if not set use currentLocation
      */
     function do_geocoding( $address = null ) {
-        $this->debugMP('msg', get_class() . '::' . __FUNCTION__,$address);
 
         // Null address, build from current location
         //
@@ -643,7 +517,6 @@ class SLPlus_Location {
 
             // Get lat/long from Google
             //
-            $this->debugMP('msg', '', $address);
             $json_response = $this->get_LatLong($address);
             if (!empty($json_response)) {
 
@@ -654,7 +527,6 @@ class SLPlus_Location {
                     $json = json_decode(json_encode(array('status' => 'ERROR', 'message' => $json_response)));
                 }
 
-                $this->debugMP('pr', '', $json);
                 switch ($json->{'status'}) {
 
                     // OK
@@ -797,7 +669,6 @@ class SLPlus_Location {
      * Delete this location permanently.
      */
     public function DeletePermanently() {
-        $this->debugMP('msg',__FUNCTION__,"Location: {$this->id}, Linked Post: {$this->linked_postid}");
         if (!ctype_digit($this->id) || ($this->id<0)) { return; }
 
         // ACTION: slp_deletelocation_starting
@@ -874,7 +745,6 @@ class SLPlus_Location {
      * @return mixed the value the property or a named array of all properties (default)
      */
     public function get_PersistentProperty($property='all') {
-        $this->debugMP('msg',__FUNCTION__);
         $persistentData = array_reduce($this->dbFields,array($this,'mapPropertyToField'));
         return (($property==='all')?$persistentData:(isset($persistentData[$property])?$persistentData[$property]:null));
     }
@@ -904,9 +774,16 @@ class SLPlus_Location {
                 '&client=' . $this->slplus->options_nojs['google_client_id'] . '&v=3' :
                 ''                                                                    ;
 
+        // Google JavaScript API server Key
+        //
+        $server_key =
+            ! empty ( $this->slplus->options_nojs['google_server_key'] )   ?
+                '&key=' . $this->slplus->options_nojs['google_server_key'] :
+                '';
+
         // Set the map language
         //
-        $language = '&language='.$this->slplus->options_nojs['map_language'];
+        $language = '?language='.$this->slplus->options_nojs['map_language'];
 
         // Base Google API URL
         //
@@ -915,14 +792,15 @@ class SLPlus_Location {
             'maps.googleapis.com'                       .
             '/maps/api/'                                .
             'geocode/json'                              .
-            '?sensor=false'                             ;
+            '?'                                         ;
 
         // Build the URL with all the params
         //
         $this->geocodeURL =
             $google_api_url     .
-            $client_id          .
             $language           .
+            $client_id          .
+            $server_key         .
             '&address='         ;
     }
 
@@ -933,7 +811,6 @@ class SLPlus_Location {
      * @param float $lng
      */
     public function set_LatLong($lat,$lng) {
-        $this->debugMP('msg',__FUNCTION__,"$lat , $lng");
         if($this->latitude  != $lat) {
             $this->latitude  = $lat;
             $this->dataChanged = true;
@@ -1022,8 +899,6 @@ class SLPlus_Location {
      * @return boolean data write OK
      */
     public function MakePersistent() {
-        $this->debugMP('msg',__FUNCTION__);
-
         $dataWritten = true;
         $dataToWrite = array_reduce($this->dbFields,array($this,'mapPropertyToField'));
 
@@ -1048,16 +923,13 @@ class SLPlus_Location {
         // Location is set, update it.
         //
         if ($this->id > 0) {
-            $this->debugMP('msg','',"Update location {$this->id}");
             if(!$this->slplus->db->update($this->slplus->database->info['table'],$dataToWrite,array('sl_id' => $this->id))) {
                 $dataWritten = false;
-                $this->debugMP('msg','',"Update location {$this->id} DID NOT update core data.");
             }
 
         // No location, add it.
         //
         } else {
-            $this->debugMP('msg','','Adding new location since no ID was provided.');
             if (!$this->slplus->db->insert($this->slplus->database->info['table'],$dataToWrite)) {
                 $this->slplus->notifications->add_notice(
                         'warning',
@@ -1190,11 +1062,9 @@ class SLPlus_Location {
             $this->attributes = maybe_unserialize($this->option_value);
 
             $this->locationData = $locationData;
-            $this->debugMP('pr', 'locationData', $locationData);
             return true;
         }
 
-        $this->debugMP('msg','','ERROR: location data not in array format.');
         return false;
     }
 
@@ -1208,8 +1078,7 @@ class SLPlus_Location {
      * @return SLPlus_Location $this - the location object
      */
     public function set_PropertiesViaDB($locationID) {
-        $this->debugMP('msg',__FUNCTION__);
-        
+
         // Reset the set_PropertiesViaArray tracker.
         //
         $this->locationData = null;
@@ -1217,7 +1086,6 @@ class SLPlus_Location {
         // Our current ID does not match, load new location data from DB
         //
         if ($this->id != $locationID) {
-            $this->debugMP('msg','',"Location {$locationID} loaded from disk");
             $this->reset();
 
             $locData =
@@ -1242,8 +1110,7 @@ class SLPlus_Location {
      * @param mixed[] $newAttributes
      */
     public function update_Attributes($newAttributes) {
-        $this->debugMP('pr',__FUNCTION__,$newAttributes);
-        if (is_array($newAttributes)) { 
+        if (is_array($newAttributes)) {
             $this->attributes =
                 is_array($this->attributes)                     ?
                 array_merge($this->attributes,$newAttributes)   :

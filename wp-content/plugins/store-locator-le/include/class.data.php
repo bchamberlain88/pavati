@@ -7,6 +7,9 @@
  * @property        string          $group_by_clause    The SQL group by clause
  * @property        boolean         $had_where_clause
  * @property-read   boolean         $has_extended_data  Does the current instantiation have extended data records.
+ * @property        string[]        $info               Info strings for the database interface.
+ *                                                      info['table'] = table name
+ *                                                      info['query'] = array of query strings
  * @property string[]               $order_by_array     The various order by clauses used by the location selection clause.
  * @property string                 $order_by_clause    The SQL order by clause.
  * @property string                 $sql_statement      The current SQL statement.
@@ -20,37 +23,30 @@
  *
  */
 class SLPlus_Data extends SLPlus_BaseClass_Object {
-    public $collate;
-    public $db;
-    public $extension;
-    public $group_by_clause     = '';
-	public $had_where_clause    = false;
+    public  $collate;
+    public  $db;
+    public  $extension;
+    public  $group_by_clause     = '';
+	public  $had_where_clause    = false;
 	private $has_extended_data  = null;
-	public $order_by_array      = array();
-	public $order_by_clause = '';
-	public $sql_statement = '';
-	public $where_clause = '';
-
-    /**
-     * Info strings for the database interface.
-     *
-     * info['table'] = table name
-     * info['query'] = array of query strings
-     * 
-     * @var string[] database info
-     */
-    public $info;
+    public  $info;
+	public  $order_by_array      = array();
+	public  $order_by_clause = '';
+	public  $sql_statement = '';
+	public  $where_clause = '';
 
     /**
      * Initialize a new data object.
      */
     public function __construct( $options = array() ) {
-	    parent::__construct( $options );
+        parent::__construct($options);
         global $wpdb;
         $this->db = $wpdb;
 
-        $db_version = get_option( SLPLUS_PREFIX."-db_version" , '' );
-        if ( ! empty ( $db_version ) ) {
+        $this->createobject_DatabaseExtension();
+
+        $db_version = get_option(SLPLUS_PREFIX . "-db_version", '');
+        if (!empty ($db_version)) {
             $this->set_database_meta();
         }
     }
@@ -229,7 +225,7 @@ class SLPlus_Data extends SLPlus_BaseClass_Object {
      * ORDER BY
      * o orderby_default - add order by if the results of the slp_ajaxsql_orderby filter returns order by criteria.  AJAX listener default is by distance asc.
      *
-     * @param string[] $commandList a comma separated array of commands or a single command
+     * @param string|string[] $commandList a comma separated array of commands or a single command
      * @return string
      */
     function get_SQL($commandList) {
@@ -260,7 +256,18 @@ class SLPlus_Data extends SLPlus_BaseClass_Object {
                     break;
 
                 case 'selectall_with_distance':
-                    // FILTER: slp_extend_get_SQL_selectall
+
+                    /**
+                     * FILTER: slp_extend_get_SQL_selectall
+                     *
+                     * Modify the selectall_with_distance SQL query string.
+                     *
+                     * @since 4.2.0
+                     *
+                     * @params  string  the original select query with all main table fields and distance calc.
+                     *
+                     * @return  string  the modified query
+                     */
                     $sqlStatement .= apply_filters(
                         'slp_extend_get_SQL_selectall',
                         'SELECT *,' .
@@ -458,7 +465,10 @@ class SLPlus_Data extends SLPlus_BaseClass_Object {
     }
 
 	/**
-	 * Return true if there is extended data in the data table.
+	 * Are there records in the extended data table used in the join?  DOES NOT EVALUATE if extended data fields exist.
+     *
+     * NOTE: this only returns true if there are RECORDS in the extended data table used in locaiton joins.
+     * this does NOT tell you if there are extended data fields in the data structure.
 	 *
 	 * TODO: make this faster by making it persistent, but make sure you catch all the extended data insert/deletes.
 	 */
@@ -475,6 +485,15 @@ class SLPlus_Data extends SLPlus_BaseClass_Object {
 
 		return $this->has_extended_data;
 	}
+
+    /**
+     * Reset and re-evaluate the has_extended_data flag.
+     */
+    public function reset_extended_data_flag() {
+        $this->has_extended_data = null;
+        $this->has_extended_data();
+        $this->join_location_tables();
+    }
 
 	/**
 	 * Returns true if there are ANY extended data fields in the meta table.
@@ -524,7 +543,13 @@ class SLPlus_Data extends SLPlus_BaseClass_Object {
                 ),
         );
 
-        $this->createobject_DatabaseExtension();
+        $this->join_location_tables();
+    }
+
+    /**
+     * Join the base location table to the extended data location table as needed.
+     */
+    public function join_location_tables() {
         if ( $this->has_extended_data() ) {
             add_filter('slp_extend_get_SQL_selectall'   , array($this->extension, 'filter_ExtendSelectAll'));
         }

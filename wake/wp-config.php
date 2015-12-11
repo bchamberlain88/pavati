@@ -34,7 +34,7 @@
 
 /** The name of the database for WordPress */
 
-define('DB_NAME', 'highwayp_wp_pavati');
+define('DB_NAME', 'highwayp_pavatiwake');
 
 
 
@@ -46,7 +46,7 @@ define('DB_USER', 'highwayp_webdev');
 
 /** MySQL database password */
 
-define('DB_PASSWORD', 'Pandorum1984!');
+define('DB_PASSWORD', 'V5p93xIZezYm');
 
 
 

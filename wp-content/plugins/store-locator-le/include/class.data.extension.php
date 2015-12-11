@@ -176,6 +176,9 @@ if ( ! class_exists('SLPlus_Data_Extension') ) {
 	            case 'select_all_from_extendo':
 	                return "SELECT * FROM {$this->metatable['name']}";
 
+                case 'select_slid_from_extended_data':
+                    return "SELECT sl_id FROM {$this->plugintable['name']}";
+
 	            // JOIN
 	            //
 	            case 'join_extendo':
@@ -296,15 +299,6 @@ if ( ! class_exists('SLPlus_Data_Extension') ) {
 	    }
 
 	    /**
-	     * Return true if the database is extended and has an extended data table with records in it.
-	     *
-	     * @return boolean
-	     */
-	    public function has_ExtendedData() {
-			return $this->database->has_extended_data();
-	    }
-
-	    /**
 	     * Tell people if the extended data contains a field identified by slug.
 	     *
 	     * @param string $slug the field slug
@@ -323,8 +317,11 @@ if ( ! class_exists('SLPlus_Data_Extension') ) {
 
 	    /**
 	     * Update an sl_id's data
+		 *
 	     * @param $sl_id int The id of the location
 	     * @param $data mixed The col => value pairs to update
+		 *
+		 * @return false|int	false if update/insert failed or number of records inserted/updated if OK.
 	     */
 	    function update_data($sl_id, $data) {
 	        global $wpdb;
@@ -335,11 +332,13 @@ if ( ! class_exists('SLPlus_Data_Extension') ) {
 	        //
 	        if ( ($currentData === null) || ( count($currentData) <= 0 ) ) {
 	            $data['sl_id'] = $sl_id;
-	            $wpdb->insert($this->plugintable['name'], $data);
+	            $changed_record_count = $wpdb->insert($this->plugintable['name'], $data);
 	        } else {
 	            $data = array_merge($currentData, $data);
-	            $replacementCount = $wpdb->update($this->plugintable['name'], $data, array('sl_id' => $sl_id));
+	            $changed_record_count = $wpdb->update($this->plugintable['name'], $data, array('sl_id' => $sl_id));
 	        }
+
+			return $changed_record_count;
 	    }
 
 	    /**
@@ -424,27 +423,46 @@ if ( ! class_exists('SLPlus_Data_Extension') ) {
 			if ( !isset( $options_array['slug'] ) || empty( $options_array['slug'] ) ) { return; }
 			$slug = $options_array['slug'];
 
-			// Pre 4.1.02 - the slug was the label, sanitized.  Change it to a proper slug.
+			// Prepare new data array
+			$data_array = array();
+			if ( $label !== false ) { $data_array['label'] = $label; }
+			if ( $type  !== false ) { $data_array['type']  = $type;  }
+
+			// From 4.3 support rename of old_slug to slug
 			//
-			if ( ! $this->has_field( $slug ) && ( $label !== false ) && ( $type !== false ) ) {
-				$this->update_field_slug( $slug , $label , $type );
+			$old_slug = '';
+			if ( isset( $options_array['old_slug'] ) ) {
+				$old_slug = $options_array['old_slug'];
+				if ( ! empty($old_slug) ) {
+					$new_slug = $this->update_field_slug( $slug , $old_slug , $type );
+					$data_array['slug']  = $slug;
+				}
+				unset($options_array['old_slug']);
+			} else {
+
+				// Pre 4.1.02 - the slug was the label, sanitized.  Change it to a proper slug.
+				//
+				if ( ! $this->has_field( $slug ) && ( $label !== false ) && ( $type !== false ) ) {
+					$old_slug = $this->update_field_slug( $slug , $label , $type );
+					$data_array['slug']  = $slug;
+				}
 			}
 
 			// All Versions
 			//
 			if ( $this->has_field( $slug ) ) {
 				$existing_options = maybe_unserialize($this->metatable['records'][$slug]->options);
+				$field_id = $this->metatable['records'][$slug]->field_id;
+			} elseif ( $this->has_field( $old_slug ) ) {
+				$existing_options = maybe_unserialize($this->metatable['records'][$old_slug]->options);
+				$field_id = $this->metatable['records'][$old_slug]->field_id;
 			} else {
 				return false;
 			}
 			$options_array = array_merge( $options_array , array( 'slug' => $slug ));
 
-			$data_array = array();
-
 			// Mix existing_options with new ones in options_array
 			$data_array['options'] = maybe_serialize( array_merge( $existing_options, $options_array) );
-			if ( $label !== false ) { $data_array['label'] = $label; }
-			if ( $type  !== false ) { $data_array['type']  = $type;  }
 
 			// Update the metadata
 			//
@@ -452,7 +470,7 @@ if ( ! class_exists('SLPlus_Data_Extension') ) {
 				$this->slplus->db->update(
 					$this->metatable['name'] ,          // table
 					$data_array              ,          // data
-					array( 'slug' => $slug )            // where
+					array( 'field_id' => $field_id )    // where
 				);
 		}
 
@@ -462,8 +480,10 @@ if ( ! class_exists('SLPlus_Data_Extension') ) {
 		 * @param string $slug
 		 * @param string $label
 		 * @param string $type
+         * @return string
 		 */
 		function update_field_slug( $slug , $label , $type ) {
+			$old_slug = $slug;
 			add_filter('sanitize_title', array($this, 'filter_SanitizeTitleForMySQLField'), 10, 3);
 			if ( $this->has_field( sanitize_title( $label ) ) ) {
 				$old_slug = sanitize_title( $label, '', 'save' );
@@ -479,6 +499,25 @@ if ( ! class_exists('SLPlus_Data_Extension') ) {
 				$this->slplus->db->query( $sql_command );
 			}
 			remove_filter( 'sanitize_title', array( $this, 'filter_SanitizeTitleForMySQLField' ) );
+			return $old_slug;
+		}
+
+		//----------------------------------------------------
+		// DEPRECATED
+		//----------------------------------------------------
+
+		/**
+		 * Return true if the database is extended and has an extended data table with records in it.
+         *
+         * TODO: remove from GFI
+		 *
+		 * @deprecated  Use ->slplus->database->has_extended_data()
+		 *
+		 * @return boolean
+		 */
+		public function has_ExtendedData() {
+			return $this->database->has_extended_data();
 		}
 	}
+
 }

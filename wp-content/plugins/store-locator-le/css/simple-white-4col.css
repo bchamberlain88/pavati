@@ -1,9 +1,9 @@
 /** file: simple-white-4col.css
- ** label: Simple White Four Column (A)
- ** description: A simple white layout with 4 columns for map results.  Emphasis on contact data from Contact Extender. Uses "Source Sans Pro", available from the Google Fonts library.  Falls back to web standard fonts.
- ** add-ons: slp-contact-extender, slp-pro, slp-enhanced-map, slp-enhanced-results
+ ** label: Simple White Four Column
+ ** description: A simple white layout with 4 columns for map results.  Emphasis on contact data from Contact Extender. Uses "Source Sans Pro", available from the Google Fonts library.  Falls back to web standard fonts.  Supports Premier Bubble Footnotes.
+ ** add-ons: slp-pro,slp-enhanced-map,slp-enhanced-results,slp-enhanced-search,slp-tagalong,slp-premier
  ** Pro Pack Locator Layout: <div id="sl_div">[slp_search][slp_map][slp_results]</div>
- ** Enhanced Map Bubble Layout: <div id="sl_info_bubble" class="[slp_location featured]"><span class="bold_entry">[slp_location name]</span><span>[slp_location department]</span><span>[slp_location contact suffix comma][slp_location title]</span><span>[slp_location address][html br ifset address2][slp_location address2]</span><span>[slp_location city suffix  comma][slp_location state suffix space][slp_location zip]</span><span>[slp_option label_directions wrap directions]</span><br/><span>[slp_option   label_phone   ifset   phone][slp_location phone]</span><span>[slp_option   label_fax     ifset   fax  ][slp_location fax]<span><span>[slp_location facility_type]</span><span>[slp_location url           wrap    website][slp_option label_website ifset url][html closing_anchor ifset url]</span></div>
+ ** Enhanced Map Bubble Layout: <div id="sl_info_bubble" class="[slp_location featured]"><span class="bold_entry">[slp_location name]</span><span>[slp_location department]</span><span>[slp_location contact suffix comma][slp_location title]</span><span>[slp_location address][html br ifset address2][slp_location address2]</span><span>[slp_location city suffix  comma][slp_location state suffix space][slp_location zip]</span><span>[slp_option label_directions wrap directions]</span><br/><span>[slp_option   label_phone   ifset   phone][slp_location phone]</span><span>[slp_option   label_fax     ifset   fax  ][slp_location fax]<span><span>[slp_location facility_type]</span><span>[slp_location url           wrap    website][slp_option label_website ifset url][html closing_anchor ifset url]</span><span class="bubble_footnote">[slp_option bubble_footnote]</span></div>
  ** Enhanced Results Results Layout: <div id="slp_results_[slp_location id]" class="results_entry [slp_location featured]"><div class="results_row_col_1"><span class="location_name">[slp_location name]</span><span>[slp_location distance_1] [slp_location distance_unit]</span></div><div class="results_row_col_2"><span>[slp_location contact]</span><span>[slp_location phone]</span></div><div class="results_row_col_3"><span>[slp_location title]</span></div><div class="results_row_col_4"><span>[slp_location city]</span><span>[slp_location state]</span><span>[slp_location country]</span></div></div>
  ** Enhanced Search Search Layout: <div id="address_search">[slp_search_element input_with_label="name"][slp_search_element input_with_label="address"][slp_search_element dropdown_with_label="city"][slp_search_element dropdown_with_label="state"][slp_search_element dropdown_with_label="country"][slp_search_element selector_with_label="tag"][slp_search_element dropdown_with_label="category"]<div class="search_item">[slp_search_element dropdown_with_label="radius"][slp_search_element button="submit"]</div></div>
  ** Results Header:
@@ -178,34 +178,93 @@ div#slp_tagline {
   width: 1em;
   vertical-align: sub; }
 
-/*#tagalong_legend {
-    border: none;
-    padding: 12px;
-}
-#tagalong_legend .legend_text {
-    display: inline-block;
-    margin-left: 6px;
-    margin-right: 20px;
-    vertical-align: middle;
-}
-#tagalong_legend .tagalong_legend_icon {
-    display: inline-block;
-    margin-bottom: 12px;
-    min-width: 190px;
-}*/
 #tagalong_category_selector .category_selector.parent {
   display: block;
   float: left; }
+#tagalong_category_selector .category_selector.child {
+  display: none;
+  float: left;
+  margin-left: 0.2em; }
 
 #tagalong_cascade_dropdowns {
   display: inline-block;
   position: relative;
   vertical-align: top; }
 
-#tagalong_category_selector .category_selector.child {
-  display: none;
-  float: left;
-  margin-left: 0.2em; }
+#searchForm div.tagalong_category_selector {
+  display: inline;
+  white-space: nowrap;
+  padding-right: 1%; }
+  #searchForm div.tagalong_category_selector:first-child {
+    margin-left: 0; }
+    #searchForm div.tagalong_category_selector:first-child LABEL {
+      display: inline-block;
+      min-width: 21%; }
+    #searchForm div.tagalong_category_selector:first-child SELECT {
+      display: inline; }
+  #searchForm div.tagalong_category_selector span.ui-selectmenu-button {
+    width: 100% !important; }
+
+#tagalong_legend {
+  border: 3px double #444444;
+  padding: 0.75em;
+  text-align: inherit; }
+  #tagalong_legend .legend_text {
+    display: inline-block;
+    margin-left: 0.25em;
+    margin-right: 1em;
+    max-width: none;
+    padding-top: 0;
+    text-align: left;
+    vertical-align: middle; }
+  #tagalong_legend .tagalong_legend_icon {
+    display: inline-block;
+    margin-bottom: 0.75em;
+    min-width: 11.875em; }
+
+.results_line.location_iconarray > a {
+  display: inline-block;
+  height: auto;
+  width: auto; }
+
+ul.ui-autocomplete.ui-front.ui-widget {
+  color: gray;
+  background-color: white;
+  border: solid 1px #C0C0C0;
+  border-radius: 3px;
+  padding: 0.2em;
+  display: inline-block;
+  height: inherit; }
+  ul.ui-autocomplete.ui-front.ui-widget li {
+    list-style: none; }
+
+/* Custom To This Theme */
+#sl_info_bubble .location_detail_hours {
+  white-space: pre-wrap; }
+
+.slp_result_contact.slp_result_hours {
+  white-space: pre-wrap; }
+
+#search_by_tag span {
+  margin-right: 0.4em; }
+  #search_by_tag span input[type="radio"] {
+    margin: 0 0.2em 0 1em;
+    width: 1em;
+    vertical-align: sub; }
+
+#searchForm div.tagalong_category_selector {
+  display: inline;
+  white-space: nowrap;
+  padding-right: 1%; }
+#searchForm div.tagalong_category_selector:first-child {
+  margin-left: 0; }
+#searchForm div.tagalong_category_selector:first-child LABEL {
+  display: inline-block;
+  min-width: 21%; }
+#searchForm div.tagalong_category_selector:first-child SELECT {
+  display: inline; }
+#searchForm div.tagalong_category_selector span.ui-selectmenu-button {
+  width: 100% !important; }
 
 ul.ui-autocomplete.ui-front.ui-widget {
   color: gray;
@@ -221,9 +280,6 @@ ul.ui-autocomplete.ui-front.ui-widget {
 /**
  * Search Form
  **/
-/**
- * Search Form : Line
- */
 form#searchForm div.search_item {
   display: block;
   margin-bottom: 3px; }
@@ -316,10 +372,12 @@ div.results_entry {
   display: inline-block;
   padding: 0 0.25em 1em 0.25em;
   width: 100%; }
-  div.results_entry.featured {
-    background-color: #EFF0DE; }
-    div.results_entry.featured:hover {
-      background-color: #E7F8D6; }
+
+div.results_entry.featured {
+  background-color: #EFF0DE; }
+
+div.results_entry.featured:hover {
+  background-color: #E7F8D6; }
 
 div.results_entry:hover {
   background-color: #F2F2F2; }
@@ -377,30 +435,9 @@ div.results_entry .slp_map_search_results a:hover {
   color: #4444FF;
   background-color: #F2F2F2; }
 
-/* Tagalong result icons */
-.results_line.location_iconarray > a {
-  display: inline-block;
-  height: auto;
-  width: auto; }
-
 #tagalong_category_selector {
   height: 2em;
   width: 100%; }
-
-#tagalong_legend {
-  border: 3px double #444444;
-  padding: 12px; }
-
-#tagalong_legend .legend_text {
-  display: inline-block;
-  margin-left: 6px;
-  margin-right: 20px;
-  vertical-align: middle; }
-
-#tagalong_legend .tagalong_legend_icon {
-  display: inline-block;
-  margin-bottom: 12px;
-  min-width: 190px; }
 
 /**
  * Default Formatting If Special Content Not Set

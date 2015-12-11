@@ -1,7 +1,7 @@
 <?php
 
 if (! class_exists('SLP_getitem')) {
-	require_once( WP_PLUGIN_DIR . '/store-locator-le/include/class.settings.php' );
+	require_once( SLPLUS_PLUGINDIR . 'include/class.settings.php' );
 
 	/**
 	 * SLP_getitem.

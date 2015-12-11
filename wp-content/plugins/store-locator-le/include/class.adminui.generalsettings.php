@@ -5,21 +5,18 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 	/**
 	 * Store Locator Plus General Settings Interface
 	 *
+	 * @property		SLP_Settings		$settings
+	 *
 	 * @package   StoreLocatorPlus\AdminUI\GeneralSettings
 	 * @author    Lance Cleveland <lance@charlestonsw.com>
 	 * @copyright 2013 - 2015 Charleston Software Associates, LLC
 	 */
 	class SLPlus_AdminUI_GeneralSettings extends SLPlus_BaseClass_Object {
-
-		/**
-		 * @var SLP_Settings
-		 */
 		public $settings;
 
-		//-----------------------------
-		// Methods
-		//-----------------------------
-
+		/**
+		 * @param array $options
+		 */
 		function __construct( $options = array() ) {
 			parent::__construct( $options );
 			$this->create_object_settings();
@@ -94,7 +91,7 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 		 * Execute the save settings action.
 		 *
 		 */
-		function save_Settings() {
+		function save_options() {
 			do_action( 'slp_save_generalsettings' );
 
 			// Standard Input Saves
@@ -291,6 +288,24 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 				)
 			);
 
+			// Google Developers API
+			//
+			$groupName = __( 'Google Developers Console', 'store-locator-le' );
+			$this->settings->add_ItemToGroup(
+				array(
+					'section'     => $sectName,
+					'group'       => $groupName,
+					'label'       => __( 'Google API Server Key', 'store-locator-le' ),
+					'setting'     => 'google_server_key',
+					'use_prefix'  => false,
+					'value'       => $this->slplus->options_nojs['google_server_key'],
+					'description' =>
+						__( 'If you have created a Google JavaScript For Maps API Server Key, enter it here. ', 'store-locator-le' ) .
+						__( 'You will not gain performance benefits from using a Google API Server Key. ', 'store-locator-le' ) .
+						__( 'You do have the option to setup pay-as-you-go at Google and get higher geocoding quotas. ', 'store-locator-le' )
+				)
+			);
+
 			// ACTION: slp_generalsettings_modify_googlepanel
 			//    params: settings object, section name
 			do_action( 'slp_generalsettings_modify_googlepanel', $this->settings, $sectName );
@@ -394,15 +409,6 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 		 * Render the map settings admin page.
 		 */
 		function render_adminpage() {
-
-			// If we are updating settings...
-			//
-			if ( isset( $_REQUEST['action'] ) && ( $_REQUEST['action'] === 'update' ) &&
-			     isset( $_REQUEST['_wpnonce'] ) && ( ! empty( $_REQUEST['_wpnonce'] ) )
-			) {
-				$this->save_Settings();
-			}
-
 			$this->settings->add_section(
 				array(
 					'name'        => 'Navigation',

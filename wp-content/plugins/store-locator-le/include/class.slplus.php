@@ -1,12 +1,13 @@
 <?php
 if (! class_exists('SLPlus')) {
-	require_once( WP_PLUGIN_DIR . '/store-locator-le/include/base_class.object.php' );
+	require_once( SLPLUS_PLUGINDIR . 'include/base_class.object.php' );
 
     /**
      * The base plugin class for Store Locator Plus.
      *
      * @property    SLPlus_Activation       $Activation
      * @property    SLP_BaseClass_Addon[]   $addons                     active add-ons TODO: Remove when all references are moved to $this->add_ons->instances (DIR,ES,GFI,REX,W)
+     * @property    SLP_Option_Manager      $option_manager             Manage the SLP options.
      * @property    string[]                $text_string_options        These are the options needing translation.
      * @property    string                  $slp_store_url              The SLP Store URL.
      * @property    string                  $support_url                The SLP Support Site URL.
@@ -80,6 +81,8 @@ if (! class_exists('SLPlus')) {
 		    'label_phone'                   => '',      // get_string_default()
             'label_website'                 => '',      // get_string_default()
 		    'map_center'                    => '',
+            'map_center_lat'                => '',
+            'map_center_lng'                => '',
 		    'map_domain'                    => 'maps.google.com',
 		    'map_end_icon'                  => '',
 		    'map_home_icon'                 => '',
@@ -107,6 +110,7 @@ if (! class_exists('SLPlus')) {
 		    'force_load_js'             => '0',
 		    'google_client_id'          => '',
 		    'google_private_key'        => '',
+            'google_server_key'         => '',
 		    'has_extended_data'         => '',
 		    'http_timeout'              => '10',    // HTTP timeout for GeoCode Requests (seconds)
 		    'instructions'              => '',      // get_string_default()
@@ -126,7 +130,9 @@ if (! class_exists('SLPlus')) {
 		    'premium_subscription_id'   => '',
 		    'remove_credits'            => '0',
 		    'retry_maximum_delay'       => '5.0',
-		    'theme'                     => 'twentyfifteen_rev02',
+            'slplus_plugindir'          => SLPLUS_PLUGINDIR,
+            'slplus_basename'           => SLPLUS_BASENAME,
+		    'theme'                     => 'twentyfifteen_rev03',
 	    );
 
 	    public $text_string_options = array(
@@ -422,6 +428,8 @@ if (! class_exists('SLPlus')) {
          */
         public $javascript_is_forced = true;
 
+        public $option_manager;
+
 	    /**
 	     * The URL that reaches the home directory for the plugin.
 	     *
@@ -589,7 +597,7 @@ if (! class_exists('SLPlus')) {
 	     */
 	    public function createobject_Activation() {
 		    if ( ! isset( $this->Activation ) ) {
-			    require_once(SLPLUS_PLUGINDIR . '/include/class.activation.php');
+			    require_once(SLPLUS_PLUGINDIR . 'include/class.activation.php');
 			    $this->Activation = new SLPlus_Activation();
 		    }
 	    }
@@ -599,7 +607,7 @@ if (! class_exists('SLPlus')) {
 	     */
 	    public function createobject_AddOnManager()  {
 		    if (!isset($this->add_ons)) {
-			    require_once(SLPLUS_PLUGINDIR . '/include/class.addon.manager.php');
+			    require_once(SLPLUS_PLUGINDIR . 'include/class.addon.manager.php');
 			    $this->add_ons = new SLPlus_AddOn_Manager();
 		    }
 	    }
@@ -621,7 +629,7 @@ if (! class_exists('SLPlus')) {
 	     */
 	    public function create_object_CountryManager( ) {
 		    if ( ! isset( $this->CountryManager ) ) {
-			    require_once( WP_PLUGIN_DIR . '/store-locator-le/include/class.country.manager.php' );
+			    require_once( SLPLUS_PLUGINDIR . 'include/class.country.manager.php' );
 			    $this->CountryManager = new SLP_Country_Manager();
 		    }
 	    }
@@ -635,6 +643,13 @@ if (! class_exists('SLPlus')) {
 			    $this->helper = new SLP_Helper();
 		    }
 	    }
+
+        function create_object_option_manager() {
+            if ( ! isset( $this->option_manager ) ) {
+                require_once( 'class.option.manager.php' );
+                $this->option_manager = new SLP_Option_Manager();
+            }
+        }
 
 	    /**
 	     * Create the settings object and attach it.
@@ -698,7 +713,13 @@ if (! class_exists('SLPlus')) {
 	     * Finish our starting constructor elements.
 	     */
 	    public function initialize() {
-		    $this->initOptions();
+            if (class_exists('SLPlus_Location') == false) {
+                require_once(SLPLUS_PLUGINDIR.'include/class.location.php');
+            }
+            $this->currentLocation = new SLPlus_Location(array('slplus' => $this));
+
+            $this->create_object_option_manager();
+            $this->option_manager->initialize();
 
 		    // Attach objects
 		    //
@@ -711,13 +732,6 @@ if (! class_exists('SLPlus')) {
 		    $this->add_actions();
 
 		    $this->initDB();
-
-		    // Hook up the Locations class
-		    //
-		    if (class_exists('SLPlus_Location') == false) {
-			    require_once(SLPLUS_PLUGINDIR.'include/class.location.php');
-		    }
-		    $this->currentLocation = new SLPlus_Location(array('slplus' => $this));
 
 		    // AJAX Processing
 		    //
@@ -749,58 +763,11 @@ if (! class_exists('SLPlus')) {
 
             // Set the data object
             //
-            require_once(SLPLUS_PLUGINDIR . '/include/class.data.php');
+            require_once(SLPLUS_PLUGINDIR . 'include/class.data.php');
             $this->database = new SLPlus_Data();
         }
 
         /**
-         * Initialize the options properties from the WordPress database.
-         */
-        function initOptions()  {
-
-	        // FILTER: slp_set_options_needing_translation
-	        // gets the options_needing translation array used by the set_ValidOptions and set_ValidOptionsNoJS
-	        // methods that interface with WPML
-	        // return a modified array of options setting names
-	        //
-	        $this->text_string_options = apply_filters('slp_set_options_needing_translation', $this->text_string_options);
-	        $this->set_text_string_defaults();
-
-            // Set options defaults to values set in property definition above.
-            //
-	        $this->options['map_home_icon'] = SLPLUS_ICONURL . 'box_yellow_home.png';
-	        $this->options['map_end_icon']  = SLPLUS_ICONURL . 'bulb_azure.png';
-            $this->options_default = $this->options;
-
-            // Serialized Options from DB for JS parameters
-            //
-            $dbOptions = get_option(SLPLUS_PREFIX . '-options');
-            if (is_array($dbOptions)) {
-                array_walk($dbOptions, array($this, 'set_ValidOptions'));
-            }
-
-            // Load serialized options for noJS parameters
-            //
-	        $this->options_nojs_default = $this->options_nojs;
-            $dbOptions = get_option(SLPLUS_PREFIX . '-options_nojs');
-            if (is_array($dbOptions)) {
-                array_walk($dbOptions, array($this, 'set_ValidOptionsNoJS'));
-            }
-            $this->javascript_is_forced = $this->is_CheckTrue($this->options_nojs['force_load_js']);
-
-            // Options that get passed to the JavaScript
-            // loaded from properties
-            //
-            foreach ($this->options as $name => $value) {
-                if ( empty( $this->options[$name] ) && ( ! empty($this->defaults[$name] ) ) ) {
-                    $this->options[$name] = $this->defaults[$name];
-                }
-            }
-
-
-        }
-
-	    /**
 	     * Add DebugMyPlugin messages.
 	     *
 	     * @param string $panel - panel name
@@ -893,20 +860,28 @@ if (! class_exists('SLPlus')) {
 				    '&client=' . $this->options_nojs['google_client_id'] . '&v=3' :
 				    '';
 
+            // Google JavaScript API server Key
+            //
+            $server_key =
+                ! empty ( $this->options_nojs['google_server_key'] )   ?
+                    '&key=' . $this->options_nojs['google_server_key'] :
+                    '';
+
+
 		    // Set the map language
 		    //
-		    $language = '&language=' . $this->options_nojs['map_language'];
+		    $language = 'language=' . $this->options_nojs['map_language'];
 
 		    // Base Google API URL
 		    //
 		    $google_api_url =
 			    'https://' .
-			    $this->options['map_domain'] .
+			    'maps.googleapis.com' .
 			    '/maps/api/' .
 			    'js' .
-			    '?sensor=false';
+			    '?';
 
-			return $google_api_url . $client_id . $language;
+			return $google_api_url . $language . $client_id . $server_key;
 	    }
 
 	    /**
@@ -931,68 +906,6 @@ if (! class_exists('SLPlus')) {
 		    }
 
 		    return $this->slp_items[ $option_name ];
-	    }
-
-	    /**
-	     * Get string defaults.
-	     *
-	     * @param string $key key name for string to translate
-	     *
-	     * @return string
-	     */
-	    private function get_string_default( $key ) {
-		    switch ( $key ) {
-			    case 'instructions':
-				    $default = __( 'Enter an address or zip code and click the find locations button.' , 'store-locator-le' );
-				    break;
-
-			    case 'invalid_query_message':
-				    $default = __('Store Locator Plus did not send back a valid JSONP response.', 'store-locator-le');
-				    break;
-
-			    case 'label_directions':
-				    $default = __( 'Directions'   , 'store-locator-le' );
-				    break;
-
-			    case 'label_fax':
-				    $default = __( 'Fax'   , 'store-locator-le' );
-				    break;
-
-			    case 'label_email':
-			        $default = __( 'Email'   , 'store-locator-le' );
-					break;
-
-			    case 'label_hours':
-				    $default =__( 'Hours', 'store-locator-le' );
-				    break;
-
-			    case 'label_image':
-				    $default =__( 'Image', 'store-locator-le' );
-				    break;
-
-			    case 'label_phone':
-				    $default = __( 'Phone'   , 'store-locator-le' );
-				    break;
-
-
-			    case 'label_website':
-				    $default = __( 'Website' , 'store-locator-le' );
-				    break;
-
-			    default:
-				    /**
-				     * FILTER: slp_string_default
-				     *
-				     * @params string value
-				     * @params string key
-				     *
-				     * @return string the gettext default string for this key
-				     */
-				    $default = apply_filters( 'slp_string_default' , '' , $key );
-				    break;
-		    }
-
-		    return $default;
 	    }
 
         /**
@@ -1103,6 +1016,67 @@ if (! class_exists('SLPlus')) {
         }
 
         /**
+         * Re-center the map as needed.
+         *
+         * Sets Center Map At ('map-center') and Lat/Lng Fallback if any of those entries are blank.
+         *
+         * Uses the Map Domain ('default_country') as the source for the new center.
+         */
+        public function recenter_map() {
+            if ( empty( $this->options['map_center']     ) ) { $this->set_map_center();                 }
+            if ( empty( $this->options['map_center_lat'] ) ) { $this->set_map_center_fallback( 'lat' ); }
+            if ( empty( $this->options['map_center_lng'] ) ) { $this->set_map_center_fallback( 'lng' ); }
+        }
+
+        /**
+         * Set the Center Map At if the setting is empty.
+         */
+        public function set_map_center() {
+            $this->create_object_CountryManager();
+            $this->options['map_center'] = $this->CountryManager->countries[$this->options_nojs['default_country']]->name;
+        }
+
+        /**
+         * Set the map center fallback for the selected country.
+         *
+         * @param string $for   latlng | lat | lng
+         */
+        public function set_map_center_fallback( $for = 'latlng' ) {
+            $this->create_object_CountryManager();
+
+            // If the map center is set to the country.
+            //
+            if ( $this->options['map_center'] == $this->CountryManager->countries[$this->options_nojs['default_country']]->name ) {
+
+                // Set the default country lat
+                //
+                if (($for === 'latlng') || ($for === 'lat')) {
+                    $this->options['map_center_lat'] = $this->CountryManager->countries[$this->options_nojs['default_country']]->map_center_lat;
+                }
+
+
+                // Set the default country lng
+                //
+                if (($for === 'latlng') || ($for === 'lng')) {
+                    $this->options['map_center_lng'] = $this->CountryManager->countries[$this->options_nojs['default_country']]->map_center_lng;
+                }
+            }
+
+            // No Lat or Lng in Country Data?  Go ask Google.
+            //
+            if ( is_null( $this->options['map_center_lng'] ) || is_null( $this->options['map_center_lat'] ) ) {
+                $json = $this->currentLocation->get_LatLong( $this->options['map_center'] );
+                if ( ! empty( $json ) ) {
+                    $json = json_decode( $json );
+                    if ( $json->{'status'} === 'OK' ) {
+                        if ( is_null( $this->options['map_center_lat'] ) ) {$this->options['map_center_lat'] = $json->results[0]->geometry->location->lat; }
+                        if ( is_null( $this->options['map_center_lng'] ) ) {$this->options['map_center_lng'] = $json->results[0]->geometry->location->lng; }
+                    }
+                }
+            }
+        }
+
+        /**
          * Set the PHP max execution time.
          */
         public function set_php_timeout() {
@@ -1112,18 +1086,6 @@ if (! class_exists('SLPlus')) {
             }
         }
 
-	    /**
-	     * Set text string defaults.
-	     */
-	    private function set_text_string_defaults() {
-		    foreach ( $this->text_string_options as $key ) {
-			    if ( array_key_exists( $key , $this->options ) ) {
-				    $this->options[$key] = $this->get_string_default( $key );
-			    } elseif ( array_key_exists( $key , $this->options_nojs ) ) {
-				    $this->options_nojs[$key] = $this->get_string_default( $key );
-			    }
-		    }
-	    }
 
         /**
          * Set valid options from the incoming REQUEST
@@ -1186,6 +1148,18 @@ if (! class_exists('SLPlus')) {
         //----------------------------------------------------
         // DEPRECATED
         //----------------------------------------------------
+
+        /**
+         * Do not use, deprecated.
+         *
+         * @deprecated 4.3.21
+         */
+        function initOptions( $a = null, $b = null, $c = null, $d = null, $e = null, $f = null ) {
+            $this->helper->create_string_wp_setting_error_box( $this->createstring_Deprecated( __FUNCTION__ ) );
+            $this->create_object_option_manager();
+            $this->option_manager->initialize();
+            return false;
+        }
 
 	    /**
 	     * Do not use, deprecated.

@@ -4,7 +4,6 @@
 	/* Background image is applied with inline CSS */
 	background-position: center center;
 	background-size: cover;
-	background-color: #eee;
 	position: relative;
 	behavior: url(backgroundsize.min.htc); /* IE polyfill for background size */
 }
@@ -38,9 +37,9 @@
 .arve-promote-link {
 	position: absolute;
 	right: 0;
-	bottom: -9px;
+	bottom: -10px;
 	font-family: "Open Sans", "Sagoe UI", Arial, sans-serif;
-	font-size: 8px;
+	font-size: 9px;
 	line-height: 1;
 }
 

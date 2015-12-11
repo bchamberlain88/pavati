@@ -120,17 +120,17 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 			global $wpdb;
 			$my_metadata = get_plugin_data( SLPLUS_FILE );
 			$this->settings->add_section( array(
-				'name'        => 'Plugin Environment',
+				'name'        => __( 'Plugin Environment' , 'store-locator-le' ),
 				'description' =>
-					$this->create_EnvDiv( $my_metadata['Name'] . ' Version', $my_metadata['Version'] ) .
+					$this->create_EnvDiv( $my_metadata['Name'] . __( ' Version' , 'store-locator-le' ), $my_metadata['Version'] ) .
 					$addonStr .
 					'<br/>' .
-					$this->create_EnvDiv( 'This Info Cached' , $this->slplus->options_nojs['broadcast_timestamp'] ) .
-					$this->create_EnvDiv( 'WordPress Version', $GLOBALS['wp_version'] ) .
-					$this->create_EnvDiv( 'Site URL', get_option( 'siteurl' ) ) .
+					$this->create_EnvDiv( __( 'This Info Cached' , 'store-locator-le' ) , $this->slplus->options_nojs['broadcast_timestamp'] ) .
+					$this->create_EnvDiv( __( 'WordPress Version', 'store-locator-le' ) , $GLOBALS['wp_version'] ) .
+					$this->create_EnvDiv( __( 'Site URL' 		 , 'store-locator-le' ) , get_option( 'siteurl' ) ) .
 					'<br/>' .
-					$this->create_EnvDiv( 'MySQL Version', $wpdb->db_version() ) .
-					$this->create_EnvDiv( 'PHP Version', phpversion() ) .
+					$this->create_EnvDiv( __( 'MySQL Version'	 , 'store-locator-le' ) , $wpdb->db_version() ) .
+					$this->create_EnvDiv( __( 'PHP Version'		 , 'store-locator-le' ) , phpversion() ) .
 					'<br/>' .
 
 					$this->create_EnvDiv(
@@ -149,15 +149,15 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 					) .
 
 
-					$this->create_EnvDiv( 'PHP Peak RAM',
+					$this->create_EnvDiv( __( 'PHP Peak RAM', 'store-locator-le' ) ,
 						sprintf( '%0.2d MB', memory_get_peak_usage( true ) / 1024 / 1024 ) ) .
 
 					$this->create_EnvDiv(
-						'PHP Post Max Size',
+						__( 'PHP Post Max Size', 'store-locator-le' ) ,
 						ini_get( 'post_max_size' )
 					) .
 
-					$this->create_EnvDiv( 'PHP Modules',
+					$this->create_EnvDiv( __( 'PHP Modules', 'store-locator-le' ) ,
 						'<pre>' . print_r( $php_modules, true ) . '</pre>' )
 			) );
 		}

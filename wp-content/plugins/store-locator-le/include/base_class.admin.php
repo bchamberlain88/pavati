@@ -1,6 +1,6 @@
 <?php
 if (! class_exists('SLP_BaseClass_Admin')) {
-	require_once(SLPLUS_PLUGINDIR.'/include/class.settings.php');
+	require_once( SLPLUS_PLUGINDIR . 'include/class.settings.php');
 
     /**
      * A base class that helps add-on packs separate admin functionality.
@@ -11,11 +11,12 @@ if (! class_exists('SLP_BaseClass_Admin')) {
      * via the admin_menu call.   Reduces the front-end footprint.
      *
      * @property        SLP_BaseClass_Addon     $addon
-     * @property        string[]                $admin_checkboxes   The expected checkboxes on each admin tab.
-     * @property        string                  $admin_page_slug    The slug for the admin page.
-     * @property        null|string[]           $js_pages           Which pages do we put the admin JS on?
-     * @property        string[]                $js_requirements    An array of the JavaScript hooks that are needed by the userinterface.js script.
-     * @property        string[]                $js_settings        JavaScript settings that are to be localized as a <slug>_settings JS variable.
+     * @property        string[]                $admin_checkboxes   	The expected checkboxes on each admin tab.
+	 * @property		string					$admin_checkbox_page	Where do the admin checkboxes live? Which tab (admin page)?
+     * @property        string                  $admin_page_slug    	The slug for the admin page.
+     * @property        null|string[]           $js_pages           	Which pages do we put the admin JS on?
+     * @property        string[]                $js_requirements    	An array of the JavaScript hooks that are needed by the userinterface.js script.
+     * @property        string[]                $js_settings        	JavaScript settings that are to be localized as a <slug>_settings JS variable.
      * @property        SLPlus                  $slplus
      *
      * TODO: Add a method that invokes a base_class.admin.slp_page.php class for methods used only if on a SLP admin page (test admin_slugs)
@@ -27,6 +28,7 @@ if (! class_exists('SLP_BaseClass_Admin')) {
     class SLP_BaseClass_Admin extends SLPlus_BaseClass_Object {
         protected $addon;
         protected $admin_checkboxes     = array();
+		protected $admin_checkbox_page  = 'slp_experience';
         protected $admin_page_slug;
 	    protected $js_pages             = null;
 	    protected $js_requirements      = array();
@@ -96,8 +98,8 @@ if (! class_exists('SLP_BaseClass_Admin')) {
 			// Only save settings if the update action is set.
 			if (
 				! empty( $_POST ) &&
-				isset($_REQUEST['action']) &&
-				( $_REQUEST['action'] === 'update' )
+				isset($_REQUEST['action']) && ( $_REQUEST['action'] === 'update' ) &&
+				isset($_REQUEST['page']  ) && ( $_REQUEST['page']   === $this->admin_checkbox_page )
 			) {
 				$this->save_my_settings();
 			}
@@ -196,6 +198,12 @@ if (! class_exists('SLP_BaseClass_Admin')) {
 	     * Necessary if you are going to use your options in localized admin scripts.
 	     *
 	     * Set $this->admin_checkboxes with all the expected checkbox names then call parent::save_my_settings.
+		 *
+		 * TODO: Refactor to save_experience_tab_settings
+		 *
+		 * Note: this is only called from the base clase on the experience tab.
+		 * Only those settings associated with the experience tab go here.
+		 * This is especially important for saving checkboxes.
 	     */
 	    function save_my_settings() {
 		    array_walk( $_POST ,array( $this->addon ,'set_ValidOptions' ) );

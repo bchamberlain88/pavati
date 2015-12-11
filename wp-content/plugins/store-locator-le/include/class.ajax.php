@@ -1,6 +1,6 @@
 <?php
 if (! class_exists('SLP_AJAX')) {
-    require_once(SLPLUS_PLUGINDIR.'/include/base_class.ajax.php');
+    require_once(SLPLUS_PLUGINDIR.'include/base_class.ajax.php');
 
 
     /**
@@ -24,31 +24,25 @@ if (! class_exists('SLP_AJAX')) {
      * @copyright 2015 Charleston Software Associates, LLC
      */
     class SLP_AJAX extends SLP_BaseClass_AJAX {
-
-	    public $valid_actions = array(
+	    public 	$valid_actions = array(
 		    'csl_ajax_onload',
 		    'csl_ajax_search',
 		    'csl_ajax_hide_column',
 		    'csl_ajax_unhide_column'
-	    );
-
-	    public $formdata_defaults = array(
+	    	);
+	    public 	$formdata_defaults = array(
 		    'addressInput'      => '',
 		    'addressInputState' => '',
 		    'nameSearch'        => '',
-	    );
-
-	    public $query_params_valid = array();
-
+	    	);
+	    public 	$query_params_valid = array();
 	    private $basic_query;
 	    private $dbQuery;
 	    private $location_manager;
-	    public $options = array( 'installed_version' => SLPLUS_VERSION );
-	    public $query_limit;
-
-	    // TODO: Legacy 4.2 Add-On Packs Support
-	    public $name = 'AjaxHandler';
-	    public $plugin;
+	    public 	$options = array( 'installed_version' => SLPLUS_VERSION );
+	    public 	$query_limit;
+	    public 	$name = 'AjaxHandler';
+	    public 	$plugin;
 
 	    /**
 	     * Instantiate a new AJAX handler object.
@@ -82,12 +76,12 @@ if (! class_exists('SLP_AJAX')) {
 		    $this->slplus->database->extend_order_array( 'sl_distance ASC' );
 	    }
 
-	    /**
-	     * Add and load search filters for onload and search methods.
-	     */
-        public function add_load_and_search_filters() {
-            add_filter( 'slp_results_marker_data' , array( $this ,'modify_email_link') , 10 , 1);
-        }
+		/**
+		 * Add and load search filters for onload and search methods.
+		 */
+		public function add_load_and_search_filters() {
+			add_filter( 'slp_results_marker_data' , array( $this ,'modify_email_link') , 10 , 1);
+		}
 
 	    /**
 	     * Attach the location_manager object.
@@ -98,6 +92,54 @@ if (! class_exists('SLP_AJAX')) {
 			    $this->location_manager = new  SLP_AJAX_Location_Manager( array( 'ajax' => $this ) );
 		    }
 	    }
+
+        /**
+         * Modify the email link
+         *
+         * @param mixed[] $marker the current marker data
+         * @return mixed[]
+         */
+        public function modify_email_link( $marker ) {
+            $marker['email_link'] = '';
+
+            if ( ! empty( $marker['email'] ) ) {
+                $marker['email_link'] =
+                    sprintf(
+                        '<a href="mailto:%s" target="_blank" id="slp_marker_email" class="storelocatorlink"><nobr>%s</nobr></a>',
+                        $marker['email'],
+                        $this->slplus->WPML->get_text('label_email')
+                    );
+            }
+
+            return $marker;
+        }
+
+        /**
+         * Process the location manager requests.
+         *
+         * NOTE: CALLED FROM base_class_ajax.php via do_ajax_startup() and this->short_action.
+         */
+        public function process_location_manager() {
+            $this->create_location_manager();
+        }
+
+		/**
+		 * Handle csl_ajax_onload.
+		 *
+		 * NOTE: CALLED FROM base_class_ajax.php via do_ajax_startup() and this->short_action.
+		 */
+		public function process_onload() {
+			$this->add_load_and_search_filters();
+		}
+
+		/**
+		 * Handle csl_ajax_search
+		 *
+		 * NOTE: CALLED FROM base_class_ajax.php via do_ajax_startup() and this->short_action.
+		 */
+		public function process_search() {
+			$this->add_load_and_search_filters();
+		}
 
 	    /**
 	     * Hide a manage locations column.
@@ -319,8 +361,8 @@ if (! class_exists('SLP_AJAX')) {
 	    /**
 	     * Do not return private locations by default.
 	     *
-	     * @param string the current where clause
-	     * @return string the extended where clause
+	     * @param 	string $where 	the current where clause
+	     * @return 	string 			the extended where clause
 	     */
 	    function filter_out_private_locations( $where ) {
 		    return $this->slplus->database->extend_Where( $where , ' ( NOT sl_private OR sl_private IS NULL) ' );
@@ -336,49 +378,6 @@ if (! class_exists('SLP_AJAX')) {
 		    }
 		    return false;
 	    }
-
-	    /**
-         * Modify the email link
-         *
-         * @param mixed[] $marker the current marker data
-         * @return mixed[]
-         */
-        public function modify_email_link( $marker ) {
-            $marker['email_link'] = '';
-
-            if ( ! empty( $marker['email'] ) ) {
-                $marker['email_link'] =
-                    sprintf(
-                        '<a href="mailto:%s" target="_blank" id="slp_marker_email" class="storelocatorlink"><nobr>%s</nobr></a>',
-                        $marker['email'],
-                        $this->slplus->WPML->get_text('label_email')
-                    );
-            }
-
-            return $marker;
-        }
-
-	    /**
-	     * Process the location manager requests.
-	     */
-	    public function process_location_manager() {
-			$this->create_location_manager();
-	    }
-
-	    /**
-	     * Handle csl_ajax_onload.
-	     */
-	    public function process_onload() {
-		    $this->add_load_and_search_filters();
-	    }
-
-	    /**
-	     * Handle csl_ajax_search
-	     */
-	    public function process_search() {
-		    $this->add_load_and_search_filters();
-	    }
-
 
 	    /**
 	     * Output a JSON response based on the incoming data and die.

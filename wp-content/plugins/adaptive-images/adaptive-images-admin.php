@@ -913,9 +913,9 @@
 
 
 
-        // Hidpi field validation.
+        // CDN support field validation.
 
-        $cdn_support = isset( $data['hidpi'] ) && $data['cdn-support'] == 'on' ? TRUE : FALSE;
+        $cdn_support = isset( $data['cdn-support'] ) && $data['cdn-support'] == 'on' ? TRUE : FALSE;
 
         $data['cdn-support'] = $cdn_support;
 

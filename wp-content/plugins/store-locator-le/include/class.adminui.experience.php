@@ -323,6 +323,7 @@ if (! class_exists('SLPlus_AdminUI_UserExperience')) {
 				'group'       => $group_name,
 				'type'        => 'dropdown',
 				'use_prefix'  => false,
+				'empty_ok'    => true
 
 			) );
 
@@ -336,6 +337,16 @@ if (! class_exists('SLPlus_AdminUI_UserExperience')) {
 				'selectedVal' => $this->slplus->options['zoom_tweak'],
 				'custom'      =>
 					array(
+						array( 'label' => '-10' ),
+						array( 'label' => '-9' ),
+						array( 'label' => '-8' ),
+						array( 'label' => '-7' ),
+						array( 'label' => '-6' ),
+						array( 'label' => '-5' ),
+						array( 'label' => '-4' ),
+						array( 'label' => '-3' ),
+						array( 'label' => '-2' ),
+						array( 'label' => '-1' ),
 						array( 'label' => '0' ),
 						array( 'label' => '1' ),
 						array( 'label' => '2' ),
@@ -346,7 +357,6 @@ if (! class_exists('SLPlus_AdminUI_UserExperience')) {
 						array( 'label' => '7' ),
 						array( 'label' => '8' ),
 						array( 'label' => '9' ),
-						array( 'label' => '10' ),
 						array( 'label' => '10' ),
 						array( 'label' => '11' ),
 						array( 'label' => '12' ),
@@ -362,6 +372,7 @@ if (! class_exists('SLPlus_AdminUI_UserExperience')) {
 				'group'       => $group_name,
 				'type'        => 'dropdown',
 				'use_prefix'  => false,
+				'empty_ok'		=> true,
 
 			) );
 		}
@@ -422,7 +433,8 @@ if (! class_exists('SLPlus_AdminUI_UserExperience')) {
 				'label'       => __( 'Center Map At', 'store-locator-le' ),
 				'description' =>
 					__( 'Enter an address to serve as the initial focus for the map. ', 'store-locator-le' ) .
-					__( 'Default is the center of the country.', 'store-locator-le' ) .
+                    __( 'Set to blank to reset this to the center of your Map Domain country. ' , 'store-locator-le' ) .
+					__( 'Default is the center of the country. ', 'store-locator-le' ) .
 					sprintf(
 						__( '%s add-on must be installed to set per-page with center_map_at="address" shortcode. ', 'store-locator-le' ),
 						$this->slplus->add_ons->get_product_url('slp-enhanced-map')
@@ -434,7 +446,36 @@ if (! class_exists('SLPlus_AdminUI_UserExperience')) {
 				'section'     => $section_name,
 				'group'       => $group_name,
 				'use_prefix'  => false,
-			) );
+				) );
+
+            $this->settings->add_ItemToGroup( array(
+                'label'       => __( 'Center Latitude Fallback', 'store-locator-le' ),
+                'description' =>
+                    __( 'Where to center the map when Google geocoding is offline. ', 'store-locator-le' ).
+					__( 'Set to blank and save settings to reset to the center of the default country if Center Map At is Blank. ', 'store-locator-le' ) .
+					__( 'If Center Map At has an address and this is set to blank, that address will be re-geocoded and stored here.' , 'store-locator-le' )
+                    ,
+                'setting'     => 'map_center_lat',
+                'value'       => $this->slplus->options['map_center_lat'],
+                'section'     => $section_name,
+                'group'       => $group_name,
+                'use_prefix'  => false,
+            ) );
+
+            $this->settings->add_ItemToGroup( array(
+                'label'       => __( 'Center Longitude Fallback', 'store-locator-le' ),
+                'description' =>
+                    __( 'Where to center the map when Google geocoding is offline. ', 'store-locator-le' ).
+					__( 'Set to blank and save settings to reset to the center of the default country if Center Map At is Blank. ', 'store-locator-le' ) .
+					__( 'If Center Map At has an address and this is set to blank, that address will be re-geocoded and stored here.' , 'store-locator-le' )
+            		,
+                'setting'     => 'map_center_lng',
+                'value'       => $this->slplus->options['map_center_lng'],
+                'section'     => $section_name,
+                'group'       => $group_name,
+                'use_prefix'  => false,
+            ) );
+
 
 		}
 
@@ -747,11 +788,8 @@ if (! class_exists('SLPlus_AdminUI_UserExperience')) {
 		 * Called when a $_POST is set when doing render_adminpage.
 		 */
 		function save_settings() {
-			/**
-			 * @var SLP_Country $selected_country
-			 */
-			$selected_country = $this->slplus->CountryManager->countries[ $_POST['default_country'] ];
-			$this->slplus->options['map_domain']       = $selected_country->google_domain;
+            // Save Map Domain and Center Map At Settings
+            $this->save_the_country();
 
 			// Set height unit to blank, if height is "auto !important"
 			if ( ( strpos( $_POST['map_height'] , 'auto' ) !== false ) && ( $_POST['map_height_units'] !== ' ' )  ) {
@@ -848,9 +886,45 @@ if (! class_exists('SLPlus_AdminUI_UserExperience')) {
 
 		}
 
-		//=======================================
-		// RENDER FUNCTIONS
-		//=======================================
+        /**
+         * Change the Center Map settings if the Map Domain (country) has changed and those settings are blank.
+         *
+         * @var     SLP_COUNTRY     $selected_country
+         */
+        private function save_the_country() {
+            $selected_country = $this->slplus->CountryManager->countries[ $_POST['default_country'] ];
+            $this->slplus->options['map_domain']       = $selected_country->google_domain;
+
+            // Default Country (Map Domain) has changed, check map center settings.
+            //
+            if ( $_POST['default_country'] !== $this->slplus->options_nojs['default_country'] ) {
+                $this->slplus->options_nojs['default_country'] = $_POST['default_country'];
+            }
+
+            if ( empty ( $_POST['map_center'    ] ) ) {
+                $this->slplus->options['map_center'    ] = null;
+            } else {
+                $this->slplus->options['map_center'    ] = $_POST['map_center'];
+            }
+            if ( empty ( $_POST['map_center_lat'] ) ) {
+                $this->slplus->options['map_center_lat'] = null;
+            } else {
+                $this->slplus->options['map_center_lat'] = $_POST['map_center_lat'];
+
+            }
+            if ( empty ( $_POST['map_center_lng'] ) ) {
+                $this->slplus->options['map_center_lng'] = null;
+            } else {
+                $this->slplus->options['map_center_lng'] = $_POST['map_center_lng'];
+            }
+
+            $this->slplus->recenter_map();
+
+            if ( ! is_null( $this->slplus->options['map_center'     ] ) ) { $_REQUEST['map_center'    ] = $this->slplus->options['map_center'    ]; }
+            if ( ! is_null( $this->slplus->options['map_center_lat' ] ) ) { $_REQUEST['map_center_lat'] = $this->slplus->options['map_center_lat']; }
+            if ( ! is_null( $this->slplus->options['map_center_lng' ] ) ) { $_REQUEST['map_center_lng'] = $this->slplus->options['map_center_lng']; }
+
+        }
 
 		/**
 		 * Add the map panel to the map settings page on the admin UI.
@@ -924,23 +998,6 @@ if (! class_exists('SLPlus_AdminUI_UserExperience')) {
 		 * Render the map settings admin page.
 		 */
 		function display() {
-			$update_msg = '';
-
-			// We Have a POST - Save Settings
-			//
-			if ( $_POST ) {
-				add_action( 'slp_save_map_settings', array( $this, 'save_settings' ), 10 );
-				do_action( 'slp_save_map_settings' );
-
-				// TODO: this can go away when all add-on packs convert to the parent::do_admin_startup() in base_class_admin.
-				//
-				do_action( 'slp_save_ux_settings' );
-				$update_msg = "<div class='highlight'>" . __( 'Successful Update', 'store-locator-le' );
-				foreach ( $this->update_info as $info_msg ) {
-					$update_msg .= '<br/>' . $info_msg;
-				}
-				$update_msg .= '</div>';
-			}
 
 			/**
 			 * @see http://goo.gl/UAXly - endIcon - the default map marker to be used for locations shown on the map
@@ -1020,7 +1077,15 @@ if (! class_exists('SLPlus_AdminUI_UserExperience')) {
 			//------------------------------------
 			// Render It
 			//
-			print $update_msg;
+            if ( count( $this->update_info ) > 0 ) {
+                $update_msg = "<div class='highlight'>" . __( 'Successful Update', 'store-locator-le' );
+                foreach ( $this->update_info as $info_msg ) {
+                    $update_msg .= '<br/>' . $info_msg;
+                }
+                $update_msg .= '</div>';
+                $this->update_info = array();
+                print $update_msg;
+            }
 			do_action( 'slp_build_map_settings_panels' );
 			$this->settings->render_settings_page();
 			$this->slplus->AdminUI->render_rate_box();
@@ -1061,6 +1126,20 @@ if (! class_exists('SLPlus_AdminUI_UserExperience')) {
 			//    params: settings object, section name
 			//
 			do_action( 'slp_ux_modify_adminpanel_results', $this->settings, $section_name );
+		}
+
+
+		/**
+		 * Save the options to the WP database options table.
+		 *
+		 * @return string update message
+		 */
+		function save_options() {
+			add_action( 'slp_save_map_settings', array( $this, 'save_settings' ), 10 );
+			do_action( 'slp_save_map_settings' );
+			// TODO: this can go away when all add-on packs convert to the parent::do_admin_startup() in base_class_admin.
+			//
+			do_action( 'slp_save_ux_settings' );
 		}
 
 		/**

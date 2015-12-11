@@ -5,37 +5,18 @@
  * Mostly handles data structure changes.
  * Update the plugin version in config.php on every structure change.
  *
+ * @property        string              $db_version_on_start            Starting DB version of this plugin.
+ * @property-read   SLPlus              $slplus
+ * @property-read   SLP_Upgrade         $Upgrade
+ *
  * @package StoreLocatorPlus\Activation
  * @author Lance Cleveland <lance@storelocatorplus.com>
  * @copyright 2012-2015 Charleston Software Associates, LLC
  */
 class SLPlus_Activation {
-
-    //----------------------------------
-    // Properties
-    //----------------------------------
-
-    /**
-     * Starting DB version of this plugin.
-     *
-     * @var string $db_version_on_start
-     */
     public  $db_version_on_start = '';
-
-	/**
-	 * @var SLPlus
-	 */
 	private $slplus;
-
-	/**
-	 * @var SLP_Upgrade
-	 **/
 	private $Upgrade;
-
-
-    //----------------------------------
-    // Methods
-    //----------------------------------
 
     /**
      * Initialize the object.
@@ -50,7 +31,7 @@ class SLPlus_Activation {
 	 */
 	public function create_object_Upgrade( ) {
 		if ( ! isset( $this->Upgrade ) ) {
-			require_once( WP_PLUGIN_DIR . '/store-locator-le/include/class.activation.upgrade.php' );
+			require_once( SLPLUS_PLUGINDIR . 'include/class.activation.upgrade.php' );
 			$this->Upgrade = new SLP_Upgrade();
 		}
 	}
@@ -333,10 +314,12 @@ class SLPlus_Activation {
         update_option(SLPLUS_PREFIX . '-installed_base_version' , SLPLUS_VERSION);
         update_option(SLPLUS_PREFIX . '-theme_lastupdated'      , '2006-10-05'  );
 
-        // Connect DB meta info after create data objects.
+        // Fresh install.
         //
         if ( empty( $this->db_version_on_start ) ) {
-            $this->slplus->database->set_database_meta();
+            $this->slplus->database->set_database_meta();                                           // Connect DB meta info after create data objects.
+            update_option( SLPLUS_PREFIX . '-options_nojs', $this->slplus->options_nojs );          // Save default options_nojs
+            update_option( SLPLUS_PREFIX . '-options'     , $this->slplus->options );               // Save default options
         }
     }
 

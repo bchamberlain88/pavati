@@ -36,7 +36,9 @@ var slp_Filter = function( id ) {
         // No jQuery Callbacks?  Why are you NOT using jQuery 1.7+??
         //
         } else {
-            console.log('jQuery 1.7.0+ required, ' + jQuery.fn.version + ' used instead.  FAIL.' );
+            if ( window.console ) {
+                console.log('jQuery 1.7.0+ required, ' + jQuery.fn.version + ' used instead.  FAIL.');
+            }
             topic = {
                 publish: function( data ) { return data; }
             }
@@ -594,7 +596,7 @@ var slp_Map = function (aMapCanvas) {
                 // Default : Zoom back 1 level, or if user has EM Zoom Tweak set do that.
             } else {
                 var current_zoom = this.gmap.getZoom();
-                var zoom_tweak = parseInt(slplus.options.zoom_tweak > 0) ? slplus.optionszoom_tweak : (current_zoom < 3) ? 0 : 1;
+                var zoom_tweak = (parseInt(slplus.options.zoom_tweak) != 0) ? slplus.options.zoom_tweak : (current_zoom < 3) ? 0 : 1;
                 var new_zoom = current_zoom - zoom_tweak;
                 if ( markerCount < 2 ) { new_zoom = Math.min( new_zoom , 15 ); }
                 this.gmap.setZoom( new_zoom );
@@ -618,11 +620,13 @@ var slp_Map = function (aMapCanvas) {
      * Show the map info bubble for the marker.
      *
      * @param infoData  the information to build the info window from (ajax result)
-     * @param marker    the slp_Marker to add the information to
+     * @param marker    the marker on the map where the bubble will be anchored
      */
     this.show_map_bubble = function (infoData, marker) {
-        this.infowindow.setContent(this.createMarkerContent(infoData));
-        this.infowindow.open(this.gmap, marker.__gmarker);
+        if ( slplus.options.hide_bubble !== '1' ) {
+            this.infowindow.setContent(this.createMarkerContent(infoData));
+            this.infowindow.open(this.gmap, marker.__gmarker);
+        }
     };
 
     /**
@@ -657,7 +661,10 @@ var slp_Map = function (aMapCanvas) {
         _this.geocoder.geocode(
             geocoder_request,
             function (results, status) {
-                if (status === 'OK' && results.length > 0) {
+
+                // Geocoder Results OK
+                //
+                if (status === google.maps.GeocoderStatus.OK && results.length > 0) {
 
 
                     var geocode_results = {
@@ -683,27 +690,30 @@ var slp_Map = function (aMapCanvas) {
 
                         //move the center of the map
                         _this.homePoint = geocode_results.best.geometry.location;
-
                         _this.addMarkerAtCenter();
-                        var tag_to_search_for = _this.saneValue('tag_to_search_for', '');
+
                         //do a search based on settings
+                        var tag_to_search_for = _this.saneValue('tag_to_search_for', '');
                         var radius = _this.saneValue('radiusSelect' , this.default_radius );
                         _this.loadMarkers(geocode_results.best.geometry.location, radius, tag_to_search_for);
                     }
 
+                // Geocoder Results Failed
+                // If no map, create one centered at the Fallback lat/long noted in the admin settings.
+                //
                 } else {
-                    //check to see if the map exists, if it doesn't then set the location to nowhere ...
-                    //probably not the best, but this should (hopefully) be rare.
-                    if (_this.gmap === null) {
-                        _this.address = "0,0";
-                        _this.doGeocode();
-                        return;
+                    if ( window.console ) {
+                        console.log( 'Google JavaScript API geocoder failed with status ' + status );
+                        console.log( 'Address sent to Google: ' + geocoder_request['address'] );
                     }
-
-                    //address couldn't be processed, so use the center of the map
-                    var tag_to_search_for = _this.saneValue('tag_to_search_for', '');
-                    var radius = _this.saneValue('radiusSelect' , this.default_radius );
-                    _this.loadMarkers(null, radius, tag_to_search_for);
+                    if (_this.gmap === null) {
+                        if ( window.console ) {
+                            console.log( 'Map set to fallback lat/lng: ' + this.slplus.options.map_center_lat + ' , ' + this.slplus.options.map_center_lng  );
+                        }
+                        _this.homePoint = new google.maps.LatLng( this.slplus.options.map_center_lat ,  this.slplus.options.map_center_lng );
+                        _this.__buildMap( _this.homePoint );
+                        _this.addMarkerAtCenter();
+                    }
                 }
 
             }
@@ -1423,11 +1433,24 @@ slp.setup_map = function () {
         slplus.options.use_sensor = false;
         cslmap = new slp_Map();
         cslmap.usingSensor = false;
-        // If set id attr
+
+
+        // If the page uses [slplus id="<location_id>"]
+        // use that location ID lat/long as the center of the map.
+        //
+        // TODO: since this is already a lat/long, this should NOT run geocoding services.  It will be a LOT faster that way.
+        // TODO: will need to split apart doGeocode() to be geocoding only, and have a separate "draw map" function.
         //
         if (slplus.options.id_addr != null) {
             cslmap.address = slplus.options.id_addr;
         }
+
+        // If the address is blank, use the center map at address.
+        //
+        if ( ( ! cslmap.address ) && ( slplus.options.center_map_at ) ) {
+            cslmap.address = slplus.options.center_map_at;
+        }
+
         cslmap.doGeocode();
     }
 };
@@ -1563,7 +1586,7 @@ jQuery(document).ready(
 
         // Our map initialization
         //
-        if (jQuery('div#sl_div').is(":visible")) {
+        if ( jQuery('div#sl_div').length ) {
             if (typeof slplus !== 'undefined') {
                 if (typeof google !== 'undefined') {
                     slp.setup_helpers();

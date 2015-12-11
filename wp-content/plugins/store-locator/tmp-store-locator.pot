@@ -1,0 +1,830 @@
+# Copyright (C) 2015 Store Locator
+# This file is distributed under the same license as the Store Locator package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator 3.87\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/store-locator\n"
+"POT-Creation-Date: 2015-12-03 00:52:34+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: sl-admin/pages/add-locations.php:19
+msgid "Successful Addition"
+msgstr ""
+
+#: sl-admin/pages/add-locations.php:21
+msgid "Unsucessful addition due to security check failure"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:31 sl-functions.php:659
+#: sl-functions.php:1516 sl-functions.php:1519 sl-inc/includes/top-nav.php:6
+msgid "Locations"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:47
+#: sl-admin/pages/manage-locations.php:49
+#: sl-inc/includes/mapdesigner-options.php:87
+msgid "Normal"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:47
+#: sl-admin/pages/manage-locations.php:49
+msgid "Expanded"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:53
+#: sl-admin/pages/manage-locations.php:55
+msgid "Tagging"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:53
+#: sl-admin/pages/manage-locations.php:55
+msgid "Multiple Fields"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:108
+msgid "Actions"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:109
+msgid "ID"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:118
+msgid "Name"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:119
+msgid "Street"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:120
+msgid "Street2"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:121 sl-functions.php:1216
+#: sl-functions.php:1300
+msgid "City"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:122 sl-functions.php:1217
+#: sl-functions.php:1301
+msgid "State"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:123 sl-functions.php:1218
+#: sl-functions.php:1302
+msgid "Zip"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:124
+#: sl-inc/includes/mgmt-buttons-links.php:34
+msgid "Tags"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:127 sl-functions.php:1221
+#: sl-functions.php:1313
+msgid "Description"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:128 sl-functions.php:1223
+#: sl-functions.php:1315
+msgid "URL"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:129 sl-functions.php:1224
+#: sl-functions.php:1316 sl-inc/includes/mapdesigner-options.php:186
+msgid "Hours"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:130 sl-functions.php:1225
+#: sl-functions.php:1317 sl-inc/includes/mapdesigner-options.php:188
+msgid "Phone"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:131 sl-functions.php:1226
+#: sl-functions.php:1318 sl-inc/includes/mapdesigner-options.php:190
+msgid "Fax"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:132 sl-functions.php:1227
+#: sl-functions.php:1319 sl-inc/includes/mapdesigner-options.php:192
+msgid "Email"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:133
+msgid "Image"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:165
+#: sl-admin/pages/manage-locations.php:166
+#: sl-admin/pages/manage-locations.php:167
+msgid "View"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:174
+msgid "Edit"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:174
+#: sl-inc/includes/mgmt-buttons-links.php:5
+msgid "Delete"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:174
+#: sl-inc/includes/mgmt-buttons-links.php:5
+#: sl-inc/includes/mgmt-buttons-links.php:34
+msgid "You sure"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:217
+msgid "No Locations Showing for this Search of "
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:217 sl-inc/includes/search-links.php:51
+msgid "Clear&nbsp;Results"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:217
+msgid "No Locations Currently in Database"
+msgstr ""
+
+#: sl-admin/pages/manage-locations.php:218
+msgid "Add Locations"
+msgstr ""
+
+#: sl-admin/pages/mapdesigner.php:19
+msgid "Successful Update"
+msgstr ""
+
+#: sl-admin/pages/mapdesigner.php:24
+msgid "Select Your Location"
+msgstr ""
+
+#: sl-admin/pages/mapdesigner.php:30
+msgid "Select Map Language"
+msgstr ""
+
+#: sl-admin/pages/mapdesigner.php:38 sl-admin/pages/mapdesigner.php:41
+#: sl-functions.php:1310
+msgid "Update"
+msgstr ""
+
+#: sl-admin/pages/mapdesigner.php:40 sl-functions.php:660
+#: sl-inc/includes/top-nav.php:11
+msgid "MapDesigner"
+msgstr ""
+
+#: sl-admin/pages/mapdesigner.php:40 sl-admin/pages/mapdesigner.php:41
+msgid "API Key"
+msgstr ""
+
+#: sl-admin/pages/mapdesigner.php:41
+msgid "Google Maps"
+msgstr ""
+
+#: sl-admin/pages/mapdesigner.php:41
+msgid ""
+"Google Maps API V3 actually doesn't require an API Key, however, if needed "
+"(it appears that high usage requires a key)"
+msgstr ""
+
+#: sl-admin/pages/mapdesigner.php:41
+msgid "get your key here"
+msgstr ""
+
+#: sl-admin/pages/mapdesigner.php:41
+msgid "Designer"
+msgstr ""
+
+#: sl-admin/pages/mapdesigner.php:45
+msgid "Defaults"
+msgstr ""
+
+#: sl-admin/pages/mapdesigner.php:73
+msgid "Design"
+msgstr ""
+
+#: sl-admin/pages/mapdesigner.php:79
+msgid "Dimensions"
+msgstr ""
+
+#: sl-admin/pages/mapdesigner.php:84
+msgid "Labels"
+msgstr ""
+
+#: sl-admin/pages/news-upgrades.php:9
+msgid ""
+"<b>Note:</b> Your directory is <b>'wordpress-store-locator-location-finder'</"
+"b>. Please rename to <b>'store-locator'</b> to continue receiving "
+"notifications of future updates in your admin panel. After changing to "
+"<b>'store-locator'</b>, make sure to also update your icon URLs on the 'Map "
+"Designer' page."
+msgstr ""
+
+#: sl-admin/pages/news-upgrades.php:21 sl-inc/includes/top-nav.php:171
+msgid "Latest News"
+msgstr ""
+
+#: sl-admin/pages/news-upgrades.php:82
+msgid "Addons & Themes"
+msgstr ""
+
+#: sl-define.php:19
+msgid "Manage Locations"
+msgstr ""
+
+#: sl-functions.php:581
+msgid "Update(s) currently available for Store Locator"
+msgstr ""
+
+#: sl-functions.php:610 sl-functions.php:650
+msgid "is available, you are using"
+msgstr ""
+
+#: sl-functions.php:616 sl-inc/includes/top-nav.php:105
+msgid "You will now be updating to Store Locator"
+msgstr ""
+
+#: sl-functions.php:616 sl-inc/includes/top-nav.php:105
+msgid "click OK or Confirm to continue"
+msgstr ""
+
+#: sl-functions.php:616 sl-inc/includes/top-nav.php:105
+msgid "Update to"
+msgstr ""
+
+#. #-#-#-#-#  tmp-store-locator.pot (Store Locator 3.87)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: sl-functions.php:657 sl-functions.php:1496
+msgid "Store Locator"
+msgstr ""
+
+#: sl-functions.php:658 sl-functions.php:1505 sl-functions.php:1508
+#: sl-inc/includes/top-nav.php:3
+msgid "News & Upgrades"
+msgstr ""
+
+#: sl-functions.php:784
+msgid "You haven't activated this upgrade yet"
+msgstr ""
+
+#: sl-functions.php:786 sl-inc/includes/module-keys.php:47
+msgid "Activate"
+msgstr ""
+
+#: sl-functions.php:788
+msgid "Go to pull-out Dashboard, and activate under 'Activation Keys' section."
+msgstr ""
+
+#: sl-functions.php:929
+msgid "Love it! I've made my site more user-friendly with"
+msgstr ""
+
+#: sl-functions.php:930
+msgid "Great! I can now easily display my locations using"
+msgstr ""
+
+#: sl-functions.php:933
+msgid ""
+"<b>Like the Store Locator? Help guide others' decisions:</b><br><a href='#' "
+"class='star_button'>Give my review now</a> -- 1 sentence is "
+"plenty<br><br><b>Any problems? View:</b><br><a href='http://docs.viadat."
+"com/' target='_blank'>Documentation</a> / <a href='http://www.viadat.com/"
+"contact/' target='_blank'>Contact us</a>"
+msgstr ""
+
+#: sl-functions.php:935 sl-inc/includes/top-nav.php:149
+#: sl-inc/includes/top-nav.php:169
+msgid "My Views"
+msgstr ""
+
+#: sl-functions.php:936
+msgid "Buttons to Spread the Word!"
+msgstr ""
+
+#: sl-functions.php:940
+msgid ""
+"<b>Liking this? Help guide others' decisions:</b>&nbsp;<a href='#' "
+"class='star_button'>Give my review now</a><br><b>Any problems? View:</"
+"b>&nbsp;<a href='http://docs.viadat.com/' target='_blank'>Documentation</"
+"a> / <a href='http://www.viadat.com/contact/' target='_blank'>Contact us</a>"
+msgstr ""
+
+#: sl-functions.php:947
+msgid "Done!  I've tweeted about / rated it"
+msgstr ""
+
+#: sl-functions.php:948
+msgid "Don't show this message again"
+msgstr ""
+
+#: sl-functions.php:1204
+msgid "Type&nbsp;Address"
+msgstr ""
+
+#: sl-functions.php:1208
+msgid "The General Address Format"
+msgstr ""
+
+#: sl-functions.php:1208
+msgid "show/hide"
+msgstr ""
+
+#: sl-functions.php:1209 sl-functions.php:1213 sl-functions.php:1297
+msgid "Name of Location"
+msgstr ""
+
+#: sl-functions.php:1210
+msgid "Address (Street - Line1)"
+msgstr ""
+
+#: sl-functions.php:1211
+msgid "Address (Street - Line2 - optional)"
+msgstr ""
+
+#: sl-functions.php:1212
+msgid "City, State Zip"
+msgstr ""
+
+#: sl-functions.php:1214 sl-functions.php:1298
+msgid "Address"
+msgstr ""
+
+#: sl-functions.php:1214 sl-functions.php:1298
+msgid "Street - Line1"
+msgstr ""
+
+#: sl-functions.php:1215 sl-functions.php:1299
+msgid "Street - Line 2 - optional"
+msgstr ""
+
+#: sl-functions.php:1220 sl-functions.php:1312
+msgid "Additional Information"
+msgstr ""
+
+#: sl-functions.php:1222 sl-functions.php:1314
+msgid "Tags (seperate with commas)"
+msgstr ""
+
+#: sl-functions.php:1228 sl-functions.php:1320
+msgid "Image URL (shown with location)"
+msgstr ""
+
+#: sl-functions.php:1233
+msgid "Add Location"
+msgstr ""
+
+#: sl-functions.php:1310
+msgid "Cancel"
+msgstr ""
+
+#: sl-functions.php:1378
+msgid "table of contents"
+msgstr ""
+
+#: sl-functions.php:1382
+msgid "Table of Contents"
+msgstr ""
+
+#: sl-functions.php:1527 sl-functions.php:1530
+msgid "Settings"
+msgstr ""
+
+#: sl-functions.php:1583
+msgid ""
+"Note: Clicking this button should update permissions, however, if it doesn"
+"\\'t, you may need to update permissions by using an FTP program.  Click "
+"&quot;OK&quot; or &quot;Confirm&quot; to continue ..."
+msgstr ""
+
+#: sl-functions.php:1587 sl-inc/includes/admin-notices.php:35
+#: sl-inc/includes/admin-notices.php:75 sl-inc/includes/admin-notices.php:96
+#: sl-inc/includes/admin-notices.php:114 sl-inc/includes/admin-notices.php:142
+msgid "Important Note"
+msgstr ""
+
+#: sl-functions.php:1587
+msgid ""
+"Some of your folders / files may need updating to the proper permissions "
+"(folders: 755 / files: 644), otherwise, all functionality may not work as "
+"intended.  View folders / files below"
+msgstr ""
+
+#: sl-functions.php:1587
+msgid "display / hide list of folders & files"
+msgstr ""
+
+#: sl-functions.php:1588
+msgid "Hide This Notice Permanently"
+msgstr ""
+
+#: sl-functions.php:1591
+msgid "Folders"
+msgstr ""
+
+#: sl-functions.php:1591
+msgid "Update Checked Folders' Permissions"
+msgstr ""
+
+#: sl-functions.php:1598
+msgid "Files"
+msgstr ""
+
+#: sl-functions.php:1598
+msgid "Update Checked Files' Permissions"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:15 sl-inc/includes/admin-notices.php:38
+#: sl-inc/includes/admin-notices.php:78 sl-inc/includes/admin-notices.php:117
+#: sl-inc/includes/admin-notices.php:143
+msgid "Hide Message"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:19
+msgid "Addons Platform"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:21
+msgid ""
+"Provides you with an addons management page for updating settings and "
+"activating each of your addons"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:22
+msgid ""
+"Allows you to conveniently browse and install addons directly from this "
+"admin area from the Addons Marketplace to enhance your Store Locator's "
+"abilities"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:23
+msgid ""
+"Create multiple Store locators on different Pages or Posts on your website "
+"using the format: <div class='code sl_code'>[STORE-LOCATOR {tag_name}="
+"{tag_value}, ...] (One of the many addon features available)</div> "
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:24
+msgid ""
+"Backwards-compatible with addons purchased before version 2.0, including the "
+"CSV Importer, DB Importer, & Multiple Field Updater"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:25
+msgid ""
+"Learn more about G2 Addons that come with the purchase of the "
+"LotsOfLocales&trade; Addons Platform from the 'ReadMe Instructions' in the "
+"pull-out Dashboard"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:36
+msgid ""
+"It appears that you do not have <a href='http://us3.php.net/manual/en/book."
+"curl.php' target='_blank'>cURL</a> actively running on this website.  cURL "
+"or <a href='http://us3.php.net/manual/en/function.file-get-contents.php' "
+"target='_blank'>file_get_contents()</a> needs to be active in order to "
+"receive coordinates for locations, validate addons, and other important "
+"actions performed by Store Locator"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:76
+msgid ""
+"You have the CSV Importer installed.  Due to a new directive added to PHP "
+"5.3.9 called 'max_input_vars', which restricts maximum array sizes to 1000 "
+"by default, you may need to update your 'php.ini' & '.htaccess' files to "
+"allow for larger imports (<b>Your current 'max_input_vars' value is"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:76
+msgid "View instructions on making updates"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:97
+msgid "You have placed files in your 'addons' directory here"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:97
+msgid ""
+"There should only be folders.  All addon-related files need to be inside of "
+"their proper addon folder in order to work with Store Locator"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:97
+msgid "Correct"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:97
+msgid "Incorrect"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:97
+msgid "Files that need to be moved"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:100
+msgid "Hide Message Permanently"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:115
+msgid ""
+"It appears that you have a <b>.htaccess</b> file in your 'wp-content' "
+"directory here"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:115
+msgid ""
+"If you're using a security plugin or other security method to 'harden' or "
+"block PHP files from working in  '/wp-content/', it will probably block "
+"Store Locator from fully working.  This includes (1) validating addons and "
+"(2) displaying locations."
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:142
+msgid ""
+"As of Store Locator v3.80, the prefixes of language files need to be updated "
+"from"
+msgstr ""
+
+#: sl-inc/includes/admin-notices.php:142
+msgid ""
+"This update should have automatically happened already, but if not, make "
+"sure to do so manually if you are using a translation for your Store Locator "
+"installation."
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:88
+msgid "Normal + Terrain (Physical)"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:89
+msgid "Satellite"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:90
+msgid "Satellite + Labels (Hybrid)"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:97
+msgid ""
+"You have switched from <strong>'wordpress-store-locator-location-finder'</"
+"strong> to <strong>'store-locator'</strong> --- great!<br>Now, please re-"
+"select your <b>'Home Icon'</b> and <b>'Destination Icon'</b> below, so that "
+"they show up properly on your store locator map."
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:151
+msgid "Default Map Type"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:153
+msgid "Locations in Results"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:155
+msgid "JS & CSS Loading"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:155
+msgid ""
+"<h2 style='margin-top:0px'>JavaScript & Cascading Style Sheets Loading</"
+"h2><b>Selective Loading:</b><br>Attempts to detect where Store Locator JS & "
+"CSS scripts are needed and only loads them on those necessary pages. "
+"<br><br><b>All Pages:</b><br>Loads JS & CSS scripts on every page of your "
+"website.<br><br><div class='sl_code code'><b>Note:</b>&nbsp;\"Selective "
+"Loading\" will work for 99% of sites, however, if you experience map loading "
+"issues or missing CSS styling on your Store Locator or addon-generated "
+"pages, choose the \"All Pages\" option.</div>"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:157
+msgid "Also Load On"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:157
+msgid "Home"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:157
+msgid "Archives"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:159
+msgid "Search By City"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:159
+msgid "Show Map Inset Box"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:161
+msgid "Auto-Locate User"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:161
+msgid "Auto-Load Locations"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:161
+msgid "Listing"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:161
+msgid ""
+"<h2 style='margin-top:0px'>Search Results Listing By Default</h2>Determine "
+"whether or not both the map icons and the results listing show when loading "
+"locations by default. <br><Br>No results listings are shown even if this is "
+"checked, but 'Auto-Load Locations' is unchecked"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:170
+msgid "Address Input"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:172
+msgid "Radius Dropdown"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:174
+msgid "Website URL"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:176
+msgid "Directions URL"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:178
+msgid "Instruction to Users"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:180
+msgid "City Dropdown"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:182
+msgid "Location Doesn't Exist"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:184
+msgid "No Results Are Found"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:196
+msgid "Zoom Level"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:198
+msgid "Map Dimensions (H x W)"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:201
+msgid "Km"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:202
+msgid "Miles"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:208
+msgid "Radii Options"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:208
+msgid "in"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:208
+msgid "Parentheses '( )' are for the default radius</span>"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:212
+msgid "Choose Theme"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:212
+msgid "No Theme Selected"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:212
+msgid "Get&nbsp;Themes"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:214
+msgid "Remove Credits"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:216
+msgid "Choose"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:216
+msgid "Home Icon"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:216
+msgid "Destination Icon"
+msgstr ""
+
+#: sl-inc/includes/mapdesigner-options.php:233
+msgid "For more unique icons, visit"
+msgstr ""
+
+#: sl-inc/includes/mgmt-buttons-links.php:34
+msgid "Add Tag"
+msgstr ""
+
+#: sl-inc/includes/mgmt-buttons-links.php:34
+msgid "Remove Tag"
+msgstr ""
+
+#: sl-inc/includes/module-keys.php:31
+msgid "Key"
+msgstr ""
+
+#: sl-inc/includes/module-keys.php:47
+msgid "Looking for more addons & themes"
+msgstr ""
+
+#: sl-inc/includes/module-keys.php:47
+msgid "They're all right here"
+msgstr ""
+
+#: sl-inc/includes/search-links.php:51
+msgid "for your search of"
+msgstr ""
+
+#: sl-inc/includes/search-links.php:58
+msgid "Results"
+msgstr ""
+
+#: sl-inc/includes/search-links.php:60
+msgid "total"
+msgstr ""
+
+#: sl-inc/includes/search-links.php:71
+msgid "Previous"
+msgstr ""
+
+#: sl-inc/includes/search-links.php:80
+msgid "Next"
+msgstr ""
+
+#: sl-inc/includes/top-nav.php:7
+msgid "Manage"
+msgstr ""
+
+#: sl-inc/includes/top-nav.php:8
+msgid "Add"
+msgstr ""
+
+#: sl-inc/includes/top-nav.php:143
+msgid "Store Locator Version"
+msgstr ""
+
+#: sl-inc/includes/top-nav.php:143
+msgid "and"
+msgstr ""
+
+#: sl-inc/includes/top-nav.php:143
+msgid "PHP Version"
+msgstr ""
+
+#: sl-inc/includes/top-nav.php:165
+msgid "Dashboard"
+msgstr ""
+
+#: sl-inc/includes/top-nav.php:170
+msgid "Information & ReadMe Instructions"
+msgstr ""
+
+#: sl-inc/includes/top-nav.php:172
+msgid "Activation Keys"
+msgstr ""
+
+#: sl-inc/includes/via-latest.php:26
+msgid "Latest about Store Locator for WordPress"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.viadat.com/store-locator/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A full-featured map maker & location management interface for creating "
+"WordPress store locators and address location maps using Google Maps, "
+"featuring several addons & themes.  Manage a few or thousands of locations "
+"effortlessly with setup in minutes."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Viadat Creations"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.viadat.com"
+msgstr ""

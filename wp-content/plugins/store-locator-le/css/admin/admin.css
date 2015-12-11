@@ -214,6 +214,11 @@ span.label {
 div.theme_details {
   display: none;
   width: 43em; }
+  div.theme_details .style_sample {
+    display: block;
+    margin: 0 auto;
+    padding: 1em 0;
+    width: 100%; }
   div.theme_details .theme_option A {
     text-decoration: none; }
   div.theme_details .theme_option SPAN.theme_option_label {
@@ -241,7 +246,8 @@ div.theme_details {
     margin: 0px 0px 0px 3em;
     padding: 0.5em;
     white-space: pre-wrap;
-    width: 80%; }
+    width: 80%;
+    resize: both; }
   div.theme_details li.product.inactive {
     list-style: circle outside none; }
     div.theme_details li.product.inactive A {

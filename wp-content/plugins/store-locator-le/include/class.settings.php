@@ -1,5 +1,5 @@
 <?php
-require_once( WP_PLUGIN_DIR . '/store-locator-le/include/base_class.object.php');
+require_once( SLPLUS_PLUGINDIR . 'include/base_class.object.php');
 
 /**
  * The SLP Settings Class

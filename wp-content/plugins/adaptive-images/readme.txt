@@ -5,8 +5,8 @@ Contributors: nevma
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WCES7V9D45HDS
 Tags: adaptive images, responsive images, mobile images, resize images, optimize images, adaptive, responsive, mobile, resize, optimize, images
 Requires at least: 4.0
-Tested up to: 4.3
-Stable tag: 0.6.41
+Tested up to: 4.4
+Stable tag: 0.6.42
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -198,6 +198,10 @@ as intended. We try to minimize the hassle between these versions. This is not e
 
 
 == Changelog ==
+
+= 0.6.42 =
+
+- Minor bug fix when saving plugin settings.
 
 = 0.6.41 =
 

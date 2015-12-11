@@ -1,0 +1,1911 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "WordPress Store Locator"
+msgstr ""
+
+#. Short description.
+msgid "A WordPress-integrated map &amp; location management interface. Quickly create store locator maps -- provides several top-level addon features"
+msgstr ""
+
+#. Screenshot description.
+msgid "Showcase of Store Locator Usage By Well-Known Organizations, With Some Having Customized it to Their Brands"
+msgstr ""
+
+#. Screenshot description.
+msgid "News &amp; Upgrades: See the Latest News and Available Addons for Your Store Locator"
+msgstr ""
+
+#. Screenshot description.
+msgid "Manage Locations: Easily Manage a Few or Many Locations, Sortable by Name, City, etc."
+msgstr ""
+
+#. Screenshot description.
+msgid "Add Locations: Once You Add a Location, it is Automatically Given Coordinates"
+msgstr ""
+
+#. Screenshot description.
+msgid "MapDesigner: Choose the Important Options For the Look &amp; Feel of Your Map"
+msgstr ""
+
+#. Screenshot description.
+msgid "Addons Platform: Increase Your Store Locator's Capabilities With Numerous Addons &amp; Themes that are Included"
+msgstr ""
+
+#. Screenshot description.
+msgid "Quickly Upload Many Locations From a Spreadsheet to Save Time (Addon: CSV/XML Importer/Exporter)"
+msgstr ""
+
+#. Screenshot description.
+msgid "Bulk Update More than just the Tags Field (Addon: Multiple-Field Updater)"
+msgstr ""
+
+#. Screenshot description.
+msgid "Examples of the Store Locator's Basic and Upgraded User Interfaces"
+msgstr ""
+
+#. Found in description header.
+msgid "Important Links"
+msgstr ""
+
+#. Found in description header.
+msgid "New in Version 3"
+msgstr ""
+
+#. Found in description header.
+msgid "New in Version 2"
+msgstr ""
+
+#. Found in description header.
+msgid "Target Users"
+msgstr ""
+
+#. Found in description header.
+msgid "Great Built-In Functionality &amp; Features"
+msgstr ""
+
+#. Found in description header.
+msgid "Upgrades"
+msgstr ""
+
+#. Found in description header.
+msgid "Addons Platform"
+msgstr ""
+
+#. Found in description header.
+msgid "Special Thanks to Translators (Email new translations to info {at} viadat {dot} com)"
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>New:</strong> <a href=\"http://www.viadat.com/products-page/early-access/\">Individual Addons</a> -- select addons to use as needed"
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>New:</strong> <a href=\"http://docs.viadat.com/Addons_Platform_Lite\">Addons Platform Lite</a> -- All the power of the full Addons Platform to power your addons, at a fraction of the price."
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>New:</strong> <a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a> addon -- Avoid upgrading to more expensive hosting, or buying dedicated IP addresses -- successfully geocodes even when the default geocoder runs in Google's geocoding quotas (requires Store Locator v3.0+)"
+msgstr ""
+
+#. Found in description list item.
+msgid "Now, in addition to using the shortcode <code>[STORE-LOCATOR]</code> on Pages &amp; Posts, display on Store Locator in PHP page templates if needed (explained in changelog &amp; <a href=\"http://docs.viadat.com\">docs</a>). "
+msgstr ""
+
+#. Found in description list item.
+msgid "Several new icons with shadowing; several current icons refreshed with shadowing for 3D effect on map"
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Now uses Google Maps V3</strong>"
+msgstr ""
+
+#. Found in description list item.
+msgid "Streamlined admin interface (more powerful yet much simplier)"
+msgstr ""
+
+#. Found in description list item.
+msgid "Implemented much faster code (reduced database use {insert/update/delete} in code by 81.4% &amp; applied fastest functions throughout)"
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Admin Dashboard:</strong> Pull-out interface that provides you with the latest Store Locator news, installation &amp; usage instructions, your website's hosting server information, available shortcode parameters to create multiple maps of specific groups of locations, general settings, and the activation interface for the Addons Platform &amp; G1 (Generation 1) addons"
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>Availability of the <a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a>:</strong>"
+msgstr ""
+
+#. Found in description list item.
+msgid "Ability to auto-locate your website visitors in order to show locations based on where visitor is currently located"
+msgstr ""
+
+#. Found in description list item.
+msgid "40+ new Google Maps country domains"
+msgstr ""
+
+#. Found in description list item, changelog list item.
+msgid "New address map icons"
+msgstr ""
+
+#. Found in description list item.
+msgid "<strong>New default fields:</strong> Fax &amp; Email Address"
+msgstr ""
+
+#. Found in description list item.
+msgid "Those who create sites for clients using WordPress"
+msgstr ""
+
+#. Found in description list item.
+msgid "Those who want to show your important locations (stores, buildings, points of interest, etc.) in an easily searchable manner."
+msgstr ""
+
+#. Found in description list item.
+msgid "You can use it for numerous countries, which will continue to be added as Google adds new countries to their Google Maps API.  See the documentation for the latest"
+msgstr ""
+
+#. Found in description list item.
+msgid "Supports international languages/translations and character sets "
+msgstr ""
+
+#. Found in description list item.
+msgid "Allows you to use unique map icons or your own custom map icons --- great for branding your map"
+msgstr ""
+
+#. Found in description list item.
+msgid "Gives your map the desired look by using our MapDesigner settings interface in the WordPress admin section"
+msgstr ""
+
+#. Found in description list item.
+msgid "Pick other cool Google Maps options, such as an inset box, zoom level, map types (street, satellite, hybrid, physical), and more"
+msgstr ""
+
+#. Found in description list item.
+msgid "You can use miles or kilometers"
+msgstr ""
+
+#. Found in description list item.
+msgid "Automatically restricts loading of Javascript &amp; CSS to only pages that display the map (or that might need access to the JS &amp; CSS) for better site performance"
+msgstr ""
+
+#. Found in description list item.
+msgid "Option to show dropdown list of cities allows visitors to quickly see where your locations are and choose their search accordingly"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://docs.viadat.com/Multiple_Mapper\">Multiple Mapper</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://docs.viadat.com/Advanced_Theme_Manager\">Advanced Theme Manager</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://docs.viadat.com/Location_Pages\">Location Pages</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://docs.viadat.com/CSV_Importer_Exporter_G2\">CSV Importer/Exporter G2</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://docs.viadat.com/DB_Importer_G2\">DB Importer G2</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://docs.viadat.com/Multiple_Field_Updater_G2\">Multiple-Field Updater G2</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://docs.viadat.com/Custom_Field_Manager\">Custom Field Manager</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "\"U.L.S\" (bonus addon - <a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a> users &amp; <a href=\"http://www.viadat.com/products-page/early-access/\">Early Access</a> members)"
+msgstr ""
+
+#. Found in description list item.
+msgid "\"F.T\" (bonus addon)"
+msgstr ""
+
+#. Found in description list item.
+msgid "\"S.S\" (bonus addon)"
+msgstr ""
+
+#. Found in description list item.
+msgid "de_DE | German (Deutsche) - Simon Schmid "
+msgstr ""
+
+#. Found in description list item.
+msgid "it_IT | Italian (Italiano) - Simon Schmid"
+msgstr ""
+
+#. Found in description list item.
+msgid "cs_CZ | Czech (Čeština) - Simon Schmid; <a href=\"http://www.viadat.com/go/josef-klimosz/\">Josef Klimosz</a> (updated)"
+msgstr ""
+
+#. Found in description list item.
+msgid "fr_FR | French (Français) - Simon Schmid; <a href=\"http://www.viadat.com/go/reno/\">Reno</a> (updated)"
+msgstr ""
+
+#. Found in description list item.
+msgid "es_MX | Mexican Spanish (Español) - Gwyn Fisher"
+msgstr ""
+
+#. Found in description list item.
+msgid "nl_NL | Dutch (Nederlands) - <a href=\"http://www.viadat.com/go/willem-jan-korsten/\">Willem-Jan Korsten</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "pt_BR | Brazilian Portuguese (Português do Brasil) - <a href=\"http://www.viadat.com/go/marcelo-v-araujo/\">Marcelo V. Araujo</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "nb_NO | Norwegian (Norsk bokmål) - Alf Vidar Snæland"
+msgstr ""
+
+#. Found in description list item.
+msgid "zh_CN | Simplified Chinese (简体中文) - Laifeilim"
+msgstr ""
+
+#. Found in description list item.
+msgid "ru_RU | Russian (Русский) - Виктор Юхименко"
+msgstr ""
+
+#. Found in description list item.
+msgid "tr_TR | Turkish (Türkçe) - <a href=\"http://www.viadat.com/go/rene/\">Rene</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "hi_IN | Hindi (हमानक हिन्दी) - <a href=\"http://www.viadat.com/go/outshine-solutions/\">Outshine Solutions</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "sr_RS | Serbian (Српски језик) - <a href=\"http://www.viadat.com/go/diana-s/\">Diana S.</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "fi        | Finnish (Suomi) - <a href=\"http://www.viadat.com/go/esa-immonen/\">Esa Immonen</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "ro_RO | Romanian (Română) - Quickloop"
+msgstr ""
+
+#. Found in description list item.
+msgid "es_ES | Spanish (Español) - <a href=\"http://www.viadat.com/go/andrew-kurtis/\">Andrew Kurtis - WebHostingHub</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "zh_TW | Traditional Chinese (繁體中文) - <a href=\"http://www.viadat.com/go/ronnie-wu/\">Ronnie Wu</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "uk        | Ukrainian (Українська) - <a href=\"http://www.viadat.com/go/ivanka-skakun/\">Ivanka Skakun from Everycloud</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Power your site with this WordPress-integrated map making &amp; location management system possessing some of the best free mapping tools to create store locators, store finders, and other location address maps. Manage and display a few or thousands of your important stores, points of interest, or product locations anywhere on Earth using Google Maps."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Its strength is best seen in its flexibility to allow you to easily manage any number of locations from your WordPress admin interface and the several addons featuring top-level features that are available to further boost its capabilities. Also referred to as an address map, address location map, locator map, store finder, dealer locator (locater), shop finder, and zip code or zipcode search."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<a href=\"http://www.viadat.com/store-locator/\">All Downloads</a> | <a href=\"http://www.viadat.com/products-page/\">Addons &amp; Themes</a> | <a href=\"http://www.viadat.com/category/store-locator/\">New Features &amp; Updates Blog</a> | <a href=\"http://docs.viadat.com/\">Documentation</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "If you need additional features, enhance your store locator with addons &amp; themes. <a href=\"http://www.viadat.com/products-page/\">Upgrade Here</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "The <a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a> provides you with a growing number of Generation 2 (G2; comes with the Addons Platform) addons &amp; themes to save you time, provide you highly-advanced features, and impress your clients. Below is a list of the G2 addons available (<a href=\"http://docs.viadat.com/Main_Page#Addons\">view documentation</a> for more details on each):"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "All addons available previous to Store Locator 2.0 are now called \"G1\" (Generation 1) addons, and can still be used, with or without the Addons Platform installed (if you purchased an addon prior to Store Locator 2.0, re-download it via the emailed link of your purchase and install a slighty updated version that allows it to work with 2.0)."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "(<a href=\"http://www.viadat.com/2009/02/store-locator-translation-files-wanted-you-might-just-get-something-nice-in-return/\">How to submit your translation</a> | If you provide your web address, we'll link back to you)"
+msgstr ""
+
+#. Found in installation header.
+msgid "Main Plugin"
+msgstr ""
+
+#. Found in installation header.
+msgid "Addons"
+msgstr ""
+
+#. Found in installation header.
+msgid "Themes"
+msgstr ""
+
+#. Found in installation header.
+msgid "Icons"
+msgstr ""
+
+#. Found in installation header.
+msgid "Custom Images"
+msgstr ""
+
+#. Found in installation header.
+msgid "Custom CSS (Stylesheet)"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Upload the <code>store-locator</code> folder to the <code>/wp-content/plugins/</code> directory"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Activate the plugin through the 'Plugins' menu in WordPress"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Sign up for a Google Maps API Key for your domain (not required in Maps V3, unless needed for high usage sites). Instructions: https://developers.google.com/maps/documentation/javascript/tutorial#api_key"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Add your locations through the 'Locations' page in the Store Locator admin area"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Place the shortcode <code>[STORE-LOCATOR]</code> in the body of a Page or a Post to display your store locator"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Unzip &amp; Upload the entire addon folder to the <code>/wp-content/uploads/sl-uploads/addons</code> directory"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Activate the addon by submitting the activation key (which you receive after purchasing it) to the \"Activation Keys\" section of your pull-out admin dashboard (If you have the Addons Platform installed, you submit activation keys on the 'Addons' &gt; 'Settings' page)"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Unzip &amp; Upload the entire theme folder to the <code>/wp-content/uploads/sl-uploads/themes</code> directory"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Select theme from the theme dropdown menu under the \"Design\" section on the \"MapDesigner\" Page"
+msgstr ""
+
+#. Found in installation list item.
+msgid "There are some default icons in the <code>/wp-content/plugins/store-locator/icons</code> directory"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Add your own custom icons in to <code>/wp-content/uploads/sl-uploads/custom-icons</code>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "You can create your own custom 'search_button.{...}png' images and place them under <code>/wp-content/uploads/sl-uploads/images/</code>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "The store locator will give priority to the 'search_button.{...}png' images in the <code>/wp-content/uploads/sl-uploads/images/</code> folder over the default 'search_button.{...}png' images in the main <code>store-locator/</code> folder, allowing for store locator plugin updates without worrying about losing your custom button images"
+msgstr ""
+
+#. Found in installation list item.
+msgid "You can modify the default 'store-locator.css' and place it under <code>/wp-content/uploads/sl-uploads/custom-css/</code>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "The store locator will give priority to the 'store-locator.css' in the <code>/wp-content/uploads/sl-uploads/custom-css/</code> folder over the default 'store-locator.css' in the main <code>store-locator/</code> folder. This allows you to update the main store locator plugin without worrying about losing your custom styling."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Adjusted view of some navigation elements to admins only"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Important CSS update for certain themes: \"#sl_div img\" entry; added \"!important\" to \"max-width: none\""
+msgstr ""
+
+#. Found in changelog list item.
+msgid "CSS: \"#addressSubmit\"; added \"width: inherit\" "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Final - Google Maps outside script conflict management"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Google Maps script update due to debug notification"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Prelim - Google Maps outside script conflict management"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Version update notification improvement"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Better error mgmt"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Location admin page - GUI / keyboard mgmt improvement - shortcut delete off when filling in search / tags text input"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Location admin page - GUI / keyboard mgmt improvement - check toggle off when clicking edit / delete links"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Properly assigned unique IDs for every location's edit &amp; delete links"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Location admin page - More descriptive confirmation / check alert"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Prelim - Location admin page GUI / keyboard mgmt enhancements/updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Soc URL fix/update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Translation func updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Automatic lang file renaming"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Text domain shift to standard"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Admin CSS updates - location management / display colors"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Prelim location selection interface tweaks"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Small updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Data fix"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Informational / instructions fix w/changelog"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Admin CSS update - nowrap MapDesigner td - better/more consistent appearance"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Additional checks when reading icon / theme dirs; trailing slash removed from icon path"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Compatibility update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Prelim icon path checks"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Soc URL update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update to line-break handling logic in xml"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Minor updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update to MapDesigner - layout, functionality tweak - mapDesigner -&gt; mapdesigner, map_designer_section-&gt; mapdesigner_section; mapdesigner_section {border-collapse: collapse}; "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Reversed Design and Labels sections"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Commented out first sl_initialize_variables (may be redundant); re-put opt hook"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Admin CSS styling update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.75.1 - very important fix"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Map interface CSS styling update related to some themes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Ukrainian (uk) translation (thank you <a href=\"http://www.viadat.com/go/ivanka-skakun/\">Ivanka Skakun</a>). Copy translation files into <code>/wp-content/uploads/sl-uploads/languages/</code>. WP 4.0+ users, go to General &gt; Settings &gt; \"Site Language\" option to choose language.  Pre-WP 4.0 users, set the 'WPLANG' constant in 'wp-config.php' to the proper language code ('uk', for example) in order to choose language."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Finnish language naming update (fi_FI -&gt; fi)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[update] <a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a> - styling updates for <a href=\"http://docs.viadat.com/Addons_Marketplace\">Addons Marketplace</a>"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update to file permissions check notification"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - Increased length limit for result of query generating Tags filter checkbox/dropdown options"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Functionality updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated CSS for 3rd-tier dropdown menu for <a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a> users -- larger click space for each addon, more usable"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated link to icons resources (Geocoder Pro website - defunct)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Important update to script loading logic"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updates to Location Add &amp; Edit management interfaces"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Better line-break handling"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved PHP &amp; JS error handling, which had been affecting certain users at times"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Important fix for full <a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a> installing via Addons Marketplace"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Small styling updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "MapDesigner data filtering adjustment"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New admin notices functionality"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New data filters - Admin notices"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: proper post-merge ordering of tags from locations, taking case-sensitivity into account"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Admin notice update - directory advisory for secured installs"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New data filters - MapDesigner"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "MapDesigner functionality update to create separate layers for data &amp; inputs' displays - JS output zones/objects #2"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "JS library update - with security fix implemented"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a> - update: Control over display of status / progress panel based on type of operation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a> - update: fix to make sure only active when submitting location vs other form submissions"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "MapDesigner functionality update to create separate layers for data &amp; inputs' displays - JS output zones/objects"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Admin notice - directory / folder security advisory for select installs"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved MapDesigner functionality - JS output zones/controllers"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "MapDesigner functionality update to create separate layers for data &amp; inputs' displays - Data output zone"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "MapDesigner functionality update to create separate layers for data &amp; inputs' displays - JS output zones/controllers"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[update] <a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a> - easier to use 3rd-tier navigation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[update] <a href=\"http://docs.viadat.com/Addons_Platform_Lite\">Addons Platform Lite</a> - easier to use 3rd-tier navigation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[update] <a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a>: modifying default files permission granting upon direct installation for few notices"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: improvement to Tag filter's tag handling and output"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updates to structural files that had been triggering messages in certain users' installs"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Exporter_G2\">CSV Importer/Exporter G2</a> - update: Improved CSV file creation process"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Exporter_G2\">CSV Importer/Exporter G2</a> - update: No longer needs to create temp file on server, thus no server / directory permissions issues"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Exporter_G2\">CSV Importer/Exporter G2</a> - update: Handles fields, such as description, that can have line breaks"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Exporter_G2\">CSV Importer/Exporter G2</a> - update: Added charset encoding to exported CSV which should have largest character set available"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Exporter_G2\">CSV Importer/Exporter G2</a> - update: Slight CSV file output MIME type update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "MapDesigner functionality update to create separate layers for data &amp; inputs' displays - Prelim: Data, Scripts, Temp. output zones"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: option to omit tags from tags filter"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: \"Display As\" option for tags filter"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: Categorizer Options page re-organization"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Bolivia, Ecuador, Guatemala, Guyana, Paraguay, Peru, Uruguay"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: empty params properly filtered out from SQL query"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: dropdown menu option for tags filtering"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a> - update: Updated addon output, in order to not interfere with other addons or functions printing to the same hook"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: case-insensitive merging of tags from locations"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FAQ updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Admin notice check interval adjustment - file permissions"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: search filtering logic updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a> - update: logic updates during initial importing and status display update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Javascript output update - removed icon dimension definitions (no longer needed)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "map_type variable fix (v3.56.1 - rollback)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.56.2 - 2nd map_type variable adjustment - removed clashing variable"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.56.2 - MapDesigner and Store Locator interface labels &amp; messages processing update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "MapDesigner functionality update to create separate layers for data &amp; inputs' displays - JS output zone"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a> - update: Re-implementing single-func version"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a> - update: Script / browser caching update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a> - update: Database usage improvement -- cut DB load dramatically when updating location data (90%+ improvement)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a> - update: Adjusted feedback usage, better status information display"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a> - update: Logic improvements for significant increase in success rate"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a> - update: Using multi-func version of geo (vs single-func version, until smoother)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a> - update: highly-improved looping and feedback usage during multi-location processing"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Important admin dashboard notices improvement and updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "WP compatibility bump to v4.2"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a> - update: functionality &amp; efficiency improvements / updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "MapDesigner data - JS output re-organization"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Distance measurements/units text now translatable"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New functionality clean-up"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a> - update: Variable scope update for applying user settings"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Location management filtering update -- needed by <a href=\"http://docs.viadat.com/CSV_Importer_Exporter_G2\">CSV Importer/Exporter G2</a> to properly show only specific locations during re-geocoding process"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a> - update: Timing settings now properly applied when re-geocoding via the <a href=\"http://docs.viadat.com/CSV_Importer_Geocoder_Exporter_XML_Exporter\">CSV Importer/Exporter</a> or <a href=\"http://docs.viadat.com/CSV_Importer_Exporter_G2\">CSV Importer/Exporter G2</a>"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "MapDesigner functionality update to create separate layers for data &amp; inputs' displays - Labels input zone + JS &amp; Template output zones"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Prelim. compatibility"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update to MapDesigner data display functionality, more efficient data filtering"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update to admin notice logic for files in 'addons' directory"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "MapDesigner functionality update to create separate layers for data &amp; inputs' displays - data initialization functionality"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[update] <a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a>: Plugged into updated WP admin toolbar functionality to display additional Store Locator links in toolbar menu in addition to the WP admin side menu &amp; Store Locator's horizontal navigation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[update] <a href=\"http://docs.viadat.com/Addons_Platform_Lite\">Addons Platform Lite</a>: Plugged into updated WP admin toolbar functionality to display additional Store Locator links in toolbar menu in addition to the WP admin side menu &amp; Store Locator's horizontal navigation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Geocoder_Exporter_XML_Exporter\">CSV Importer/Exporter</a> - update: Improved CSV file creation process"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Geocoder_Exporter_XML_Exporter\">CSV Importer/Exporter</a> - update: No longer needs to create temp file on server, thus no server / directory permissions issues"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Geocoder_Exporter_XML_Exporter\">CSV Importer/Exporter</a> - update: Handles fields, such as description, that can have line breaks"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Geocoder_Exporter_XML_Exporter\">CSV Importer/Exporter</a> - update: Added charset encoding to exported CSV which should have largest character set available"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Geocoder_Exporter_XML_Exporter\">CSV Importer/Exporter</a> - update: Slight CSV file output MIME type update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Prefixed functionality used in MapDesigner for choosing map dimensions"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.47.1 - Dashboard update to Activation Keys module for addons. Only displays validation fields if an valid addon folder(s) are properly uploaded to the '/uploads/sl-uploads/addons/' directory"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.47.2, v3.47.3 - New admin notice: instructions to move files placed directly in addons directory to their addons folder"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "MapDesigner functionality update to create separate layers for data &amp; inputs' displays - data saving functionality"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "MapDesigner functionality update to create separate layers for data &amp; inputs' displays - Dimensions &amp; Design input zones"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Interface design updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.45.1 - functionality update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "MapDesigner functionality update to create separate layers for data &amp; inputs' displays - Defaults &amp; Labels input zones"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Remote data interface updates for WP side navigation &amp; SL top navigation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Data retrieval functionality improvement"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Further rewrite/improvement to Store Locator script-loading logic, better fine control"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Additional JS &amp; CSS script loading options for further specifying load pages when selective loading is chosen for more fine control"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved Store Locator script-loading logic"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New texts wrapped for localization/translation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update to remote data retrieval interface for base Store Locator, <a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a> / <a href=\"http://docs.viadat.com/Addons_Platform_Lite\">Addons Platform Lite</a> update notifications &amp; information"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improvement &amp; re-instatement of notification bubble, update count, and description(s) for Store Locator label in WordPress's main admin menu"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[theme] Debonair Theme - update: Multiple CSS updates to search form elements which had prevented proper inline display in browsers other than Firefox"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[theme] Debonair Theme - update: Added descriptive header in stylesheet"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Important update to base Store Locator CSS -- prevents distortion/removal of Google Map elements &amp; images caused by some WordPress theme's stylesheets"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added update notification bubble to Store Locator's navigation within WordPress's admin menu; displays number of updates available, along with description "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Wrapped new texts for translation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.38.1, v.3.38.2 - updates to admin menu notification bubble"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[update] <a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a>"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[update] <a href=\"http://docs.viadat.com/Addons_Platform_Lite\">Addons Platform Lite</a> "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added 3rd-tier sub-navigational links to horizontal navigation bar.  Allows user to reach individual addon's settings page in fewer clicks. Displays links when hovering over 'Settings' link under 'Addons' tab for all addons that are currently turned on (requires Store Locator v3.23.1+ to take advantage of 3rd-tier nav functionality)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "MapDesigner settings re-organization of variables for user-facing interface presentation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update in sync with website updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New/Updated string labels wrapped for international translations capability"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Hours, Phone, Fax, and Email labels that appear in location markers' infowindows can now be modified via MapDesigner settings"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Important bugfixes/patches -- please update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Location-data retrieval updates &amp; improvements"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Modified Store Locator database interfacing functionality back to default"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Store Locator template modification / re-organization or functionality, variables"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.33.1 - Pull-out dashboard &amp; Interface updates to match with some website updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "User-facing interface update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Initial-condition layout improvement for new users using default display options &amp; for scenario where user has city dropdown on, but no full cities to display, search input field displays in full width"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update to db prefix definition for better portability during site transfers / migrations"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Base plugin &amp; [addon] <a href=\"http://docs.viadat.com/Location_Pages\">Location Pages</a> - update: Accented/foreign characters translation to alphabetical equivalent updated &amp; improved"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added data filtering hook to Store Locator database interfacing functionality to allow external modification"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New strings wrapped / prepared for translation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Geocoder_Exporter_XML_Exporter\">CSV Importer</a> - update: notice for suggested modifications"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Exporter_G2\">CSV Importer G2</a> - update: notice for suggested modifications"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Notices only display for certain CSV Importer (original / G2) users"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.29.1 - additional logic / database validation check to determine whether to display mod notification"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "News &amp; Upgrades page updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Version-tested update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "<a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a> Update notifier re-instated"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Addons Platform Update notifier data backend improved. Query previously had some missing logic"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Store Locator notifications updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Debugging info update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New MapDesigner option for selective or all-pages JS &amp; CSS script loading, helpful for those with map or CSS style loading issues on a few pages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Translator credits / names updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "MapDesigner map language dropdown update  "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.26.1 - small update/fix: 'scripts_load' notice for seen by a few for new jS/CSS loading option"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "In-CSS custom styling instructions notice"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "FAQs update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "<a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a> notifier paused, re-planned. Will show once update occurs again."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix allowing HTTPS-prefixed hyperlinks to display correctly in admin &amp; user interfaces"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "CSS stylesheet caching update on admin &amp; user-interface stylesheets"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "3rd-tier navigation preparation for even more friendly UI.  Reduces clicks to reach deeper pages.  Will also speed usage once <a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a> (Full / LIte) receives updates to maximizes navigational levels."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Navigational structure enhancements"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Admin CSS updates / enhancements"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Traditional Chinese (zh_TW) translation (thank you <a href=\"http://www.viadat.com/go/ronnie-wu/\">Ronnie Wu</a>). Copy translation files into <code>/wp-content/uploads/sl-uploads/languages/</code>. WP 4.0+ users, go to General &gt; Settings &gt; \"Site Language\" option to choose language.  Pre-WP 4.0 users, set the 'WPLANG' constant in 'wp-config.php' to the proper language code ('zh_TW', for example) in order to choose language."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Translator credits - layout update in readme, better readability"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.22.1 - translation credits/thanks &amp; foreign language names updated to proper spellings"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.22.1 - <a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a> update notifier 12-hr information caching for less filesystem / data load for more efficient admin pages loading"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "<a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a> update notifier -- displays in navigation, to keep Addons Platform (Full &amp; Lite) users aware when newer versions are available for most up-to-date functionality"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Admin News page updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Interface improvements"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.20.1 - Finally, much smoother admin pull-out Dashboard appearance &amp; operation in all browsers"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.20.1 - Admin CSS updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Interface updates (v3.19.2 - improved status messages for users when adding locations)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updates to latest notices &amp; text instructions / directions, wrapping for translation-capability (v3.19.1 - translation strings update for line breaks)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Increase number locations shown by default due to several inquiries"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: activating display of Store Locator JS &amp; CSS shows for page(s) containing Category Search Form"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated navigation functionality / flexibility for adding navigational elements"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Reduced database load coming from navigational header related to notices"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New notice allowing users to see &amp; update folders / files that don't currently have proper 755 / 644 permissions, respectively"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Small bugfix, MapDesigner settings page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.18.1 - added Israel as a country selection option under MapDesigner"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Improved / added flexibility to environment / config loading"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Smaller geocoding delay, for even quicker importing"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Small admin interface update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Location_Pages\">Location Pages</a> - update: Info bubble now shows when clicking the map marker on a single location page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Location_Pages\">Location Pages</a> - update: New in-page directions &amp; labeling options now available. Start / end point submitted via info bubble and directions display on map and step-by-step panel"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Location_Pages\">Location Pages</a> - update:  New shortcode 'sl_directions_results', which displays step-by-step driving directions. Default template updated to contain 'sl_directions_results'. Shortcode also shown in side menu that lists all available shortcode parameters"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Location_Pages\">Location Pages</a> - update:  Line breaks now show in all data fields, providing more readability for fields such as 'sl_description', for example"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Location_Pages\">Location Pages</a> - update: Now, in addition to entering base custom page slug, one can further customize page URL by choosing a Store Locator database field such as city, state, zip, etc instead of the ID (custom fields can also be chosen, if any exist)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Location_Pages\">Location Pages</a> - update: Permalinks structure of pages is now automatically applied once customized from Location Pages admin section; no need to manually save permalinks under WP admin settings"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Validation button for addons displayed in pull-out dashboard"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "PHP version displayed along with Store Locator version in navigation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Removed/commented out non-critical hook function meant to load jQuery in scenario wp_head() was absent; removal done to avoid image gallery/portfolio conflict within a certain theme"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Base plugin &amp; [addon] <a href=\"http://docs.viadat.com/Location_Pages\">Location Pages</a> - update: Foreign characters now also converted to their non-accented equivalent characters when page neat titles are generated, for better readability for international location names"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Validation button for addons displays only if there are uploaded addons. Message to users otherwise for clarity."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Location_Pages\">Location Pages</a> - update: Page neat titles are generated earlier (prior to first click)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Location_Pages\">Location Pages</a> - update: Page's neat title auto-updates if location is renamed"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated DB schema - 'sl_description' field updated from varchar to mediumtext to hold more information"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Important bugfix/patch"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: Tag filtering, now available! Now you can filter your locations by both category (1 category per location) and by tags (multiple tags per location). This allows for far more specification in filtering out locations directly from the Store Locator's user interface"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: Added option for hiding/displaying new tag filter"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: Added option for customizing label for new tag filter"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: Added CSS rules to Categorizer's stylesheet for new tag filter"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: Updated layout of category checkbox filter slightly (JS &amp; CSS)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Slight update to folder creation for languages, custom images, icons, CSS, addons, etc (recursive)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Notification to users if cURL isn't active on server, since it's important for geocoding, other functionality"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[theme] Streamline Theme - new: Responsive theme ready to give your store locator a highly-professional appearance (<a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a> users: install via Addons Marketplace in Store Locator admin; <a href=\"http://www.viadat.com/products-page/early-access/\">Early Access</a> members: login to view themes)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[theme] Debonair Theme - new: Responsive, vibrant theme ready to infuse color into your users' interface experience"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[theme] Compact Right Theme - update: custom search button added"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update to deprecated or soon-to-be-deprecated DB functionality, for improved performance (rolled back in v3.10.2 -- mysqli_* functions appears to be buggy for some)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update of functionality to WP DB class where applicable"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixes aimed at resolving any jQuery conflicts w/other plugins/themes (rolled back in v3.10.1 -- appears to conflict with themes by with prettyPhoto and/or avia JS framework)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix to avoid empty query error when user wants to update location that contains a percent sign ('%') in its fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Multiple_Mapper\">Multiple Mapper</a> - update: custom SQL building loop clause added to check if parameter exists / is array"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: added new category form field for map -- select category from dropdrown menu prior to search to limit results to specific category"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: added option to turn category checkbox filters and new category dropdown menu on &amp; off"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: added option to customize label of new category dropdown menu"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update to temp directory used during imports"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Important fix for location management of individual locations to redirect properly after making an update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Geocoder_Exporter_XML_Exporter\">CSV Importer</a> - update: fix for function declaration"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Geocoder_Exporter_XML_Exporter\">CSV Importer</a> - update: updated location of temporary file created for export to the 'wp-content/uploads/sl-uploads/addons' directory (needs to be writeable / 755 permissions)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Geocoder_Exporter_XML_Exporter\">CSV Importer</a> - update: added email, fax to export &amp; import options"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Exporter_G2\">CSV Importer G2</a> - update: updated location of temporary file created for export to the 'wp-content/uploads/sl-uploads/addons' directory (needs to be writeable / 755 permissions)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Exporter_G2\">CSV Importer G2</a> - update: name-spaced important functions"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Much smoother map loading during auto-location of users"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "jQuery updates to deprecated functions"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Better determination of javascript loading on pages w/ Store Locator shortcode.  Now should work fully with the default WordPress page editor, custom page builders, custom post types/statuses, etc."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.7.1 - small fix"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.7.2 - additional helpful usage info in introduction message to users"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Quicker map load when auto-locating user by their position"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update to News &amp; Upgrades"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Much Improved toolbar navigation &amp; updated tab navigation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] \"U.L.S.\" (bonus) - update: admin / settings submission fields update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Important CSS update"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Location_Pages\">Location Pages</a> - update: Location page slug input field information is now visible (had been affected by WP v3.8 interface CSS changes)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Location_Pages\">Location Pages</a> - update: HTML template moved to now be stored in the Store Locator database to prevent overwriting of the template file during each update (<strong>IMPORTANT, If modifications have already been made to your 'location-template.php' file, make sure to save a copy to your computer before updating Location Pages</strong>.  'location-template.php' will become 'location-sample-template.php' moving forward, used as a default template for first-time users). After this update, you will no longer need to worry about your template being overwritten during updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Location_Pages\">Location Pages</a> - update: Added template shortcode usage examples to readme file for reference"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Advanced_Theme_Manager\">Advanced Theme Manager</a> - update: Increased flexibility in theming Store Locator map interface"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Advanced_Theme_Manager\">Advanced Theme Manager</a> - update: Several new map layout template shortcodes: sl_form_search, sl_form_button, sl_form_cities, sl_form_radius, hook_sl_header, sl_form_start, sl_form_end"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Advanced_Theme_Manager\">Advanced Theme Manager</a> - update: Now even further responsive-design ready"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] \"U.L.S.\" (bonus - <a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a> users &amp; <a href=\"http://www.viadat.com/products-page/early-access/\">Early Access</a> members) - update: Options for more customization of message to users after submission"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] \"U.L.S.\" (bonus) - update: Options for more customization of message to admin after submission"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] \"U.L.S.\" (bonus) - update: More customization options for custom display / hiding of form fields"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] \"U.L.S.\" (bonus) - update: Options for more customization of message to users after admin interaction"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.5.1 - Resolved blank admin issues for a few users due to cURL functionality problems "
+msgstr ""
+
+#. Found in changelog list item.
+msgid "v3.5.1 - Small Manage Locations admin interface improvements"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed stray jQuery code showing up in default location addition form"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Properly linked to <a href=\"http://docs.viadat.com/Advanced_Theme_Manager\">Advanced Theme Manager</a> addon in readme"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added info for creating custom search button images to readme"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added Spanish (es_ES) translation (thank you <a href=\"http://www.viadat.com/go/andrew-kurtis/\">Andrew Kurtis - WebHostingHub</a>). Copy translation into <code>/wp-content/uploads/sl-uploads/languages/</code> to use"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Restored changelog"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Advanced_Theme_Manager\">Advanced Theme Manager</a> - update: complimentary SL Starter theme included"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] \"F.T.\" (bonus - <a href=\"http://docs.viadat.com/Addons_Platform\">Addons Platform</a> users &amp; <a href=\"http://www.viadat.com/products-page/early-access/\">Early Access</a> members) - update: new option in settings to determine whether or not to use automatic address updating"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] \"F.T.\" (bonus) - update: displays full address at all times below map"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[theme] SL Starter - new"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[update] <a href=\"http://docs.viadat.com/Addons_Platform_Lite\">Addons Platform Lite</a> -- improved default file/folder permissions"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New option to modify city search dropdown label in MapDesigner"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated mysql_real_escape_string() -&gt; esc_sql() (for later WP/PHP versions)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Increased default Locations in Results"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Categorizer\">Categorizer</a> - update: Added ability for users to customize \"Default\" label associated with un-categorized locations"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated geocoding to a secure (HTTPS) connection"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Map interface CSS updates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "WP v3.8.2 compatibility testing / updates of MapDesigner, Addons Marketplace displays for WP v3.8.x (&amp; still backward-compatible for pre-WP v3.8 admin)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a> - update: now fully shows settings &amp; shows all functionality for those who have installed it via Addons Platform.  If already installed, delete <code>super-geocoder</code> folder from <code>/sl-uploads/addons/</code> directory, then search Addons Marketplace for 'geocoder' and click 'Install Now' button to re-install it."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "<strong>Introducing:</strong> <a href=\"http://www.viadat.com/products-page/early-access/\">Early Access Stage 1 - Individual Addons</a> -- Earliest entrants receive higher status"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Location_Pages\">Location Pages</a> - update: bug fix when displaying map relating to categories &amp; fix relating to conditional template shortcode"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Geocoder_Exporter_XML_Exporter\">CSV Importer/Exporter</a> (original) - update: Integrated re-geocoding capabilities, to allow bulk re-geocoding for any imported locations that weren't given coordinates on initial import (re-geocoding should work w/Store Locator v2.9+)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/CSV_Importer_Exporter_G2\">CSV Importer/Exporter G2</a> - update: also added re-geocoding capabilities (re-geocoding capabilities needs Store Locator v3.0+)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[addon] <a href=\"http://docs.viadat.com/Super_Geocoder\">Super Geocoder</a> - new: Avoid upgrading to more expensive hosting, or buying dedicated IP addresses -- successfully geocodes even when the default geocoder runs in Google's geocoding quotas (requires Store Locator v3.0+)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[new] <a href=\"http://docs.viadat.com/Addons_Platform_Lite\">Addons Platform Lite</a> -- All the power of the full Addons Platform to power your G2 addons, at a fraction of the price; buy addons individually as needed (requires Store Locator v3.0+)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "[update] <a href=\"http://docs.viadat.com/Addons_Platform_Lite\">Addons Platform</a> -- Addons API updates; code &amp; Windows compatibility fixes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "In addition to using the shortcode <code>[STORE-LOCATOR]</code> on Pages &amp; Posts, display on page templates with code: <code>if (function_exists(\"sl_template\")) {print sl_template(\"[STORE-LOCATOR]\");}</code>"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Several new icons with shadowing; newer current icons refreshed with shadowing for 3D effect on map"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added constants for Addons Platforms, removed hard-coding; updated logic in v3.0.1, v3.0.2"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added constant for the site's name, used by addons"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "'sl-uploads' folder permission granting update (for folders copied from) 'store-locator'"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Existence checks/updates of variables for 1st-time users"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Uploads directory creation class updated (to avoid collisions with other plugins with the same library)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Google Maps API Javascript - <code>&amp;</code> in querystring updated to <code>&amp;amp;</code> for XHTML validation"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Several Store Locator admin updates due to significant WP admin interface changes introduced in WordPress v3.8.  Elements fixed include:"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Pull-Out Dashboard &amp; Modules"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "MapDesigner page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "All Sectional headers"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Addons Platform Settings page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Admin CSS fixes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Still maintains good appearance for pre-WP v3.8 installs also"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fully Uses Google Maps API V3 -- both for displaying maps, geocoding locations, and performing reverse geocoding.  Transition from V2 is automatic and seamless -- no extra steps on your part."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New default fields added: Fax &amp; Email Address"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Streamlined interface"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Benchmarked coding improvements for fastest code performance"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Greatly reduced database usage (reduced by 81.4%)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New pull-out Dashboard for important settings &amp; management tasks"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New option to perform automatic search based on visitor's current location (auto-location)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "40+ new Google maps country domains"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Addons Platform: boosts your Store Locator's abilities dramatically, based off of your most-requested features &amp; paid customizations: 11+ free G2 addons. 8 listed above in 'Description' section, 3 visible only to those with the Addons Platform installed, 1 yet-to-be-released, 4+ currently in development, and compatible with the 3 main addons prior to Store Locator 2.0 (CSV/XML Importer/Exporter, DB Importer, &amp; Multiple Field Updater; the Point, Click, Add Mapper will be retired).  For those who purchased addons prior to 2.0, you can re-visit the email link sent to you when you purchased the addon, then re-download and install the updated version which makes it compatible with 2.0."
+msgstr ""
+
+#. Found in faq header.
+msgid "My Store Locator seems to all of a sudden not display locations / My addon isn't validating -- just a spinning image in the pull-out Dashboard"
+msgstr ""
+
+#. Found in faq header.
+msgid "Can I display {certain information} in search results?"
+msgstr ""
+
+#. Found in faq header.
+msgid "I'm getting 'failed to geocode' error messages -- why?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Bought the CSV Importer ..."
+msgstr ""
+
+#. Found in faq header.
+msgid "I'm using an updated Store Locator, but still no luck geocoding when adding a location"
+msgstr ""
+
+#. Found in faq header.
+msgid "Is this plugin USA-only? / Does it support locations in multiple countries?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Can I display the Store Locator in a page template instead of using shortcode in a Page or a Post?"
+msgstr ""
+
+#. Found in faq header.
+msgid "I'm seeing a 'Google Maps is disabled', or other Google Maps error messages on my website when viewing my Store Locator"
+msgstr ""
+
+#. Found in faq header.
+msgid "If I need to rename my folder from the older 'wordpress-store-locator-location-finder' to 'store-locator', will I lose my locations?"
+msgstr ""
+
+#. Found in faq header.
+msgid "How can I have more than one Store Locator map on my website?"
+msgstr ""
+
+#. Found in faq header.
+msgid "I would like to show different icons for different locations -- can that be done?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Do I need a Google Account to use this store locator?"
+msgstr ""
+
+#. Found in faq header.
+msgid "How Do I use a Translation?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Which countries is this compatible with?"
+msgstr ""
+
+#. Found in faq list item.
+msgid "Are you 'hardening' / blocking your 'wp-content' directory with a security plugin, php.ini, robots.txt or .htaccess (sometimes wp-content/.htaccess)?  Blocking wp-content functionality completely will disrupt proper Store Locator &amp; addon operation."
+msgstr ""
+
+#. Found in faq list item.
+msgid "For Store Locator not displaying locations:  when on your Store Locator page, turn on Firefox Firebug or Google Chrome Developer Tools, and view Console &gt; All.  Oftentimes you may see 'Multiple instances of Google API' error, which is caused by another plugin or your theme including it a 2nd time, or you will see a number of other JavaScript errors that your website is outputing (usually from other plugins) that can affect the map's display -- resolving these usually fixes most problems. "
+msgstr ""
+
+#. Found in faq list item.
+msgid "Yes, the <a href=\"http://docs.viadat.com/Advanced_Theme_Manager\">Advanced Theme Manager addon</a>, which comes with a complimentary theme, called 'SL Starter'. Copy 'sl-starter' folder from your 'advanced-theme-manager' folder into 'wp-content/uploads/sl-uploads/themes/', select SL Starter under 'Design' section in MapDesigner, and modify its templates under Store Locator &gt; Addons &gt; Settings &gt; Advanced Theme Manager as needed"
+msgstr ""
+
+#. Found in faq list item.
+msgid "Have you updated your Store Locator? <a href=\"http://www.viadat.com/2013/10/important-update-store-locator-v2-uses-google-maps-api-v3\">It's mandatory to be using Store Locator v2.x</a> if you want anything to work"
+msgstr ""
+
+#. Found in faq list item.
+msgid "Since Store Locator v3.0, the <a href=\"http://docs.viadat.com/Super_Geocder\">Super Geocoder</a> addon geocodes locations not geocoding due to reaching Google geocoding quota limits (based on your website's IP address)"
+msgstr ""
+
+#. Found in faq list item.
+msgid "Nearly all your questions <a href=\"http://docs.viadat.com/CSV_Importer_Geocoder_Exporter_XML_Exporter\">have been answered here</a>. If you follow these instructions &amp; answers exactly, you should be fine"
+msgstr ""
+
+#. Found in faq list item.
+msgid "<a href=\"https://developers.google.com/maps/documentation/geocoding/index#Limits\">Google's Geocoding API v3 has 2,500 geocode per day limit</a>, so you may need to wait several hours, and try to add your locations again"
+msgstr ""
+
+#. Found in faq list item.
+msgid "On the MapDesigner admin page (v2.x+), you can select your main country. This gives the Google Maps API a region to focus on"
+msgstr ""
+
+#. Found in faq list item.
+msgid "<a href=\"http://docs.viadat.com/Main_Page#How_do_I_enter_non-US_addresses.3F\">For non-USA addresses, use the 'State' field for the Country / Region</a> containing the city &amp; location you are submitting (regions, such as country, province, territory, arrondissement, protectorate, S.A.R, state, etc.). When you use any of these types of regions, the Google Maps API will still geocode (give coordinates) to them"
+msgstr ""
+
+#. Found in faq list item.
+msgid "<a href=\"http://docs.viadat.com/Main_Page#Special_Thanks_to_Translators\">It has been translated</a> into 15+ languages -- if you would like to <a href=\"http://www.viadat.com/2009/02/store-locator-translation-files-wanted-you-might-just-get-something-nice-in-return/\">provide a new or updated translation</a>, please do so"
+msgstr ""
+
+#. Found in faq list item.
+msgid "Yes, in your page template, instead of <code>do_shortcode(\"[STORE-LOCATOR]\")</code> add the code:<code>if (function_exists(\"sl_template\")) {print sl_template(\"[STORE-LOCATOR]\");}</code>"
+msgstr ""
+
+#. Found in faq list item.
+msgid "Additionally, for versions prior to Store Locator v3.0, you would also need to add the following to your theme's functions.php file:<code>if (!function_exists(\"show_sl_scripts\")){    function show_sl_scripts(){}}</code>"
+msgstr ""
+
+#. Found in faq list item.
+msgid "Are you using Store Locator v1.9.7 or earlier?  You must update immediately"
+msgstr ""
+
+#. Found in faq list item.
+msgid "No. You won't lose them. And make sure to re-select your home &amp; end map markers in MapDesigner after renaming"
+msgstr ""
+
+#. Found in faq list item.
+msgid "Yes, the <a href=\"http://docs.viadat.com/Multiple_Mapper\">Multiple Mapper addon</a>"
+msgstr ""
+
+#. Found in faq list item.
+msgid "Yes, the <a href=\"http://docs.viadat.com/Categorizer\">Categorizer addon</a>"
+msgstr ""
+
+#. Found in faq list item.
+msgid "To sign up for a Google Account, visit: https://www.google.com/accounts/"
+msgstr ""
+
+#. Found in faq list item.
+msgid "To sign up for a Google Maps API Key, visit: https://developers.google.com/maps/documentation/javascript/tutorial#api_key"
+msgstr ""
+
+#. Found in faq list item.
+msgid "Place .po &amp; .mo translation files into the <code>/wp-content/uploads/sl-uploads/languages</code> folder, and then change the <code>WPLANG</code> constant to the corresponding language abbreviation in the <code>wp-config.php</code> file in the root wordpress directory"
+msgstr ""
+
+#. Found in faq list item.
+msgid "Example - using French (pre-WP 4.0): make sure <code>lol-fr_FR.po</code> &amp; <code>lol-fr_FR.mo</code> are in the <code>/wp-content/uploads/sl-uploads/languages</code> folder, then make sure to update the code in <code>wp-config.php</code> to read <code>define('WPLANG', 'fr_FR')</code>, and Voila, Il sera en francais (It will be in French)."
+msgstr ""
+
+#. Found in faq list item.
+msgid "Example - using French (WP 4.0+):  go to General &gt; Settings &gt; \"Site Language\" option to choose French language (may need to first install language pack)"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Make sure to check http://docs.viadat.com for the most updated information"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "This plugin in not USA-only, and yes, it supports locations all over the world -- as long as the Google Maps API properly supports it:"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Since Store Locator v2.x, which uses Google Maps API v3, it is not required like it was in Google Maps API v2. However, high-usage sites may still need an API key to monitor usage. Thus, if needed:"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"This plugin is compatible with all countries that have Google Map domains. This includes:\n"
+"* Algeria\n"
+"* American Samoa\n"
+"* Angola\n"
+"* Argentina\n"
+"* Australia\n"
+"* Austria\n"
+"* Bangladesh\n"
+"* Bahrain\n"
+"* Belgium\n"
+"* Belize\n"
+"* Benin\n"
+"* Bolivia\n"
+"* Botswana\n"
+"* Brazil\n"
+"* Bulgaria\n"
+"* Burundi\n"
+"* Canada\n"
+"* Central African Republic\n"
+"* Chile\n"
+"* China\n"
+"* Congo\n"
+"* Cyprus\n"
+"* Czech Republic\n"
+"* Djibouti\n"
+"* Dem. Republic of Congo\n"
+"* Denmark\n"
+"* Ecuador\n"
+"* Ethiopia\n"
+"* Finland\n"
+"* France\n"
+"* Gabon\n"
+"* Gambia\n"
+"* Germany\n"
+"* Ghana\n"
+"* Greece\n"
+"* Guatemala\n"
+"* Guyana\n"
+"* Hong Kong\n"
+"* Hungary\n"
+"* India\n"
+"* Indonesia\n"
+"* Israel\n"
+"* Italy\n"
+"* Japan\n"
+"* Kenya\n"
+"* Lesotho\n"
+"* Liechtenstein\n"
+"* Macedonia\n"
+"* Madagascar\n"
+"* Malawi\n"
+"* Malaysia\n"
+"* Mauritius\n"
+"* Mexico\n"
+"* Mozambique\n"
+"* Namibia\n"
+"* Netherlands\n"
+"* New Zealand\n"
+"* Nigeria\n"
+"* Norway\n"
+"* Paraguay\n"
+"* Peru\n"
+"* Philippines\n"
+"* Poland\n"
+"* Portugal\n"
+"* Reunion\n"
+"* Romania\n"
+"* Russia\n"
+"* Rwanda\n"
+"* Sao Tome &amp; Principe\n"
+"* Senegal\n"
+"* Seychelles\n"
+"* Sierra Leone\n"
+"* Singapore\n"
+"* South Africa\n"
+"* South Korea\n"
+"* Spain\n"
+"* Sri Lanka\n"
+"* Sweden\n"
+"* Switzerland\n"
+"* Taiwan\n"
+"* Tanzania\n"
+"* Thailand\n"
+"* Togo\n"
+"* Turkey\n"
+"* Uganda\n"
+"* United Arab Emirates\n"
+"* United Kingdom\n"
+"* United States\n"
+"* Uruguay\n"
+"* Venezuela\n"
+"* Zambia\n"
+"* Zimbabwe"
+msgstr ""

@@ -16,3 +16,6 @@
 [14-Jun-2015 11:50:43 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/wp-rss-multi-importer/inc/upgrade.php on line 3
 [30-Aug-2015 19:48:42 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/wp-rss-multi-importer/inc/rss_feed.php on line 10
 [31-Aug-2015 04:39:20 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/wp-rss-multi-importer/inc/upgrade.php on line 3
+[01-Dec-2015 05:49:51 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/wp-rss-multi-importer/inc/cron.php on line 18
+[01-Dec-2015 14:40:14 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/wp-rss-multi-importer/inc/options.php on line 467
+[02-Dec-2015 02:22:56 CST6CDT] PHP Fatal error:  Call to undefined function add_action() in /home/highwayp/public_html/pavati/wp-content/plugins/wp-rss-multi-importer/inc/export.php on line 122

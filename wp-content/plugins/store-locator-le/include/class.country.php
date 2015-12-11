@@ -1,7 +1,7 @@
 <?php
 
 if ( ! class_exists('SLP_Country') ) {
-	require_once( WP_PLUGIN_DIR . '/store-locator-le/include/base_class.object.php');
+	require_once( SLPLUS_PLUGINDIR . 'include/base_class.object.php');
 
 	/**
 	 * Class SLP_Country
@@ -12,10 +12,12 @@ if ( ! class_exists('SLP_Country') ) {
 	 * @author Lance Cleveland <lance@charlestonsw.com>
 	 * @copyright 2015 Charleston Software Associates, LLC
 	 *
-	 * @property string $slug the slug, a sanitized key version of name
-	 * @property string $name full text name
-	 * @property string $google_domain the Google maps domain
-	 * @property string cctld the registered cctld
+	 * @property string $slug 				the slug, a sanitized key version of name
+	 * @property string $name 				full text name
+	 * @property string $google_domain 		the Google maps domain
+	 * @property string $cctld 				the registered cctld
+	 * @property string $map_center_lat		the default lat for the center of the country
+	 * @property string $map_center_lng		the default lng for the center of the country
 	 *
 	 * @see SLP_Country https://en.wikipedia.org/wiki/List_of_Internet_top-level_domains#Country_code_top-level_domains
 	 *
@@ -26,6 +28,8 @@ if ( ! class_exists('SLP_Country') ) {
 		public $google_domain;
 		public $cctld;
 		public $slug;
+		public $map_center_lat;
+		public $map_center_lng;
 
 		function __construct( $options = array() ) {
 			parent::__construct( $options );

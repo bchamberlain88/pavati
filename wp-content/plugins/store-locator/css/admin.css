@@ -138,6 +138,24 @@ pre {
 /*---- End - General Admin ----*/
 
 /*##################################
+	Location Table
+####################################*/
+#loc_table tr[id^="sl_tr-"] {
+	cursor: pointer;
+	cursor: hand;
+}
+#loc_table tr:nth-child(2n) {
+	background-color: #eee;
+}
+.location_ungeocoded {
+	background-color: salmon !important;
+}
+.location_selected {
+	background-color: lightYellow !important;
+}
+/*---- End - Location Table ----*/
+
+/*##################################
 	Top Navigation Tabs
 ####################################*/
 .tablist {

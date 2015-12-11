@@ -7,49 +7,19 @@
  * @author Lance Cleveland <lance@charlestonsw.com>
  * @copyright 2014 - 2015 Charleston Software Associates, LLC
  *
+ * @property        string                          $css_dir                The theme CSS directory, absolute.
+ * @property        string                          $css_url                The theme CSS URL, absolute.
+ * @property-read   string                          $current_slug           The current theme slug.
+ * @property        wpCSL_notifications__slplus     $notifications          Plugin notifications system.
+ * @property-read   mixed[]                         $themeDetails           A named array containing meta data about the CSS theme.
+ * @property-read   mixed[]                         $theme_options_field    The array of theme meta data option fields in slug => full_text format.
  */
 class SLP_Styles_Admin  extends SLPlus_BaseClass_Object {
-
-    /**
-     * The theme CSS directory, absolute.
-     *
-     * @var string $css_dir
-     */
     public $css_dir;
-
-    /**
-     * The theme CSS URL, absolute.
-     *
-     * @var string $css_url
-     */
     public $css_url;
-
-    /**
-     * The current theme slug.
-     * 
-     * @var string $current_slug
-     */
     private $current_slug;
-
-    /**
-     * Plugin notifications system.
-     *
-     * @var wpCSL_notifications__slplus $notifications
-     */
     public $notifications;
-
-    /**
-     * A named array containing meta data about the CSS theme.
-     * 
-     * @var mixed[] $themeDetails
-     */
     private $themeDetails;
-
-    /**
-     * The array of theme meta data option fields in slug => full_text format.
-     * 
-     * @var mixed[] $theme_options_fields
-     */
     private $theme_option_fields;
 
     /**
@@ -68,13 +38,25 @@ class SLP_Styles_Admin  extends SLPlus_BaseClass_Object {
         } else {
             $HTML .= $this->themeDetails[$this->current_slug]['description'];
         }
+
+        // Theme Image
+        // Show Image
+        //
+        if ( is_readable( SLPLUS_PLUGINDIR . 'images/plugin_styles/' . $this->current_slug . '.png' ) ) {
+            $HTML .=
+                sprintf('<span class="style_sample"><img src="%s" alt="%s example" title="%s example"></span>',
+                    SLPLUS_PLUGINURL . '/images/plugin_styles/' . $this->current_slug . '.png',
+                    $this->current_slug,
+                    $this->current_slug
+                );
+        }
         
         $HTML .= 
             '<p>' .
             __('Learn more about changing the Store Locator Plus interface via the ' , 'store-locator-le') .
             sprintf(
                 '<a href="%s" target="csa">%s</a>',
-                $this->slplus->support_url . 'user-experience/view/themes-custom-css/',
+                $this->slplus->support_url . 'user-experience/view/styles-themes-custom-css/',
                 __('Plugin Styles documentation.','store-locator-le')
             ) .
             '</p>';
@@ -335,31 +317,31 @@ class SLP_Styles_Admin  extends SLPlus_BaseClass_Object {
                 'PRO.layout'    => array(
                     'slug'  => 'slp-pro',
                     'name'  => 'Pro Pack Locator Layout',
-                    'short_name' => 'Locator Layout' ,
+                    'short_name' => __( 'Locator Layout' , 'store-locator-le' ) ,
                     'field' => 'csl-slplus-layout'
                 ),
                 'EM.layout'    => array(
                     'slug'  => 'slp-enhanced-map',
                     'name'  => 'Enhanced Map Bubble Layout',
-                    'short_name' => 'Bubble Layout' ,
+                    'short_name' => __( 'Bubble Layout' , 'store-locator-le' )  ,
                     'field' => 'bubblelayout'
                 ),
                 'ER.layout'    => array(
                     'slug'  => 'slp-enhanced-results',
                     'name'  => 'Enhanced Results Results Layout',
-                    'short_name'  => 'Results Layout',
+                    'short_name'  => __( 'Results Layout' , 'store-locator-le' )  ,
                     'field' => 'csl-slplus-ER-options[resultslayout]'
                 ),
                 'ES.layout'    => array(
                     'slug'  => 'slp-enhanced-search',
                     'name'  => 'Enhanced Search Search Layout',
-                    'short_name'  => 'Search Layout',
+                    'short_name'  => __( 'Search Layout' , 'store-locator-le' )  ,
                     'field' => 'csl-slplus-ES-options[searchlayout]'
                 ),
                 'results_header'    => array(
                     'slug' => 'slp-premier',
                     'name' => 'Results Header',
-                    'short_name' => 'Results Header',
+                    'short_name' => __( 'Results Header' , 'store-locator-le' )  ,
                     'field' => 'slp-premier-options[results_header]',
                 ),
             );
